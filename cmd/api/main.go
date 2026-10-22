@@ -11,6 +11,7 @@ import (
 
 	"hackathon-backend/internal/config"
 	apphttp "hackathon-backend/internal/http"
+	"hackathon-backend/internal/news"
 	"hackathon-backend/internal/storage"
 )
 
@@ -31,6 +32,11 @@ func main() {
 		os.Exit(1)
 	}
 	defer db.Close()
+
+	newsRepo := news.NewRepository(db)
+	if err := newsRepo.Deduplicate(ctx); err != nil {
+		logger.Error("deduplicate failed", "error", err)
+	}
 
 	router := apphttp.NewRouter(db, logger)
 	server := &http.Server{
