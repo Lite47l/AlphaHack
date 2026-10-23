@@ -36,6 +36,8 @@ func main() {
 	newsRepo := news.NewRepository(db)
 	if err := newsRepo.Deduplicate(ctx); err != nil {
 		logger.Error("deduplicate failed", "error", err)
+		db.Close()
+		os.Exit(1)
 	}
 
 	router := apphttp.NewRouter(db, logger)

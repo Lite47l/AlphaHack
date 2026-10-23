@@ -1,7 +1,6 @@
 package http
 
 import (
-	"github.com/jackc/pgx/v5/pgxpool"
 	"hackathon-backend/internal/analysis"
 	"hackathon-backend/internal/company"
 	"hackathon-backend/internal/knowledge"
@@ -9,6 +8,8 @@ import (
 	"hackathon-backend/internal/response"
 	"log/slog"
 	"net/http"
+
+	"github.com/jackc/pgx/v5/pgxpool"
 )
 
 func NewRouter(db *pgxpool.Pool, logger *slog.Logger) http.Handler {
@@ -33,8 +34,17 @@ func NewRouter(db *pgxpool.Pool, logger *slog.Logger) http.Handler {
 	mux.HandleFunc("GET /api/v1/knowledge", kh.List)
 	mux.HandleFunc("POST /api/v1/companies/{id}/analyses", ah.Create)
 	mux.HandleFunc("GET /api/v1/analyses/{id}", ah.GetByID)
-	return requestIDMiddleware(loggingMiddleware(logger, mux))
+
+	var handler http.Handler = mux
+
+	handler = recoveryMiddleware(logger, handler)
+	handler = loggingMiddleware(logger, handler)
+	handler = requestIDMiddleware(handler)
+	handler = securityHeadersMiddleware(handler)
+
+	return handler
 }
+
 func readyHandler(db *pgxpool.Pool) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if err := db.Ping(r.Context()); err != nil {

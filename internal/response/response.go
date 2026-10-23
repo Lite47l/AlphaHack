@@ -3,9 +3,11 @@ package response
 import (
 	"encoding/json"
 	"errors"
-	"github.com/jackc/pgx/v5"
 	"net/http"
 	"strings"
+
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgconn"
 )
 
 type ErrorBody struct {
@@ -15,25 +17,51 @@ type ErrorBody struct {
 func WriteJSON(w http.ResponseWriter, status int, v any) {
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.WriteHeader(status)
+
 	_ = json.NewEncoder(w).Encode(v)
 }
+
 func WriteError(w http.ResponseWriter, status int, message string) {
 	WriteJSON(w, status, ErrorBody{Error: message})
 }
+
 func WriteServiceError(w http.ResponseWriter, err error) {
 	if err == nil {
 		return
 	}
-	msg := err.Error()
+
 	status := http.StatusInternalServerError
+	message := "internal server error"
+
 	switch {
-	case strings.Contains(msg, "invalid ") || strings.Contains(msg, "must be between") || strings.Contains(msg, "must be >="):
-		status = http.StatusBadRequest
-	case strings.Contains(msg, "not found") || errors.Is(err, pgx.ErrNoRows):
+	case errors.Is(err, pgx.ErrNoRows):
 		status = http.StatusNotFound
+		message = "Resource Not Found"
+
+	case strings.Contains(err.Error(), "not found"):
+		status = http.StatusNotFound
+		message = err.Error()
+
+	case strings.Contains(err.Error(), "invalid"),
+		strings.Contains(err.Error(), "must be between"),
+		strings.Contains(err.Error(), "must be >="):
+		status = http.StatusBadRequest
+		message = err.Error()
+
+	default:
+		var pgErr *pgconn.PgError
+		if errors.As(err, &pgErr) {
+			switch pgErr.Code {
+			case "23505":
+				status = http.StatusConflict
+				message = "resource already exists"
+
+			case "23503", "23514", "23502":
+				status = http.StatusBadRequest
+				message = "invalid data"
+			}
+		}
 	}
-	if status == 500 {
-		msg = "internal server error"
-	}
-	WriteError(w, status, msg)
+
+	WriteError(w, status, message)
 }
