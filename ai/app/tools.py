@@ -11,7 +11,7 @@ from datetime import timedelta
 from . import events as ev_mod
 from .events import parse_dt
 from .mechanisms import candidates
-from .ranking import score
+from .ranking import latest_time, score
 from .textproc import similarity
 
 GRAPH_KEYS = ['payments_out.sectors', 'payments_in.sectors', 'payments_out.fts_countries', 'payments_out.top5_share',
@@ -120,7 +120,8 @@ class Tools:
     def score_relevance(self, company_id, news_id):
         cov, _ = self.bank.coverage(ev_mod.bank_query(self.ctx['event'], self.ctx['news']),
                                     as_of=str(self.ctx['news'].get('published_at') or '')[:10] or None)
-        r = score(self.ctx['profile'], self.ctx['event'], cov, self.ctx['news'].get('published_at'))
+        now = latest_time(self.store.list_news(limit=1) + [self.ctx['news']])  # свежесть — от самой свежей новости
+        r = score(self.ctx['profile'], self.ctx['event'], cov, self.ctx['news'].get('published_at'), now=now)
         self.ctx['relevance'] = r
         return ToolResult('ok', f'score {r["score"]} ({r["level"]}); {r["why_short"]}', r,
                           [e for c in r['components'] for e in c['evidence']])

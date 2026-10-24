@@ -3,7 +3,7 @@ import threading
 from datetime import datetime, timedelta, timezone
 
 from .events import EXTRACTOR_VERSION, bank_query, extract_event, parse_dt
-from .ranking import score
+from .ranking import latest_time, score
 from .textproc import tokens
 
 
@@ -87,10 +87,11 @@ class FeedService:
         groups = self.clusters(news)
         items, filtered = [], []
         stats = {'news_considered': len(news), 'clusters': len(groups), 'filtered_non_business': 0, 'filtered_low_relevance': 0}
+        now = latest_time(news)  # свежесть — от самой свежей новости набора, лента не «протухает» на демо
         for rep, dups in groups.items():
             n, e = by_id[rep], events[rep]
             cov, hits = self.coverage(n, e)
-            rel = score(p, e, cov, n['published_at'])
+            rel = score(p, e, cov, n['published_at'], now=now)
             item = self.item(n, e, rel, hits, [by_id[d] for d in dups])
             if not e['business_relevant']:
                 stats['filtered_non_business'] += 1
@@ -102,12 +103,37 @@ class FeedService:
                 filtered.append(item)
             else:
                 items.append(item)
-        items = self.diversify(items)
+        items = self.diversify(self.merge_macro(items))
         filtered.sort(key=lambda x: -x['relevance']['score'])
         stats['shown'] = min(limit, len(items))
         stats['significant'] = sum(1 for x in items if x['relevance']['level'] in ('high', 'medium'))
         return {'company_id': company_id, 'generated_at': datetime.now(timezone.utc).isoformat(), 'items': items[:limit],
                 'filtered': filtered[:60] if include_filtered else [], 'stats': stats}
+
+    @staticmethod
+    def merge_macro(items: list[dict]) -> list[dict]:
+        """Одно макрособытие (например, решение ЦБ) разные издания пишут разными заголовками, которые не склеиваются
+        по тексту. Сообщения одного макротипа с тем же направлением в пределах суток объединяются: остаётся самое
+        значимое, остальные становятся «ещё источниками»."""
+        from .ranking import MACRO_TYPES
+        out, keep = [], {}
+        official = ('Банк России', 'Минфин', 'Росстат')  # первоисточник события предпочтительнее пересказа
+        for it in sorted(items, key=lambda x: -(x['relevance']['score'] + (0.1 if x['source_name'] in official else 0))):
+            e = it['event']
+            dt = parse_dt(it['published_at'])
+            if e['event_type'] not in MACRO_TYPES or not dt:
+                out.append(it)
+                continue
+            key = (e['event_type'], e.get('direction'))
+            rep = next((r for r in keep.get(key, []) if abs((parse_dt(r['published_at']) - dt).total_seconds()) < 86400), None)
+            if rep is None:
+                keep.setdefault(key, []).append(it)
+                out.append(it)
+            else:
+                rep['duplicates'].append({'news_id': it['news_id'], 'title': it['title'], 'source_name': it['source_name'],
+                                          'url': it['url']})
+                rep['duplicates'].extend(it['duplicates'])
+        return out
 
     @staticmethod
     def diversify(items: list[dict]) -> list[dict]:
@@ -118,7 +144,7 @@ class FeedService:
         while pool:
             def adj(x):
                 k = (x['event']['event_type'], (x['event']['sectors'] or [''])[0])
-                return x['relevance']['score'] * (0.9 ** seen.get(k, 0))
+                return x['relevance']['score'] * (0.75 ** seen.get(k, 0))
             best = max(pool, key=adj)
             pool.remove(best)
             k = (best['event']['event_type'], (best['event']['sectors'] or [''])[0])
@@ -145,10 +171,11 @@ class FeedService:
             return None
         e = self.events_for([n])[n['id']]
         cov, _ = self.coverage(n, e)
+        now = latest_time(self.store.list_news(limit=1) + [n])
         results = []
         for cid in company_ids[:6]:
             p = self.profiles.get(cid)
             if p:
                 results.append({'company_id': cid, 'display_name': p['display_name'], 'subtitle': p['subtitle'],
-                                'relevance': score(p, e, cov, n['published_at'])})
+                                'relevance': score(p, e, cov, n['published_at'], now=now)})
         return {'news': n, 'event': e, 'results': results}

@@ -46,6 +46,42 @@ def tokens(text: str, drop_stop: bool = True) -> list[str]:
     return out
 
 
+# ---------------------------------------------------------------- лексиконы событий
+# Для поиска по банку остаётся stem() с обрезкой до 6 символов. Для лексиконов событий она даёт ложные
+# совпадения («электроэнерг» → «электр» ловит «электросчётчики», «ограничен» → «ограни» ловит «ограничить»),
+# поэтому здесь отдельная логика: слово лексикона короче 5 символов совпадает только с токеном целиком,
+# длиннее — как префикс токена. Альтернативные формы слова пишутся через «|»: 'курс|курса доллар'.
+_LEX_WORD = re.compile(r'[a-zа-яё0-9]+', re.I)
+LEX_MIN_PREFIX = 5
+
+
+def lex_tokens(text: str) -> list[str]:
+    """Токены без стемминга (нижний регистр, ё → е, дефис разделяет слова)."""
+    return [w.replace('ё', 'е') for w in _LEX_WORD.findall((text or '').lower())]
+
+
+def lex_pattern(phrase: str) -> tuple[tuple[str, ...], ...]:
+    """Фраза лексикона → последовательность слов, у каждого — набор допустимых форм/префиксов."""
+    words = []
+    for part in phrase.lower().replace('ё', 'е').split():
+        alts = tuple(a for alt in part.split('|') for a in _LEX_WORD.findall(alt))
+        if alts:
+            words.append(alts)
+    return tuple(words)
+
+
+def _lex_hit(alts: tuple[str, ...], tok: str) -> bool:
+    return any(tok == a if len(a) < LEX_MIN_PREFIX else tok.startswith(a) for a in alts)
+
+
+def lex_count(pattern: tuple[tuple[str, ...], ...], toks: list[str]) -> int:
+    """Число вхождений фразы лексикона в последовательность lex_tokens."""
+    n = len(pattern)
+    if not n:
+        return 0
+    return sum(1 for i in range(len(toks) - n + 1) if all(_lex_hit(pattern[j], toks[i + j]) for j in range(n)))
+
+
 _NUM = re.compile(r'(?<![\w.,])[-+−]?\d{1,3}(?:[  ]\d{3})+(?:[.,]\d+)?|(?<![\w.,])[-+−]?\d+(?:[.,]\d+)?')
 
 

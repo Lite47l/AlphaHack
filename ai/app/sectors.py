@@ -40,7 +40,7 @@ OKVED_MAP = {
     '28': ['machinery'], '29': ['auto', 'machinery'], '30': ['machinery', 'transport'], '31': ['consumer_goods'],
     '32': ['consumer_goods'], '33': ['machinery'], '35': ['fuel_energy', 'utilities'], '36': ['utilities'],
     '37': ['utilities'], '38': ['utilities'], '39': ['utilities'],
-    '41': ['construction'], '42': ['construction', 'utilities'], '43': ['construction'],
+    '41': ['construction', 'real_estate'], '42': ['construction', 'utilities'], '43': ['construction'],
     '45': ['auto'], '45.1': ['auto', 'retail'], '45.3': ['auto', 'wholesale'],
     '46': ['wholesale'], '46.1': ['wholesale', 'business_services'],
     '46.2': ['wholesale', 'agri_food'], '46.3': ['wholesale', 'agri_food', 'consumer_goods'],
@@ -61,6 +61,26 @@ OKVED_MAP = {
     '87': ['pharma_health'], '88': ['pharma_health'], '90': ['hospitality'], '91': ['hospitality'],
     '92': ['hospitality'], '93': ['hospitality'], '94': ['public'], '95': ['business_services'], '96': ['business_services'],
 }
+
+
+# ОКВЭД → товарные группы агро/продовольствия (чтобы «урожай картофеля» не считался событием зернотрейдера).
+# 'all' — неспециализированная торговля продуктами: касается любая товарная группа.
+OKVED_COMMODITIES = {
+    '01.11': ['grain'], '01.13': ['vegetables'], '01.2': ['vegetables'], '01.4': ['meat', 'dairy'],
+    '03': ['fish'], '10.1': ['meat'], '10.2': ['fish'], '10.3': ['vegetables'], '10.5': ['dairy'], '10.6': ['grain'],
+    '10.7': ['grain'], '10.8': ['sugar'], '11': ['beverages'],
+    '46.21': ['grain'], '46.31': ['vegetables'], '46.32': ['meat'], '46.33': ['dairy'], '46.34': ['beverages'],
+    '46.36': ['sugar'], '46.38': ['fish', 'other_food'], '46.39': ['all'],
+    '47.11': ['all'], '47.2': ['all'], '56': ['all'],
+}
+
+
+def commodities_for_okved(code: str | None) -> list[str]:
+    """Товарные группы компании по самому длинному префиксу ОКВЭД; [] — компания не из продовольственной цепочки."""
+    if not code:
+        return []
+    best = max((p for p in OKVED_COMMODITIES if code.strip().startswith(p)), key=len, default='')
+    return list(OKVED_COMMODITIES.get(best, []))
 
 
 def sectors_for_okved(code: str | None) -> list[str]:

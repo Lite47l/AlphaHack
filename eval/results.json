@@ -1,0 +1,4241 @@
+{
+ "generated_at": "2026-10-25T00:27:34+03:00",
+ "labels_files": [
+  "eval/labels.csv",
+  "eval/labels_fresh.csv"
+ ],
+ "ai_dir": "ai",
+ "now_for_freshness": "2026-10-24T20:22:59+03:00",
+ "profiles_source": "real:data/raw",
+ "profiles_version": "a907df8bb053",
+ "profiles_count": 926,
+ "min_revenue": 5000000000.0,
+ "extractor": "rules-1.3",
+ "skipped_pairs": [],
+ "t2_check": [
+  {
+   "title": "Аналитик прогнозирует, что снижения ключевой ставки не будет до весны 2027 года",
+   "event_type": "key_rate",
+   "U_1595": {
+    "score": 0.7354,
+    "level": "high"
+   },
+   "U_8167": {
+    "score": 0.2869,
+    "level": "low"
+   },
+   "ok": true
+  },
+  {
+   "title": "ЦБ сохранил ключевую ставку, цена земли в Подмосковье достигла рекордного уровня. Главное за день",
+   "event_type": "key_rate",
+   "U_1595": {
+    "score": 0.733,
+    "level": "high"
+   },
+   "U_8167": {
+    "score": 0.286,
+    "level": "low"
+   },
+   "ok": true
+  },
+  {
+   "title": "ЦБ не спешит // Пауза в снижении ключевой ставки может затянуться",
+   "event_type": "key_rate",
+   "U_1595": {
+    "score": 0.7265,
+    "level": "high"
+   },
+   "U_8167": {
+    "score": 0.2835,
+    "level": "low"
+   },
+   "ok": true
+  },
+  {
+   "title": "ЦБ сохранил ключевую ставку на уровне 14%",
+   "event_type": "key_rate",
+   "U_1595": {
+    "score": 0.7257,
+    "level": "high"
+   },
+   "U_8167": {
+    "score": 0.2831,
+    "level": "low"
+   },
+   "ok": true
+  },
+  {
+   "title": "Банк России сохранил ключевую ставку",
+   "event_type": "key_rate",
+   "U_1595": {
+    "score": 0.7257,
+    "level": "high"
+   },
+   "U_8167": {
+    "score": 0.2831,
+    "level": "low"
+   },
+   "ok": true
+  },
+  {
+   "title": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "event_type": "key_rate",
+   "U_1595": {
+    "score": 0.7271,
+    "level": "high"
+   },
+   "U_8167": {
+    "score": 0.3873,
+    "level": "medium"
+   },
+   "ok": true
+  },
+  {
+   "title": "Шохин: бизнес не ожидает снижения ключевой ставки ЦБ",
+   "event_type": "key_rate",
+   "U_1595": {
+    "score": 0.7238,
+    "level": "high"
+   },
+   "U_8167": {
+    "score": 0.2824,
+    "level": "low"
+   },
+   "ok": true
+  }
+ ],
+ "weights": {
+  "sector": 0.27,
+  "channel": 0.3,
+  "counterparty": 0.12,
+  "region": 0.08,
+  "macro": 0.15,
+  "bank": 0.08
+ },
+ "metrics": {
+  "current": {
+   "per_company": {
+    "U_22299": {
+     "split": "dev",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.9808
+    },
+    "U_102920": {
+     "split": "dev",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.9377
+    },
+    "U_34911": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.9808
+    },
+    "U_201985": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.6086
+    },
+    "U_44792": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.7727
+    },
+    "U_1595": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 1.0,
+     "ndcg@5": 1.0
+    },
+    "U_8167": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.9218
+    },
+    "U_4601": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.9377
+    },
+    "U_212593": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.6667,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.8119
+    },
+    "U_9250": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.9307
+    }
+   },
+   "mean": {
+    "dev": {
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.9592,
+     "companies": 2,
+     "pairs": 20
+    },
+    "holdout": {
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.5333,
+     "ndcg@5": 0.8568,
+     "companies": 5,
+     "pairs": 50
+    },
+    "all": {
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.5714,
+     "ndcg@5": 0.8861,
+     "companies": 7,
+     "pairs": 70
+    },
+    "fresh": {
+     "p@3_rel": 0.8889,
+     "p@3_strict": 0.5556,
+     "ndcg@5": 0.8934,
+     "companies": 3,
+     "pairs": 30
+    }
+   }
+  },
+  "baseline_freshness": {
+   "per_company": {
+    "U_22299": {
+     "split": "dev",
+     "n": 10,
+     "p@3_rel": 0.6667,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.3775
+    },
+    "U_102920": {
+     "split": "dev",
+     "n": 10,
+     "p@3_rel": 0.0,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.2703
+    },
+    "U_34911": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.6667,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.5162
+    },
+    "U_201985": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.3333,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.3479
+    },
+    "U_44792": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.0,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.1652
+    },
+    "U_1595": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.3333,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.3162
+    },
+    "U_8167": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.3333,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.1792
+    },
+    "U_4601": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.3333,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.4284
+    },
+    "U_212593": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.0,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.1652
+    },
+    "U_9250": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.3333,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.4917
+    }
+   },
+   "mean": {
+    "dev": {
+     "p@3_rel": 0.3333,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.3239,
+     "companies": 2,
+     "pairs": 20
+    },
+    "holdout": {
+     "p@3_rel": 0.3333,
+     "p@3_strict": 0.1333,
+     "ndcg@5": 0.3049,
+     "companies": 5,
+     "pairs": 50
+    },
+    "all": {
+     "p@3_rel": 0.3333,
+     "p@3_strict": 0.0952,
+     "ndcg@5": 0.3104,
+     "companies": 7,
+     "pairs": 70
+    },
+    "fresh": {
+     "p@3_rel": 0.2222,
+     "p@3_strict": 0.2222,
+     "ndcg@5": 0.3618,
+     "companies": 3,
+     "pairs": 30
+    }
+   }
+  },
+  "baseline_macro_only": {
+   "per_company": {
+    "U_22299": {
+     "split": "dev",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.4667,
+     "ndcg@5": 0.8325
+    },
+    "U_102920": {
+     "split": "dev",
+     "n": 10,
+     "p@3_rel": 0.6667,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.8501
+    },
+    "U_34911": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.8613
+    },
+    "U_201985": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.6667,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.783
+    },
+    "U_44792": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.6667,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.3902
+    },
+    "U_1595": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.7865
+    },
+    "U_8167": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.0,
+     "ndcg@5": 0.7522
+    },
+    "U_4601": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 1.0,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.9478
+    },
+    "U_212593": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.6667,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.8857
+    },
+    "U_9250": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.6667,
+     "p@3_strict": 0.6667,
+     "ndcg@5": 0.8883
+    }
+   },
+   "mean": {
+    "dev": {
+     "p@3_rel": 0.8334,
+     "p@3_strict": 0.5667,
+     "ndcg@5": 0.8413,
+     "companies": 2,
+     "pairs": 20
+    },
+    "holdout": {
+     "p@3_rel": 0.8667,
+     "p@3_strict": 0.3333,
+     "ndcg@5": 0.7146,
+     "companies": 5,
+     "pairs": 50
+    },
+    "all": {
+     "p@3_rel": 0.8572,
+     "p@3_strict": 0.4,
+     "ndcg@5": 0.7508,
+     "companies": 7,
+     "pairs": 70
+    },
+    "fresh": {
+     "p@3_rel": 0.7778,
+     "p@3_strict": 0.5556,
+     "ndcg@5": 0.9073,
+     "companies": 3,
+     "pairs": 30
+    }
+   }
+  },
+  "baseline_random": {
+   "per_company": {
+    "U_22299": {
+     "split": "dev",
+     "n": 10,
+     "p@3_rel": 0.7,
+     "p@3_strict": 0.3,
+     "ndcg@5": 0.5316
+    },
+    "U_102920": {
+     "split": "dev",
+     "n": 10,
+     "p@3_rel": 0.5,
+     "p@3_strict": 0.2,
+     "ndcg@5": 0.4273
+    },
+    "U_34911": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.6,
+     "p@3_strict": 0.3,
+     "ndcg@5": 0.4907
+    },
+    "U_201985": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.6,
+     "p@3_strict": 0.2,
+     "ndcg@5": 0.4748
+    },
+    "U_44792": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.5,
+     "p@3_strict": 0.1,
+     "ndcg@5": 0.4171
+    },
+    "U_1595": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.6,
+     "p@3_strict": 0.3,
+     "ndcg@5": 0.4907
+    },
+    "U_8167": {
+     "split": "holdout",
+     "n": 10,
+     "p@3_rel": 0.7,
+     "p@3_strict": 0.1,
+     "ndcg@5": 0.5363
+    },
+    "U_4601": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.5,
+     "p@3_strict": 0.2,
+     "ndcg@5": 0.4273
+    },
+    "U_212593": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.5,
+     "p@3_strict": 0.1,
+     "ndcg@5": 0.4171
+    },
+    "U_9250": {
+     "split": "fresh",
+     "n": 10,
+     "p@3_rel": 0.5,
+     "p@3_strict": 0.2,
+     "ndcg@5": 0.4273
+    }
+   },
+   "mean": {
+    "dev": {
+     "p@3_rel": 0.6,
+     "p@3_strict": 0.25,
+     "ndcg@5": 0.4794,
+     "companies": 2,
+     "pairs": 20
+    },
+    "holdout": {
+     "p@3_rel": 0.6,
+     "p@3_strict": 0.2,
+     "ndcg@5": 0.4819,
+     "companies": 5,
+     "pairs": 50
+    },
+    "all": {
+     "p@3_rel": 0.6,
+     "p@3_strict": 0.2143,
+     "ndcg@5": 0.4812,
+     "companies": 7,
+     "pairs": 70
+    },
+    "fresh": {
+     "p@3_rel": 0.5,
+     "p@3_strict": 0.1667,
+     "ndcg@5": 0.4239,
+     "companies": 3,
+     "pairs": 30
+    }
+   }
+  }
+ },
+ "feed_view": {
+  "dev": {
+   "shown": 13,
+   "pairs": 20,
+   "precision_shown_rel": 0.8462,
+   "recall_rel": 0.9167,
+   "recall_strict": 1.0,
+   "hidden_label2": [],
+   "shown_label0": [
+    "P09",
+    "P16"
+   ]
+  },
+  "holdout": {
+   "shown": 33,
+   "pairs": 50,
+   "precision_shown_rel": 0.8182,
+   "recall_rel": 0.9,
+   "recall_strict": 1.0,
+   "hidden_label2": [],
+   "shown_label0": [
+    "P28",
+    "P29",
+    "P37",
+    "P38",
+    "P40",
+    "P68"
+   ]
+  },
+  "all": {
+   "shown": 46,
+   "pairs": 70,
+   "precision_shown_rel": 0.8261,
+   "recall_rel": 0.9048,
+   "recall_strict": 1.0,
+   "hidden_label2": [],
+   "shown_label0": [
+    "P09",
+    "P16",
+    "P28",
+    "P29",
+    "P37",
+    "P38",
+    "P40",
+    "P68"
+   ]
+  },
+  "fresh": {
+   "shown": 22,
+   "pairs": 30,
+   "precision_shown_rel": 0.6364,
+   "recall_rel": 0.9333,
+   "recall_strict": 1.0,
+   "hidden_label2": [],
+   "shown_label0": [
+    "F06",
+    "F07",
+    "F09",
+    "F16",
+    "F19",
+    "F27",
+    "F28",
+    "F30"
+   ]
+  }
+ },
+ "errors": [
+  {
+   "type": "missed",
+   "pair_id": "P01",
+   "company_id": "U_22299",
+   "news_title": "Что рассказал Новак о планах по экспорту дизтоплива и импорту бензина",
+   "label": 2,
+   "rank": 4,
+   "score": 0.4693,
+   "level": "high",
+   "event_type": "fuel_energy",
+   "event_sectors": [
+    "fuel_energy"
+   ],
+   "components": {
+    "sector": 0.75,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Цены на топливо и энергию — цены на топливо и энергию напрямую определяют выручку и маржу"
+  },
+  {
+   "type": "missed",
+   "pair_id": "P21",
+   "company_id": "U_34911",
+   "news_title": "Россию на мировом рынке зерна не заменить",
+   "label": 2,
+   "rank": 4,
+   "score": 0.4769,
+   "level": "high",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "components": {
+    "sector": 0.75,
+    "channel": 0.818,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.452
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку"
+  },
+  {
+   "type": "missed",
+   "pair_id": "P31",
+   "company_id": "U_201985",
+   "news_title": "Набиуллина заявила о необходимости ограничить объемы льготной ипотеки",
+   "label": 2,
+   "rank": 7,
+   "score": 0.375,
+   "level": "medium",
+   "event_type": "real_estate",
+   "event_sectors": [
+    "real_estate"
+   ],
+   "components": {
+    "sector": 0.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.592
+   },
+   "why_short": "Строительный цикл и недвижимость — отрасль зависит от строительного цикла и ипотеки"
+  },
+  {
+   "type": "false_up",
+   "pair_id": "F19",
+   "company_id": "U_212593",
+   "news_title": "РЖД запустили новый поезд через пять регионов РФ, «Аэрофлот» перешел на зимнее расписание. Главное о туризме и путешествиях за неделю",
+   "label": 0,
+   "rank": 3,
+   "score": 0.3934,
+   "level": "medium",
+   "event_type": "logistics",
+   "event_sectors": [
+    "transport",
+    "hospitality"
+   ],
+   "components": {
+    "sector": 1.0,
+    "channel": 0.105,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 0.749
+   },
+   "why_short": "Затрагивает отрасль компании: общепит, гостиницы и досуг"
+  }
+ ],
+ "pairs": [
+  {
+   "pair_id": "P01",
+   "company_id": "U_22299",
+   "news_id": "6b3f3b7b-9269-508e-8971-9a8893af9176",
+   "news_title": "Что рассказал Новак о планах по экспорту дизтоплива и импорту бензина",
+   "label": 2,
+   "split": "dev",
+   "published_at": "2026-10-15T08:49:22+00:00",
+   "score": 0.4693,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fuel_energy",
+   "event_sectors": [
+    "fuel_energy"
+   ],
+   "event_channels": {
+    "fuel_costs": 1.0,
+    "foreign_trade": 0.5
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.75,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Цены на топливо и энергию — цены на топливо и энергию напрямую определяют выручку и маржу",
+   "b_freshness": -9.356678240740742,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "P02",
+   "company_id": "U_22299",
+   "news_id": "286f5413-a822-5350-9976-71cf436518d4",
+   "news_title": "Нефть марки Brent превысила $117 за баррель впервые за полгода",
+   "label": 2,
+   "split": "dev",
+   "published_at": "2026-10-23T17:23:38+00:00",
+   "score": 0.5964,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fuel_energy",
+   "event_sectors": [
+    "fuel_energy"
+   ],
+   "event_channels": {
+    "fuel_costs": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.75,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Цены на топливо и энергию — цены на топливо и энергию напрямую определяют выручку и маржу",
+   "b_freshness": -0.9995486111111112,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "P03",
+   "company_id": "U_22299",
+   "news_id": "908d08e7-6c2f-52c5-8995-2a1fd90cf270",
+   "news_title": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "label": 2,
+   "split": "dev",
+   "published_at": "2026-10-23T10:30:00+00:00",
+   "score": 0.7271,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "key_rate",
+   "event_sectors": [
+    "fuel_energy",
+    "retail"
+   ],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3,
+    "payroll": 0.5,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.95,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты, лизинг",
+   "b_freshness": -1.2867939814814815,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "P04",
+   "company_id": "U_22299",
+   "news_id": "25a488b1-6dc4-5c94-9be2-c95cd5742059",
+   "news_title": "В Мордовии снимут введенные в июле ограничения на отпуск топлива",
+   "label": 1,
+   "split": "dev",
+   "published_at": "2026-10-24T14:58:47+00:00",
+   "score": 0.4631,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fuel_energy",
+   "event_sectors": [
+    "fuel_energy"
+   ],
+   "event_channels": {
+    "fuel_costs": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.75,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Цены на топливо и энергию — цены на топливо и энергию напрямую определяют выручку и маржу",
+   "b_freshness": -0.10013888888888889,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "P05",
+   "company_id": "U_22299",
+   "news_id": "a9c95606-2960-5d10-9d55-cb76187dc658",
+   "news_title": "В Рязани отменяют продажу топлива по номерам машин",
+   "label": 1,
+   "split": "dev",
+   "published_at": "2026-10-24T04:00:32+00:00",
+   "score": 0.4549,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fuel_energy",
+   "event_sectors": [
+    "fuel_energy",
+    "auto"
+   ],
+   "event_channels": {
+    "fuel_costs": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [
+    "Рязанская область"
+   ],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.75,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Цены на топливо и энергию — цены на топливо и энергию напрямую определяют выручку и маржу",
+   "b_freshness": -0.5572569444444444,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "P06",
+   "company_id": "U_22299",
+   "news_id": "c6ea9c68-f31a-56b4-a4f9-0cd9f806d6c7",
+   "news_title": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+   "label": 1,
+   "split": "dev",
+   "published_at": "2026-10-23T18:33:00+00:00",
+   "score": 0.0983,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Курс рубля и валюты: общеэкономический фактор для бизнеса",
+   "b_freshness": -0.9513773148148148,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "P07",
+   "company_id": "U_22299",
+   "news_id": "757c8af8-bcd5-558d-8cc1-337ae47c4604",
+   "news_title": "Результаты мониторинга максимальных процентных ставок кредитных организаций (21.10.2026)",
+   "label": 1,
+   "split": "dev",
+   "published_at": "2026-10-21T11:32:53+00:00",
+   "score": 0.5835,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "credit_market",
+   "event_sectors": [
+    "finance"
+   ],
+   "event_channels": {
+    "cost_of_debt": 0.9,
+    "liquidity_yield": 0.5,
+    "financial_markets": 0.4
+   },
+   "event_regions": [
+    "Московская область"
+   ],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.855,
+    "channel": 0.907,
+    "counterparty": 0.046,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты, лизинг",
+   "b_freshness": -3.243125,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "P08",
+   "company_id": "U_22299",
+   "news_id": "16a06578-3d24-5e5c-9888-c8c669aac674",
+   "news_title": "«Русснефть» получила рассрочку на уплату задолженности в 10 млрд рублей",
+   "label": 0,
+   "split": "dev",
+   "published_at": "2026-10-23T15:33:44+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -1.0758680555555555,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "P09",
+   "company_id": "U_22299",
+   "news_id": "255f1675-591f-5ace-a23e-f26542371716",
+   "news_title": "ФАС запросила у производителей коксующегося угля объяснения роста цен",
+   "label": 0,
+   "split": "dev",
+   "published_at": "2026-10-23T11:24:27+00:00",
+   "score": 0.1842,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "metals",
+   "event_sectors": [
+    "metals_mining"
+   ],
+   "event_channels": {
+    "metals_prices": 1.0,
+    "foreign_trade": 0.2,
+    "consumer_demand": 0.3,
+    "payroll": 0.2,
+    "cost_of_debt": 0.25,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.253,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 1.0
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.2489814814814815,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "P10",
+   "company_id": "U_22299",
+   "news_id": "7c87271c-bc0b-5215-9951-57c4a0b382eb",
+   "news_title": "Китайский пловец побил мировой рекорд на дистанции 50 м на спине",
+   "label": 0,
+   "split": "dev",
+   "published_at": "2026-10-24T17:21:25+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -0.0010879629629629629,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "P11",
+   "company_id": "U_102920",
+   "news_id": "c6ea9c68-f31a-56b4-a4f9-0cd9f806d6c7",
+   "news_title": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+   "label": 2,
+   "split": "dev",
+   "published_at": "2026-10-23T18:33:00+00:00",
+   "score": 0.6582,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.9,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Внешнеэкономическая деятельность и курс — компания есть в базе ФТС (ПЕРУ, ЧИЛИ, ДАНИЯ); направление операций (импорт/экспорт) в данных не указано",
+   "b_freshness": -0.9513773148148148,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "P12",
+   "company_id": "U_102920",
+   "news_id": "908d08e7-6c2f-52c5-8995-2a1fd90cf270",
+   "news_title": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "label": 2,
+   "split": "dev",
+   "published_at": "2026-10-23T10:30:00+00:00",
+   "score": 0.7235,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "key_rate",
+   "event_sectors": [
+    "fuel_energy",
+    "retail"
+   ],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3,
+    "payroll": 0.5,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.95,
+    "channel": 0.987,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты, лизинг",
+   "b_freshness": -1.2867939814814815,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "P13",
+   "company_id": "U_102920",
+   "news_id": "9b00fc09-814e-57e0-8599-c2745b553b41",
+   "news_title": "Внешнеторговый оборот России за восемь месяцев вырос на 13,8%",
+   "label": 1,
+   "split": "dev",
+   "published_at": "2026-10-12T08:00:00+00:00",
+   "score": 0.2694,
+   "level": "low",
+   "confidence": "high",
+   "event_type": "trade_sanctions",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0
+   },
+   "event_regions": [],
+   "macro_importance": 0.4,
+   "bank_coverage": 0.58,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.4,
+    "bank": 0.58
+   },
+   "why_short": "Внешнеэкономическая деятельность и курс — компания есть в базе ФТС (ПЕРУ, ЧИЛИ, ДАНИЯ); направление операций (импорт/экспорт) в данных не указано",
+   "b_freshness": -12.390960648148148,
+   "b_macro": 0.4,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "P14",
+   "company_id": "U_102920",
+   "news_id": "febd1ff2-af67-5345-b848-8a9544c4975a",
+   "news_title": "ФАС заподозрила «Пятерочку» в дискриминации воронежского производителя молока",
+   "label": 1,
+   "split": "dev",
+   "published_at": "2026-10-23T08:42:36+00:00",
+   "score": 0.1926,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food",
+    "retail"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [
+    "Воронежская область"
+   ],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.539,
+   "components": {
+    "sector": 0.3,
+    "channel": 0.338,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.539
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку",
+   "b_freshness": -1.3613773148148147,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "P15",
+   "company_id": "U_102920",
+   "news_id": "286f5413-a822-5350-9976-71cf436518d4",
+   "news_title": "Нефть марки Brent превысила $117 за баррель впервые за полгода",
+   "label": 1,
+   "split": "dev",
+   "published_at": "2026-10-23T17:23:38+00:00",
+   "score": 0.294,
+   "level": "low",
+   "confidence": "high",
+   "event_type": "fuel_energy",
+   "event_sectors": [
+    "fuel_energy"
+   ],
+   "event_channels": {
+    "fuel_costs": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.527,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Цены на топливо и энергию — топливо — существенная статья затрат для отрасли",
+   "b_freshness": -0.9995486111111112,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "P16",
+   "company_id": "U_102920",
+   "news_id": "59bddfb0-c6f2-520b-8e9d-8fe068ff7b95",
+   "news_title": "Урожай картофеля в России упал",
+   "label": 0,
+   "split": "dev",
+   "published_at": "2026-10-23T05:51:00+00:00",
+   "score": 0.2392,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.321,
+   "components": {
+    "sector": 0.3,
+    "channel": 0.338,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.321
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку",
+   "b_freshness": -1.4805439814814816,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "P17",
+   "company_id": "U_102920",
+   "news_id": "4df298f8-0b83-5ec6-823a-f0ab7a684549",
+   "news_title": "Пошлину на иностранный крепкий алкоголь могут повысить уже в ноябре",
+   "label": 0,
+   "split": "dev",
+   "published_at": "2026-10-23T03:01:00+00:00",
+   "score": 0.1258,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "budget_tax",
+   "event_sectors": [
+    "consumer_goods"
+   ],
+   "event_channels": {
+    "state_budget": 0.9,
+    "payroll": 0.2,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 0.814,
+   "components": {
+    "sector": 0.09,
+    "channel": 0.195,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 0.814
+   },
+   "why_short": "Затрагивает отрасль компании: потребительские товары",
+   "b_freshness": -1.598599537037037,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "P18",
+   "company_id": "U_102920",
+   "news_id": "9104388a-aa52-53c3-afe2-a23b126e64b8",
+   "news_title": "Трамп заявил о возможном введении 200%-ных пошлин против России и Украины",
+   "label": 0,
+   "split": "dev",
+   "published_at": "2026-10-24T11:59:57+00:00",
+   "score": 0.1122,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "budget_tax",
+   "event_sectors": [],
+   "event_channels": {
+    "state_budget": 0.9,
+    "payroll": 0.2,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 0.69,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.195,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 0.69
+   },
+   "why_short": "Бюджет и налоги: общеэкономический фактор для бизнеса",
+   "b_freshness": -0.2243287037037037,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "P19",
+   "company_id": "U_102920",
+   "news_id": "76da1065-78a1-5b8a-bbe3-e802409ce4e5",
+   "news_title": "Логистический центр Ozon в Омске попал под атаку беспилотников",
+   "label": 0,
+   "split": "dev",
+   "published_at": "2026-10-24T16:01:02+00:00",
+   "score": 0.1245,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "logistics",
+   "event_sectors": [
+    "retail"
+   ],
+   "event_channels": {
+    "fuel_costs": 0.3,
+    "foreign_trade": 0.3
+   },
+   "event_regions": [
+    "Омская область"
+   ],
+   "macro_importance": 0.25,
+   "bank_coverage": 0.514,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.293,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 0.514
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -0.05690972222222222,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "P20",
+   "company_id": "U_102920",
+   "news_id": "f8efeb9a-cea4-5928-b0e8-895b20289a51",
+   "news_title": "В Стамбуле отменили концерт Галкина",
+   "label": 0,
+   "split": "dev",
+   "published_at": "2026-10-24T17:18:41+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -0.0029861111111111113,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "P21",
+   "company_id": "U_34911",
+   "news_id": "9ca8e85d-c749-5410-8708-d980cfe47a43",
+   "news_title": "Россию на мировом рынке зерна не заменить",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-21T21:31:48+00:00",
+   "score": 0.4769,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.452,
+   "components": {
+    "sector": 0.75,
+    "channel": 0.818,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.452
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку",
+   "b_freshness": -2.827210648148148,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "P22",
+   "company_id": "U_34911",
+   "news_id": "c6ea9c68-f31a-56b4-a4f9-0cd9f806d6c7",
+   "news_title": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-23T18:33:00+00:00",
+   "score": 0.6582,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.9,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Внешнеэкономическая деятельность и курс — компания есть в базе ФТС (ОАЭ, АЛЖИР, ИНДИЯ); направление операций (импорт/экспорт) в данных не указано",
+   "b_freshness": -0.9513773148148148,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "P23",
+   "company_id": "U_34911",
+   "news_id": "908d08e7-6c2f-52c5-8995-2a1fd90cf270",
+   "news_title": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-23T10:30:00+00:00",
+   "score": 0.6934,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "key_rate",
+   "event_sectors": [
+    "fuel_energy",
+    "retail"
+   ],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3,
+    "payroll": 0.5,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.9,
+    "channel": 0.927,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты",
+   "b_freshness": -1.2867939814814815,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "P24",
+   "company_id": "U_34911",
+   "news_id": "57df93a9-0550-5d20-84bf-bed246ee8f2d",
+   "news_title": "Выручка от агроэкспорта России в Китай достигла около $7,8 млрд",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T07:49:09+00:00",
+   "score": 0.499,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.42,
+   "components": {
+    "sector": 0.75,
+    "channel": 0.818,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.42
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку",
+   "b_freshness": -1.3984953703703704,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "P25",
+   "company_id": "U_34911",
+   "news_id": "3bfd3cd2-ab55-568c-a08e-1266bb072b84",
+   "news_title": "Российские военные ударили по порту Черноморск и сухогрузу под Одессой",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-24T05:35:53+00:00",
+   "score": 0.1794,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "logistics",
+   "event_sectors": [
+    "transport"
+   ],
+   "event_channels": {
+    "fuel_costs": 0.3,
+    "foreign_trade": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 0.64,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.293,
+    "counterparty": 0.053,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 0.64
+   },
+   "why_short": "≈2% объёма платежей приходится на получателей платежей (возможные поставщики) из отраслей события",
+   "b_freshness": -0.49104166666666665,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "P26",
+   "company_id": "U_34911",
+   "news_id": "286f5413-a822-5350-9976-71cf436518d4",
+   "news_title": "Нефть марки Brent превысила $117 за баррель впервые за полгода",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T17:23:38+00:00",
+   "score": 0.294,
+   "level": "low",
+   "confidence": "high",
+   "event_type": "fuel_energy",
+   "event_sectors": [
+    "fuel_energy"
+   ],
+   "event_channels": {
+    "fuel_costs": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.527,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Цены на топливо и энергию — топливо — существенная статья затрат для отрасли",
+   "b_freshness": -0.9995486111111112,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "P27",
+   "company_id": "U_34911",
+   "news_id": "39d46e1c-97b4-50cf-bd2b-b8a80e0f2409",
+   "news_title": "Акции российских производителей удобрений подорожали после заявления Путина",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-21T11:45:00+00:00",
+   "score": 0.0381,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "industry",
+   "event_sectors": [
+    "chemicals"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.518,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.518
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -3.2347106481481482,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "P28",
+   "company_id": "U_34911",
+   "news_id": "6308e9c1-12e3-5a3c-a862-cd58a5fadd00",
+   "news_title": "FT: Украина предложила перенести досмотр зерновозов вглубь Польши и Словакии",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T07:55:20+00:00",
+   "score": 0.2516,
+   "level": "low",
+   "confidence": "high",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food",
+    "transport"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.393,
+   "components": {
+    "sector": 0.75,
+    "channel": 0.818,
+    "counterparty": 0.053,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.393
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку",
+   "b_freshness": -1.394201388888889,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "P29",
+   "company_id": "U_34911",
+   "news_id": "59bddfb0-c6f2-520b-8e9d-8fe068ff7b95",
+   "news_title": "Урожай картофеля в России упал",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T05:51:00+00:00",
+   "score": 0.2392,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.321,
+   "components": {
+    "sector": 0.3,
+    "channel": 0.338,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.321
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку",
+   "b_freshness": -1.4805439814814816,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "P30",
+   "company_id": "U_34911",
+   "news_id": "8b5e18f6-93e1-52f8-9b76-5c1095ccf7bc",
+   "news_title": "«Крылья Советов» нанесли «Рубину» третье подряд поражение в РПЛ",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-24T16:15:28+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [
+    "Воронежская область",
+    "Самарская область"
+   ],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -0.046886574074074074,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "P31",
+   "company_id": "U_201985",
+   "news_id": "aecdde77-9c49-5377-853d-bcada6e73ace",
+   "news_title": "Набиуллина заявила о необходимости ограничить объемы льготной ипотеки",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-23T13:15:16+00:00",
+   "score": 0.375,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "real_estate",
+   "event_sectors": [
+    "real_estate"
+   ],
+   "event_channels": {
+    "construction_cycle": 1.0,
+    "cost_of_debt": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.592,
+   "components": {
+    "sector": 0.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.592
+   },
+   "why_short": "Строительный цикл и недвижимость — отрасль зависит от строительного цикла и ипотеки",
+   "b_freshness": -1.172025462962963,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "P32",
+   "company_id": "U_201985",
+   "news_id": "908d08e7-6c2f-52c5-8995-2a1fd90cf270",
+   "news_title": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-23T10:30:00+00:00",
+   "score": 0.5401,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "key_rate",
+   "event_sectors": [
+    "fuel_energy",
+    "retail"
+   ],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3,
+    "payroll": 0.5,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.6,
+    "channel": 0.66,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть лизинг",
+   "b_freshness": -1.2867939814814815,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "P33",
+   "company_id": "U_201985",
+   "news_id": "c75c1311-7139-586c-b8ac-f14318096dad",
+   "news_title": "В правительстве начали обсуждать досрочное завершение IT-ипотеки",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T09:22:53+00:00",
+   "score": 0.3757,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "real_estate",
+   "event_sectors": [
+    "real_estate",
+    "it_telecom"
+   ],
+   "event_channels": {
+    "construction_cycle": 1.0,
+    "cost_of_debt": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.631,
+   "components": {
+    "sector": 0.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.631
+   },
+   "why_short": "Строительный цикл и недвижимость — отрасль зависит от строительного цикла и ипотеки",
+   "b_freshness": -1.3334027777777777,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "P34",
+   "company_id": "U_201985",
+   "news_id": "ac3d53c6-fb6f-5b9b-a4ba-f402c6c84edc",
+   "news_title": "С Мосбиржи уходит один из крупнейших застройщиков, электросчетчики будут менять по-новому. Главное о жилье за неделю",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-24T17:00:27+00:00",
+   "score": 0.6618,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "real_estate",
+   "event_sectors": [
+    "construction",
+    "real_estate"
+   ],
+   "event_channels": {
+    "construction_cycle": 1.0,
+    "cost_of_debt": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.59,
+   "components": {
+    "sector": 1.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.59
+   },
+   "why_short": "Строительный цикл и недвижимость — отрасль зависит от строительного цикла и ипотеки",
+   "b_freshness": -0.015648148148148147,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "P35",
+   "company_id": "U_201985",
+   "news_id": "96cc0625-b440-5bb4-89f8-a5db9577e939",
+   "news_title": "«Северсталь» улучшила прогноз потребления стали на 2026 год",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-21T09:18:07+00:00",
+   "score": 0.4696,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "metals",
+   "event_sectors": [
+    "metals_mining",
+    "construction"
+   ],
+   "event_channels": {
+    "metals_prices": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.474,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 1.0
+   },
+   "why_short": "Цены на металлы — металл — входящее сырьё для отрасли",
+   "b_freshness": -3.336712962962963,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "P36",
+   "company_id": "U_201985",
+   "news_id": "772c8746-4561-5b2d-9013-a4d9e7907a3a",
+   "news_title": "Продажи товаров для ремонта сократились на 4,7%",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T05:01:00+00:00",
+   "score": 0.394,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "consumer_demand",
+   "event_sectors": [
+    "construction"
+   ],
+   "event_channels": {
+    "consumer_demand": 1.0
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Затрагивает отрасль компании: строительство и стройматериалы",
+   "b_freshness": -1.5152662037037037,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "P37",
+   "company_id": "U_201985",
+   "news_id": "3f8d63c8-36bc-52dc-875b-ab8bb1af0b7e",
+   "news_title": "Мосбиржа нашла нарушения в корпоративном управлении «Самолета»",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T19:08:26+00:00",
+   "score": 0.3143,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "industry",
+   "event_sectors": [
+    "construction"
+   ],
+   "event_channels": {},
+   "event_regions": [
+    "Московская область"
+   ],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.322,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.322
+   },
+   "why_short": "Затрагивает отрасль компании: строительство и стройматериалы",
+   "b_freshness": -0.9267708333333333,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "P38",
+   "company_id": "U_201985",
+   "news_id": "34ef0af5-fc28-5bbf-88e3-d9d2cb47f2fd",
+   "news_title": "Российские дорожные строители погрязли в долгах",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-22T05:28:00+00:00",
+   "score": 0.3167,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "industry",
+   "event_sectors": [
+    "construction"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.593,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.593
+   },
+   "why_short": "Затрагивает отрасль компании: строительство и стройматериалы",
+   "b_freshness": -2.496516203703704,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "P39",
+   "company_id": "U_201985",
+   "news_id": "de651fc3-6c31-5cb0-b033-9e5c2ada7661",
+   "news_title": "Путин поручил увеличить лимиты госпрограммы для льготной аренды жилья в ДФО",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T14:45:57+00:00",
+   "score": 0.0309,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "industry",
+   "event_sectors": [
+    "real_estate"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.296,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.296
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.109050925925926,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "P40",
+   "company_id": "U_201985",
+   "news_id": "2194d631-ab67-5dd0-b883-bf93f1ff4fcb",
+   "news_title": "Россиянам объяснили рост налога на недвижимость",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-24T13:08:00+00:00",
+   "score": 0.4373,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "budget_tax",
+   "event_sectors": [
+    "real_estate"
+   ],
+   "event_channels": {
+    "state_budget": 0.9,
+    "payroll": 0.2,
+    "foreign_trade": 0.2,
+    "construction_cycle": 0.5,
+    "cost_of_debt": 0.15
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 0.92,
+   "components": {
+    "sector": 0.45,
+    "channel": 0.568,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 0.92
+   },
+   "why_short": "Строительный цикл и недвижимость — отрасль зависит от строительного цикла и ипотеки",
+   "b_freshness": -0.17707175925925925,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "P41",
+   "company_id": "U_44792",
+   "news_id": "6d54791e-4503-5952-8b62-84e8c2cd2c07",
+   "news_title": "Бизнес исключил скорый рост спроса на российские разработки",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-23T09:35:00+00:00",
+   "score": 0.3235,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "industry",
+   "event_sectors": [
+    "it_telecom"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.505,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.505
+   },
+   "why_short": "Затрагивает отрасль компании: it и связь",
+   "b_freshness": -1.324988425925926,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "P42",
+   "company_id": "U_44792",
+   "news_id": "c75c1311-7139-586c-b8ac-f14318096dad",
+   "news_title": "В правительстве начали обсуждать досрочное завершение IT-ипотеки",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T09:22:53+00:00",
+   "score": 0.3472,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "real_estate",
+   "event_sectors": [
+    "real_estate",
+    "it_telecom"
+   ],
+   "event_channels": {
+    "construction_cycle": 1.0,
+    "cost_of_debt": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.631,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.631
+   },
+   "why_short": "Затрагивает отрасль компании: it и связь",
+   "b_freshness": -1.3334027777777777,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "P43",
+   "company_id": "U_44792",
+   "news_id": "f4a85d1c-8df6-5760-9bb3-af859d87beb1",
+   "news_title": "ЦБ оценил ситуацию на российском рынке труда",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T11:35:00+00:00",
+   "score": 0.2564,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "labor_market",
+   "event_sectors": [],
+   "event_channels": {
+    "payroll": 1.0,
+    "consumer_demand": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.2,
+    "channel": 0.2,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 1.0
+   },
+   "why_short": "Рынок труда: общеэкономический фактор для бизнеса",
+   "b_freshness": -1.2416550925925927,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "P44",
+   "company_id": "U_44792",
+   "news_id": "a7d80632-bf87-5f46-9a02-5b967171f4ac",
+   "news_title": "Как ФНС и бизнес видят режим самозанятости после 2028 года",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-21T21:33:55+00:00",
+   "score": 0.2194,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "labor_market",
+   "event_sectors": [],
+   "event_channels": {
+    "payroll": 1.0,
+    "consumer_demand": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 0.679,
+   "components": {
+    "sector": 0.2,
+    "channel": 0.2,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 0.679
+   },
+   "why_short": "Рынок труда: общеэкономический фактор для бизнеса",
+   "b_freshness": -2.825740740740741,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "P45",
+   "company_id": "U_44792",
+   "news_id": "908d08e7-6c2f-52c5-8995-2a1fd90cf270",
+   "news_title": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T10:30:00+00:00",
+   "score": 0.1356,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "key_rate",
+   "event_sectors": [
+    "fuel_energy",
+    "retail"
+   ],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3,
+    "payroll": 0.5,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.1,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Ключевая ставка и ДКП: общеэкономический фактор для бизнеса",
+   "b_freshness": -1.2867939814814815,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "P46",
+   "company_id": "U_44792",
+   "news_id": "c6ea9c68-f31a-56b4-a4f9-0cd9f806d6c7",
+   "news_title": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T18:33:00+00:00",
+   "score": 0.0983,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Курс рубля и валюты: общеэкономический фактор для бизнеса",
+   "b_freshness": -0.9513773148148148,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "P47",
+   "company_id": "U_44792",
+   "news_id": "2ac563aa-df52-5239-8ed3-7ec80ebc41e5",
+   "news_title": "Банк Barclays сократит 5 тыс. сотрудников из-за внедрения ИИ",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-22T11:25:58+00:00",
+   "score": 0.1488,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "industry",
+   "event_sectors": [
+    "it_telecom"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.297,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.297
+   },
+   "why_short": "Затрагивает отрасль компании: it и связь",
+   "b_freshness": -2.2479282407407406,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "P48",
+   "company_id": "U_44792",
+   "news_id": "aecdde77-9c49-5377-853d-bcada6e73ace",
+   "news_title": "Набиуллина заявила о необходимости ограничить объемы льготной ипотеки",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T13:15:16+00:00",
+   "score": 0.0529,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "real_estate",
+   "event_sectors": [
+    "real_estate"
+   ],
+   "event_channels": {
+    "construction_cycle": 1.0,
+    "cost_of_debt": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.592,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.592
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.172025462962963,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "P49",
+   "company_id": "U_44792",
+   "news_id": "286f5413-a822-5350-9976-71cf436518d4",
+   "news_title": "Нефть марки Brent превысила $117 за баррель впервые за полгода",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T17:23:38+00:00",
+   "score": 0.0851,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "fuel_energy",
+   "event_sectors": [
+    "fuel_energy"
+   ],
+   "event_channels": {
+    "fuel_costs": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -0.9995486111111112,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "P50",
+   "company_id": "U_44792",
+   "news_id": "eaf65684-e400-5ae5-88cc-07a706d6efb5",
+   "news_title": "Греф анонсировал новые продукты Сбербанка",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T09:12:18+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -1.3407523148148148,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "P51",
+   "company_id": "U_1595",
+   "news_id": "908d08e7-6c2f-52c5-8995-2a1fd90cf270",
+   "news_title": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-23T10:30:00+00:00",
+   "score": 0.7271,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "key_rate",
+   "event_sectors": [
+    "fuel_energy",
+    "retail"
+   ],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3,
+    "payroll": 0.5,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.95,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты, лизинг",
+   "b_freshness": -1.2867939814814815,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "P52",
+   "company_id": "U_1595",
+   "news_id": "38c16112-738c-5a75-b4dc-43db5f3d59b9",
+   "news_title": "Российские ритейлеры стали чаще закрывать физические магазины",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-20T21:23:55+00:00",
+   "score": 0.6261,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "consumer_demand",
+   "event_sectors": [
+    "retail"
+   ],
+   "event_channels": {
+    "consumer_demand": 1.0
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 1.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Потребительский спрос — компания работает с конечным потребителем",
+   "b_freshness": -3.832685185185185,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "P53",
+   "company_id": "U_1595",
+   "news_id": "c6ea9c68-f31a-56b4-a4f9-0cd9f806d6c7",
+   "news_title": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-23T18:33:00+00:00",
+   "score": 0.6033,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.8,
+    "channel": 0.8,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Внешнеэкономическая деятельность и курс — компания есть в базе ФТС (ТУРЦИЯ, НИДЕРЛАНДЫ); направление операций (импорт/экспорт) в данных не указано",
+   "b_freshness": -0.9513773148148148,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "P54",
+   "company_id": "U_1595",
+   "news_id": "bc20be54-28c7-5868-9936-22c4b4eb1abb",
+   "news_title": "Доклад «Региональная экономика»: потребительская активность была умеренной",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-14T17:00:00+00:00",
+   "score": 0.3342,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "consumer_demand",
+   "event_sectors": [],
+   "event_channels": {
+    "consumer_demand": 1.0
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Потребительский спрос — компания работает с конечным потребителем",
+   "b_freshness": -10.015960648148148,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "P55",
+   "company_id": "U_1595",
+   "news_id": "20c7f6de-5d30-5d77-a39f-e9dc95955928",
+   "news_title": "ЦБ указал на устойчивый рост цен в России // ЦБ: рост цен в России находится в диапазоне 5-6% в пересчете на год",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T10:59:56+00:00",
+   "score": 0.3537,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "inflation",
+   "event_sectors": [],
+   "event_channels": {
+    "consumer_demand": 0.6,
+    "payroll": 0.4,
+    "cost_of_debt": 0.5,
+    "fuel_costs": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.671,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Потребительский спрос — компания работает с конечным потребителем",
+   "b_freshness": -1.2660069444444444,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "P56",
+   "company_id": "U_1595",
+   "news_id": "f4a85d1c-8df6-5760-9bb3-af859d87beb1",
+   "news_title": "ЦБ оценил ситуацию на российском рынке труда",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T11:35:00+00:00",
+   "score": 0.541,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "labor_market",
+   "event_sectors": [],
+   "event_channels": {
+    "payroll": 1.0,
+    "consumer_demand": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.7,
+    "channel": 0.745,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 1.0
+   },
+   "why_short": "Расходы на персонал — численность (ФНС): Более 251",
+   "b_freshness": -1.2416550925925927,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "P57",
+   "company_id": "U_1595",
+   "news_id": "abb5a4fd-de1e-57f7-a52c-2b7f5c0fd3a1",
+   "news_title": "Владельцы ПВЗ попросили не облагать налогом кадастровую стоимость их помещений",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-22T21:25:56+00:00",
+   "score": 0.1034,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "budget_tax",
+   "event_sectors": [],
+   "event_channels": {
+    "state_budget": 0.9,
+    "payroll": 0.2,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 0.692,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.181,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 0.692
+   },
+   "why_short": "Бюджет и налоги: общеэкономический фактор для бизнеса",
+   "b_freshness": -1.8312847222222222,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "P58",
+   "company_id": "U_1595",
+   "news_id": "fe88c121-94ad-53ff-b4dc-5c446d5eb9ac",
+   "news_title": "Россиянам дали неочевидные советы сохранить деньги на распродажах",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T14:17:00+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -1.1291550925925926,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "P59",
+   "company_id": "U_1595",
+   "news_id": "f8efeb9a-cea4-5928-b0e8-895b20289a51",
+   "news_title": "В Стамбуле отменили концерт Галкина",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-24T17:18:41+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -0.0029861111111111113,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "P60",
+   "company_id": "U_1595",
+   "news_id": "ed24a39b-5ae4-566a-8995-f857b4445c4b",
+   "news_title": "АвтоВАЗ спрогнозировал снижение продаж новых Lada в октябре",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T15:06:35+00:00",
+   "score": 0.0501,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "industry",
+   "event_sectors": [
+    "auto"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.714,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.714
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.0947222222222222,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "P61",
+   "company_id": "U_8167",
+   "news_id": "908d08e7-6c2f-52c5-8995-2a1fd90cf270",
+   "news_title": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T10:30:00+00:00",
+   "score": 0.3873,
+   "level": "medium",
+   "confidence": "medium",
+   "event_type": "key_rate",
+   "event_sectors": [
+    "fuel_energy",
+    "retail"
+   ],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3,
+    "payroll": 0.5,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.3,
+    "channel": 0.395,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Расходы на персонал — численность (ФНС): Более 251",
+   "b_freshness": -1.2867939814814815,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "P62",
+   "company_id": "U_8167",
+   "news_id": "38c16112-738c-5a75-b4dc-43db5f3d59b9",
+   "news_title": "Российские ритейлеры стали чаще закрывать физические магазины",
+   "label": 2,
+   "split": "holdout",
+   "published_at": "2026-10-20T21:23:55+00:00",
+   "score": 0.6261,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "consumer_demand",
+   "event_sectors": [
+    "retail"
+   ],
+   "event_channels": {
+    "consumer_demand": 1.0
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 1.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Потребительский спрос — компания работает с конечным потребителем",
+   "b_freshness": -3.832685185185185,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "P63",
+   "company_id": "U_8167",
+   "news_id": "febd1ff2-af67-5345-b848-8a9544c4975a",
+   "news_title": "ФАС заподозрила «Пятерочку» в дискриминации воронежского производителя молока",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T08:42:36+00:00",
+   "score": 0.3091,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food",
+    "retail"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [
+    "Воронежская область"
+   ],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.539,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.2,
+    "counterparty": 0.134,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.539
+   },
+   "why_short": "Затрагивает отрасль компании: розничная торговля",
+   "b_freshness": -1.3613773148148147,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "P64",
+   "company_id": "U_8167",
+   "news_id": "59bddfb0-c6f2-520b-8e9d-8fe068ff7b95",
+   "news_title": "Урожай картофеля в России упал",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T05:51:00+00:00",
+   "score": 0.1387,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.321,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.2,
+    "counterparty": 0.134,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.321
+   },
+   "why_short": "≈5% объёма платежей приходится на получателей платежей (возможные поставщики) из отраслей события",
+   "b_freshness": -1.4805439814814816,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "P65",
+   "company_id": "U_8167",
+   "news_id": "d72b73dc-40f2-592f-98d3-34ed5f5f2c7b",
+   "news_title": "Инфляция за период с 6 по 12 октября составила 0,11%",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-14T16:00:00+00:00",
+   "score": 0.2706,
+   "level": "low",
+   "confidence": "high",
+   "event_type": "inflation",
+   "event_sectors": [],
+   "event_channels": {
+    "consumer_demand": 0.6,
+    "payroll": 0.4,
+    "cost_of_debt": 0.5,
+    "fuel_costs": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.642,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Потребительский спрос — компания работает с конечным потребителем",
+   "b_freshness": -10.057627314814814,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "P66",
+   "company_id": "U_8167",
+   "news_id": "4df298f8-0b83-5ec6-823a-f0ab7a684549",
+   "news_title": "Пошлину на иностранный крепкий алкоголь могут повысить уже в ноябре",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T03:01:00+00:00",
+   "score": 0.2315,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "budget_tax",
+   "event_sectors": [
+    "consumer_goods"
+   ],
+   "event_channels": {
+    "state_budget": 0.9,
+    "payroll": 0.2,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 0.814,
+   "components": {
+    "sector": 0.225,
+    "channel": 0.15,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 0.814
+   },
+   "why_short": "Затрагивает отрасль компании: потребительские товары",
+   "b_freshness": -1.598599537037037,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "P67",
+   "company_id": "U_8167",
+   "news_id": "c6ea9c68-f31a-56b4-a4f9-0cd9f806d6c7",
+   "news_title": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+   "label": 1,
+   "split": "holdout",
+   "published_at": "2026-10-23T18:33:00+00:00",
+   "score": 0.3561,
+   "level": "medium",
+   "confidence": "medium",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.35,
+    "channel": 0.35,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Внешнеэкономическая деятельность и курс — заметная часть исходящих платежей идёт контрагентам с ВЭД (≈18% объёма)",
+   "b_freshness": -0.9513773148148148,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "P68",
+   "company_id": "U_8167",
+   "news_id": "76da1065-78a1-5b8a-bbe3-e802409ce4e5",
+   "news_title": "Логистический центр Ozon в Омске попал под атаку беспилотников",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-24T16:01:02+00:00",
+   "score": 0.2845,
+   "level": "low",
+   "confidence": "high",
+   "event_type": "logistics",
+   "event_sectors": [
+    "retail"
+   ],
+   "event_channels": {
+    "fuel_costs": 0.3,
+    "foreign_trade": 0.3
+   },
+   "event_regions": [
+    "Омская область"
+   ],
+   "macro_importance": 0.25,
+   "bank_coverage": 0.514,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.105,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 0.514
+   },
+   "why_short": "Затрагивает отрасль компании: розничная торговля",
+   "b_freshness": -0.05690972222222222,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "P69",
+   "company_id": "U_8167",
+   "news_id": "ed24a39b-5ae4-566a-8995-f857b4445c4b",
+   "news_title": "АвтоВАЗ спрогнозировал снижение продаж новых Lada в октябре",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-23T15:06:35+00:00",
+   "score": 0.0501,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "industry",
+   "event_sectors": [
+    "auto"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.714,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.714
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.0947222222222222,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "P70",
+   "company_id": "U_8167",
+   "news_id": "7c87271c-bc0b-5215-9951-57c4a0b382eb",
+   "news_title": "Китайский пловец побил мировой рекорд на дистанции 50 м на спине",
+   "label": 0,
+   "split": "holdout",
+   "published_at": "2026-10-24T17:21:25+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -0.0010879629629629629,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "F01",
+   "company_id": "U_4601",
+   "news_id": "b3de20e0-94ab-5f81-86e8-97f04dd1af6e",
+   "news_title": "ЦБ сохранил ключевую ставку на уровне 14%",
+   "label": 2,
+   "split": "fresh",
+   "published_at": "2026-10-23T10:31:24+00:00",
+   "score": 0.6934,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "key_rate",
+   "event_sectors": [],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.9,
+    "channel": 0.927,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты",
+   "b_freshness": -1.2858217592592593,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "F02",
+   "company_id": "U_4601",
+   "news_id": "10f5586d-e507-5098-803c-1c9d785da49d",
+   "news_title": "Рубль дорожает. Курсы доллара, евро и юаня на 24 октября",
+   "label": 2,
+   "split": "fresh",
+   "published_at": "2026-10-24T02:00:53+00:00",
+   "score": 0.6661,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.9,
+    "channel": 0.9,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Внешнеэкономическая деятельность и курс — компания есть в базе ФТС (ИНДИЯ, КИТАЙ, ЕГИПЕТ); направление операций (импорт/экспорт) в данных не указано",
+   "b_freshness": -0.6403472222222222,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "F03",
+   "company_id": "U_4601",
+   "news_id": "57df93a9-0550-5d20-84bf-bed246ee8f2d",
+   "news_title": "Выручка от агроэкспорта России в Китай достигла около $7,8 млрд",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-23T07:49:09+00:00",
+   "score": 0.499,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.42,
+   "components": {
+    "sector": 0.75,
+    "channel": 0.818,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.42
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку",
+   "b_freshness": -1.3984953703703704,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "F04",
+   "company_id": "U_4601",
+   "news_id": "38c16112-738c-5a75-b4dc-43db5f3d59b9",
+   "news_title": "Российские ритейлеры стали чаще закрывать физические магазины",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-20T21:23:55+00:00",
+   "score": 0.2858,
+   "level": "low",
+   "confidence": "high",
+   "event_type": "consumer_demand",
+   "event_sectors": [
+    "retail"
+   ],
+   "event_channels": {
+    "consumer_demand": 1.0
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.6,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Потребительский спрос — продукция компании ориентирована на потребительский рынок",
+   "b_freshness": -3.832685185185185,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "F05",
+   "company_id": "U_4601",
+   "news_id": "d72b73dc-40f2-592f-98d3-34ed5f5f2c7b",
+   "news_title": "Инфляция за период с 6 по 12 октября составила 0,11%",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-14T16:00:00+00:00",
+   "score": 0.2397,
+   "level": "low",
+   "confidence": "high",
+   "event_type": "inflation",
+   "event_sectors": [],
+   "event_channels": {
+    "consumer_demand": 0.6,
+    "payroll": 0.4,
+    "cost_of_debt": 0.5,
+    "fuel_costs": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.504,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты",
+   "b_freshness": -10.057627314814814,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "F06",
+   "company_id": "U_4601",
+   "news_id": "100978b9-9df8-5c1f-bbe2-b5f77b5a9ac9",
+   "news_title": "Минсельхоз ожидает урожай картофеля выше среднего за пять лет",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-23T07:18:43+00:00",
+   "score": 0.2553,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.527,
+   "components": {
+    "sector": 0.3,
+    "channel": 0.338,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.527
+   },
+   "why_short": "Цены на агропродукцию — цены на агросырьё влияют на закупки или выручку",
+   "b_freshness": -1.4196296296296296,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "F07",
+   "company_id": "U_4601",
+   "news_id": "255f1675-591f-5ace-a23e-f26542371716",
+   "news_title": "ФАС запросила у производителей коксующегося угля объяснения роста цен",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-23T11:24:27+00:00",
+   "score": 0.184,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "metals",
+   "event_sectors": [
+    "metals_mining"
+   ],
+   "event_channels": {
+    "metals_prices": 1.0,
+    "foreign_trade": 0.2,
+    "consumer_demand": 0.3,
+    "payroll": 0.2,
+    "cost_of_debt": 0.25,
+    "fuel_costs": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.252,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 1.0
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.2489814814814815,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "F08",
+   "company_id": "U_4601",
+   "news_id": "4427c2db-8042-5302-b6e7-09863f03b1ab",
+   "news_title": "Китай в сентябре увеличил закупки российского угля более чем на треть",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-20T21:23:07+00:00",
+   "score": 0.0898,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "metals",
+   "event_sectors": [
+    "metals_mining"
+   ],
+   "event_channels": {
+    "metals_prices": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.18,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 1.0
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -3.8332407407407407,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "F09",
+   "company_id": "U_4601",
+   "news_id": "d951e658-df3d-5f93-a740-e269817425f2",
+   "news_title": "РЖД запустили новый поезд через пять регионов РФ, «Аэрофлот» перешел на зимнее расписание. Главное о туризме и путешествиях за неделю",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-24T09:00:21+00:00",
+   "score": 0.1826,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "logistics",
+   "event_sectors": [
+    "transport",
+    "hospitality"
+   ],
+   "event_channels": {
+    "fuel_costs": 0.3,
+    "foreign_trade": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 0.749,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.293,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 0.749
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -0.3490509259259259,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "F10",
+   "company_id": "U_4601",
+   "news_id": "09a43ca5-8d94-5cc1-95a2-caebbdd59d25",
+   "news_title": "Внука диктатора Иди Амина лишили боксерской медали за запрещенный удар",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-24T16:48:59+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -0.02361111111111111,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "F11",
+   "company_id": "U_212593",
+   "news_id": "b3de20e0-94ab-5f81-86e8-97f04dd1af6e",
+   "news_title": "ЦБ сохранил ключевую ставку на уровне 14%",
+   "label": 2,
+   "split": "fresh",
+   "published_at": "2026-10-23T10:31:24+00:00",
+   "score": 0.5358,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "key_rate",
+   "event_sectors": [],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.6,
+    "channel": 0.645,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть лизинг",
+   "b_freshness": -1.2858217592592593,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "F12",
+   "company_id": "U_212593",
+   "news_id": "bc20be54-28c7-5868-9936-22c4b4eb1abb",
+   "news_title": "Доклад «Региональная экономика»: потребительская активность была умеренной",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-14T17:00:00+00:00",
+   "score": 0.3342,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "consumer_demand",
+   "event_sectors": [],
+   "event_channels": {
+    "consumer_demand": 1.0
+   },
+   "event_regions": [],
+   "macro_importance": 0.45,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.45,
+    "bank": 1.0
+   },
+   "why_short": "Потребительский спрос — компания работает с конечным потребителем",
+   "b_freshness": -10.015960648148148,
+   "b_macro": 0.45,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "F13",
+   "company_id": "U_212593",
+   "news_id": "f4a85d1c-8df6-5760-9bb3-af859d87beb1",
+   "news_title": "ЦБ оценил ситуацию на российском рынке труда",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-23T11:35:00+00:00",
+   "score": 0.4867,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "labor_market",
+   "event_sectors": [],
+   "event_channels": {
+    "payroll": 1.0,
+    "consumer_demand": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.6,
+    "channel": 0.645,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 1.0
+   },
+   "why_short": "Расходы на персонал — численность (ФНС): Более 251",
+   "b_freshness": -1.2416550925925927,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "F14",
+   "company_id": "U_212593",
+   "news_id": "20c7f6de-5d30-5d77-a39f-e9dc95955928",
+   "news_title": "ЦБ указал на устойчивый рост цен в России // ЦБ: рост цен в России находится в диапазоне 5-6% в пересчете на год",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-23T10:59:56+00:00",
+   "score": 0.3462,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "inflation",
+   "event_sectors": [],
+   "event_channels": {
+    "consumer_demand": 0.6,
+    "payroll": 0.4,
+    "cost_of_debt": 0.5,
+    "fuel_costs": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.645,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Потребительский спрос — компания работает с конечным потребителем",
+   "b_freshness": -1.2660069444444444,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "F15",
+   "company_id": "U_212593",
+   "news_id": "4df298f8-0b83-5ec6-823a-f0ab7a684549",
+   "news_title": "Пошлину на иностранный крепкий алкоголь могут повысить уже в ноябре",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-23T03:01:00+00:00",
+   "score": 0.2258,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "budget_tax",
+   "event_sectors": [
+    "consumer_goods"
+   ],
+   "event_channels": {
+    "state_budget": 0.9,
+    "payroll": 0.2,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 0.814,
+   "components": {
+    "sector": 0.225,
+    "channel": 0.131,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 0.814
+   },
+   "why_short": "Затрагивает отрасль компании: потребительские товары",
+   "b_freshness": -1.598599537037037,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "F16",
+   "company_id": "U_212593",
+   "news_id": "10f5586d-e507-5098-803c-1c9d785da49d",
+   "news_title": "Рубль дорожает. Курсы доллара, евро и юаня на 24 октября",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-24T02:00:53+00:00",
+   "score": 0.3603,
+   "level": "medium",
+   "confidence": "medium",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.35,
+    "channel": 0.35,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Внешнеэкономическая деятельность и курс — заметная часть исходящих платежей идёт контрагентам с ВЭД (≈35% объёма)",
+   "b_freshness": -0.6403472222222222,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 4
+  },
+  {
+   "pair_id": "F17",
+   "company_id": "U_212593",
+   "news_id": "100978b9-9df8-5c1f-bbe2-b5f77b5a9ac9",
+   "news_title": "Минсельхоз ожидает урожай картофеля выше среднего за пять лет",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-23T07:18:43+00:00",
+   "score": 0.1394,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "agri",
+   "event_sectors": [
+    "agri_food"
+   ],
+   "event_channels": {
+    "agri_prices": 1.0,
+    "consumer_demand": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.527,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.2,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.527
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.4196296296296296,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "F18",
+   "company_id": "U_212593",
+   "news_id": "78d03828-3f0f-518f-a45e-2bab65612f6d",
+   "news_title": "Размах на рубль // Оборот падел-кортов за 2026 год вырастет на 71%",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-23T10:08:36+00:00",
+   "score": 0.0508,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "industry",
+   "event_sectors": [
+    "real_estate"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.593,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.097,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.593
+   },
+   "why_short": "≈4% объёма платежей приходится на получателей платежей (возможные поставщики) из отраслей события",
+   "b_freshness": -1.3016550925925925,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "F19",
+   "company_id": "U_212593",
+   "news_id": "d951e658-df3d-5f93-a740-e269817425f2",
+   "news_title": "РЖД запустили новый поезд через пять регионов РФ, «Аэрофлот» перешел на зимнее расписание. Главное о туризме и путешествиях за неделю",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-24T09:00:21+00:00",
+   "score": 0.3934,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "logistics",
+   "event_sectors": [
+    "transport",
+    "hospitality"
+   ],
+   "event_channels": {
+    "fuel_costs": 0.3,
+    "foreign_trade": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 0.749,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.105,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 0.749
+   },
+   "why_short": "Затрагивает отрасль компании: общепит, гостиницы и досуг",
+   "b_freshness": -0.3490509259259259,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "F20",
+   "company_id": "U_212593",
+   "news_id": "f1539f1a-2abc-576a-8f73-31b18d14518a",
+   "news_title": "Deadline назвал основных претендентов на роль нового Джеймса Бонда",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-24T10:11:41+00:00",
+   "score": 0.0,
+   "level": "none",
+   "confidence": "high",
+   "event_type": "non_business",
+   "event_sectors": [],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.0,
+   "bank_coverage": 0.0,
+   "components": {},
+   "why_short": "Не относится к бизнесу",
+   "b_freshness": -0.2995138888888889,
+   "b_macro": 0.0,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "F21",
+   "company_id": "U_9250",
+   "news_id": "b3de20e0-94ab-5f81-86e8-97f04dd1af6e",
+   "news_title": "ЦБ сохранил ключевую ставку на уровне 14%",
+   "label": 2,
+   "split": "fresh",
+   "published_at": "2026-10-23T10:31:24+00:00",
+   "score": 0.74,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "key_rate",
+   "event_sectors": [],
+   "event_channels": {
+    "cost_of_debt": 1.0,
+    "liquidity_yield": 0.8,
+    "construction_cycle": 0.4,
+    "consumer_demand": 0.3
+   },
+   "event_regions": [],
+   "macro_importance": 0.85,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 1.0,
+    "channel": 1.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.85,
+    "bank": 1.0
+   },
+   "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты, лизинг, банковские гарантии",
+   "b_freshness": -1.2858217592592593,
+   "b_macro": 0.85,
+   "b_random": 0.0,
+   "rank": 1
+  },
+  {
+   "pair_id": "F22",
+   "company_id": "U_9250",
+   "news_id": "10f5586d-e507-5098-803c-1c9d785da49d",
+   "news_title": "Рубль дорожает. Курсы доллара, евро и юаня на 24 октября",
+   "label": 2,
+   "split": "fresh",
+   "published_at": "2026-10-24T02:00:53+00:00",
+   "score": 0.6144,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "fx",
+   "event_sectors": [],
+   "event_channels": {
+    "foreign_trade": 1.0,
+    "metals_prices": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.6,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.8,
+    "channel": 0.814,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.6,
+    "bank": 1.0
+   },
+   "why_short": "Внешнеэкономическая деятельность и курс — компания есть в базе ФТС (КИТАЙ); направление операций (импорт/экспорт) в данных не указано",
+   "b_freshness": -0.6403472222222222,
+   "b_macro": 0.6,
+   "b_random": 0.0,
+   "rank": 2
+  },
+  {
+   "pair_id": "F23",
+   "company_id": "U_9250",
+   "news_id": "e5dc3ebd-8ff7-5251-a7af-a6e6195b711f",
+   "news_title": "Как прошло обсуждение закона о бюджете в профильном комитете Госдумы",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-12T21:23:55+00:00",
+   "score": 0.1245,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "regulation",
+   "event_sectors": [],
+   "event_channels": {
+    "state_budget": 0.45,
+    "payroll": 0.1,
+    "foreign_trade": 0.1
+   },
+   "event_regions": [],
+   "macro_importance": 0.3,
+   "bank_coverage": 0.703,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.237,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.3,
+    "bank": 0.703
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -11.832685185185186,
+   "b_macro": 0.3,
+   "b_random": 0.0,
+   "rank": 8
+  },
+  {
+   "pair_id": "F24",
+   "company_id": "U_9250",
+   "news_id": "96cc0625-b440-5bb4-89f8-a5db9577e939",
+   "news_title": "«Северсталь» улучшила прогноз потребления стали на 2026 год",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-21T09:18:07+00:00",
+   "score": 0.4696,
+   "level": "high",
+   "confidence": "high",
+   "event_type": "metals",
+   "event_sectors": [
+    "metals_mining",
+    "construction"
+   ],
+   "event_channels": {
+    "metals_prices": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.474,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 1.0
+   },
+   "why_short": "Цены на металлы — металл — входящее сырьё для отрасли",
+   "b_freshness": -3.336712962962963,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 3
+  },
+  {
+   "pair_id": "F25",
+   "company_id": "U_9250",
+   "news_id": "34ef0af5-fc28-5bbf-88e3-d9d2cb47f2fd",
+   "news_title": "Российские дорожные строители погрязли в долгах",
+   "label": 1,
+   "split": "fresh",
+   "published_at": "2026-10-22T05:28:00+00:00",
+   "score": 0.3167,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "industry",
+   "event_sectors": [
+    "construction"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.593,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.593
+   },
+   "why_short": "Затрагивает отрасль компании: строительство и стройматериалы",
+   "b_freshness": -2.496516203703704,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 5
+  },
+  {
+   "pair_id": "F26",
+   "company_id": "U_9250",
+   "news_id": "de651fc3-6c31-5cb0-b033-9e5c2ada7661",
+   "news_title": "Путин поручил увеличить лимиты госпрограммы для льготной аренды жилья в ДФО",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-23T14:45:57+00:00",
+   "score": 0.0309,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "industry",
+   "event_sectors": [
+    "real_estate"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.296,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.296
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.109050925925926,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 10
+  },
+  {
+   "pair_id": "F27",
+   "company_id": "U_9250",
+   "news_id": "c45b45bd-73b7-5b64-8c2f-de2000e5b519",
+   "news_title": "Росатом продолжает строительство АЭС «Пакш-2» по согласованному графику",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-21T14:05:48+00:00",
+   "score": 0.3101,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "industry",
+   "event_sectors": [
+    "construction"
+   ],
+   "event_channels": {},
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.594,
+   "components": {
+    "sector": 1.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.594
+   },
+   "why_short": "Затрагивает отрасль компании: строительство и стройматериалы",
+   "b_freshness": -3.1369328703703703,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 6
+  },
+  {
+   "pair_id": "F28",
+   "company_id": "U_9250",
+   "news_id": "4427c2db-8042-5302-b6e7-09863f03b1ab",
+   "news_title": "Китай в сентябре увеличил закупки российского угля более чем на треть",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-20T21:23:07+00:00",
+   "score": 0.2266,
+   "level": "low",
+   "confidence": "medium",
+   "event_type": "metals",
+   "event_sectors": [
+    "metals_mining"
+   ],
+   "event_channels": {
+    "metals_prices": 1.0,
+    "foreign_trade": 0.2
+   },
+   "event_regions": [],
+   "macro_importance": 0.25,
+   "bank_coverage": 1.0,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.474,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.25,
+    "bank": 1.0
+   },
+   "why_short": "Цены на металлы — металл — входящее сырьё для отрасли",
+   "b_freshness": -3.8332407407407407,
+   "b_macro": 0.25,
+   "b_random": 0.0,
+   "rank": 7
+  },
+  {
+   "pair_id": "F29",
+   "company_id": "U_9250",
+   "news_id": "e2766e9b-4de7-583d-aeb6-92284ca4c05c",
+   "news_title": "Страховщик возместит Алеф-банку выплату по гарантии",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-23T14:39:08+00:00",
+   "score": 0.0537,
+   "level": "none",
+   "confidence": "medium",
+   "event_type": "financial_sector",
+   "event_sectors": [
+    "finance"
+   ],
+   "event_channels": {
+    "financial_markets": 0.8
+   },
+   "event_regions": [],
+   "macro_importance": 0.2,
+   "bank_coverage": 0.794,
+   "components": {
+    "sector": 0.0,
+    "channel": 0.0,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.2,
+    "bank": 0.794
+   },
+   "why_short": "Слабая связь с профилем компании",
+   "b_freshness": -1.1137847222222221,
+   "b_macro": 0.2,
+   "b_random": 0.0,
+   "rank": 9
+  },
+  {
+   "pair_id": "F30",
+   "company_id": "U_9250",
+   "news_id": "2194d631-ab67-5dd0-b883-bf93f1ff4fcb",
+   "news_title": "Россиянам объяснили рост налога на недвижимость",
+   "label": 0,
+   "split": "fresh",
+   "published_at": "2026-10-24T13:08:00+00:00",
+   "score": 0.4224,
+   "level": "medium",
+   "confidence": "high",
+   "event_type": "budget_tax",
+   "event_sectors": [
+    "real_estate"
+   ],
+   "event_channels": {
+    "state_budget": 0.9,
+    "payroll": 0.2,
+    "foreign_trade": 0.2,
+    "construction_cycle": 0.5,
+    "cost_of_debt": 0.15
+   },
+   "event_regions": [],
+   "macro_importance": 0.5,
+   "bank_coverage": 0.92,
+   "components": {
+    "sector": 0.45,
+    "channel": 0.518,
+    "counterparty": 0.0,
+    "region": 0.0,
+    "macro": 0.5,
+    "bank": 0.92
+   },
+   "why_short": "Госрасходы и налоги — отрасль чувствительна к госзаказу и бюджетным расходам",
+   "b_freshness": -0.17707175925925925,
+   "b_macro": 0.5,
+   "b_random": 0.0,
+   "rank": 4
+  }
+ ],
+ "robustness": {
+  "U_9000008": {
+   "profile_status": "matched",
+   "missing_fields": 10,
+   "channels": {
+    "foreign_trade": 0.35,
+    "construction_cycle": 0.4
+   },
+   "scored_news": 200,
+   "shown_level_not_none": 25,
+   "confidence_top": "low",
+   "warnings_top": [
+    "Неполный профиль: нет регион регистрации, кредитные продукты, работники (фнс)"
+   ],
+   "top3": [
+    {
+     "title": "Рубль дорожает. Курсы доллара, евро и юаня на 24 октября",
+     "score": 0.3603,
+     "why_short": "Внешнеэкономическая деятельность и курс — заметная часть исходящих платежей идёт контрагентам с ВЭД (≈58% объёма)"
+    },
+    {
+     "title": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+     "score": 0.3561,
+     "why_short": "Внешнеэкономическая деятельность и курс — заметная часть исходящих платежей идёт контрагентам с ВЭД (≈58% объёма)"
+    },
+    {
+     "title": "Курс доллара. Прогноз на 26–30 октября // Мнения и прогнозы аналитиков о том, как будет вести себя рубль",
+     "score": 0.3553,
+     "why_short": "Внешнеэкономическая деятельность и курс — заметная часть исходящих платежей идёт контрагентам с ВЭД (≈58% объёма)"
+    }
+   ]
+  },
+  "U_9000009": {
+   "profile_status": "ambiguous",
+   "missing_fields": 23,
+   "channels": {},
+   "scored_news": 200,
+   "shown_level_not_none": 0,
+   "confidence_top": "low",
+   "warnings_top": [
+    "ID компании встречается в справочнике несколько раз — профиль не используется для персонализации",
+    "Неполный профиль: нет код основного оквэд, регион регистрации, кредитные продукты, работники (фнс), годовая выручка"
+   ],
+   "top3": [
+    {
+     "title": "Аналитик прогнозирует, что снижения ключевой ставки не будет до весны 2027 года",
+     "score": 0.1201,
+     "why_short": "Ключевая ставка и ДКП: общеэкономический фактор для бизнеса"
+    },
+    {
+     "title": "ЦБ сохранил ключевую ставку, цена земли в Подмосковье достигла рекордного уровня. Главное за день",
+     "score": 0.1197,
+     "why_short": "Ключевая ставка и ДКП: общеэкономический фактор для бизнеса"
+    },
+    {
+     "title": "ЦБ не спешит // Пауза в снижении ключевой ставки может затянуться",
+     "score": 0.1186,
+     "why_short": "Ключевая ставка и ДКП: общеэкономический фактор для бизнеса"
+    }
+   ]
+  }
+ }
+}

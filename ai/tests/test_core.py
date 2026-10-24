@@ -244,3 +244,73 @@ def test_chat_rules_answer_has_sources(profiles, bank, store):
     row = {'id': 'i1', 'company_id': 'U_9000001', 'result': res}
     ans = ChatService(profiles, bank, store, LLMClient(s, store)).answer(row, 'Как это повлияет на обслуживание кредитов?')
     assert ans['statements'] and all(sid in ans['sources'] for st in ans['statements'] for sid in st['source_ids'])
+
+
+# ---------------------------------------------------------------- правки по итогам офлайн-оценки (eval/)
+
+def _news(title, summary=''):
+    return {'id': '44444444-4444-4444-8444-444444444444', 'title': title, 'summary': summary, 'content': '',
+            'url': 'https://example.org/x', 'source_name': 'test', 'published_at': '2026-10-24T10:00:00+03:00'}
+
+
+def test_direction_negation():
+    e = extract_event(_news('Аналитик прогнозирует, что снижения ключевой ставки не будет до весны 2027 года'))
+    assert e['event_type'] == 'key_rate' and e['direction'] == 'hold'
+    e = extract_event(_news('Шохин: бизнес не ожидает снижения ключевой ставки ЦБ'))
+    assert e['direction'] == 'hold'
+    assert extract_event(_news('ЦБ снизил ключевую ставку до 13%'))['direction'] == 'down'
+    # не ставка: отрицание → направление не указано; заголовок важнее текста
+    e = extract_event(_news('Бизнес исключил скорый рост спроса на российские разработки'))
+    assert e['direction'] is None
+    e = extract_event(_news('Цены на бензин выросли на бирже', 'Ранее аналитики ожидали снижения цен.'))
+    assert e['direction'] == 'up'
+
+
+def test_short_triggers_match_whole_tokens_only():
+    # «медали», «стали чаще», «на связи», «ограничить» не должны давать металлы/IT/санкции
+    assert 'metals_mining' not in extract_event(_news('Внука диктатора лишили боксерской медали'))['sectors']
+    e = extract_event(_news('Российские ритейлеры стали чаще закрывать физические магазины'))
+    assert e['event_type'] != 'metals' and 'metals_mining' not in e['sectors'] and 'retail' in e['sectors']
+    e = extract_event(_news('Губернатор сообщил об атаке на склад', 'Оставайтесь на связи с РБК в «Максе».'))
+    assert 'it_telecom' not in e['sectors']
+    e = extract_event(_news('Набиуллина заявила о необходимости ограничить объемы льготной ипотеки'))
+    assert e['event_type'] == 'real_estate'
+    # длинные триггеры по-прежнему работают как префикс; «рынке труда» и «угля» находятся
+    assert extract_event(_news('ЦБ оценил ситуацию на российском рынке труда'))['event_type'] == 'labor_market'
+    assert 'metals_mining' in extract_event(_news('Китай увеличил закупки российского угля'))['sectors']
+
+
+def test_foreign_market_without_russian_context_downweighted(profiles):
+    e = extract_event(_news('WSJ объяснила, что помешает ЕС создать конкурента Starlink для Украины',
+                            'Ограничения бюджета и регулирования мешают европейским компаниям.'))
+    assert e['geo_scope'] == 'foreign' and e['event_type'] != 'trade_sanctions'
+    for cid in ('U_9000001', 'U_9000002', 'U_9000003', 'U_9000007'):
+        assert score(profiles.get(cid), e, 0.8, e['published_at'])['level'] not in ('high', 'medium')
+    # российский контекст снимает понижение
+    assert extract_event(_news('Трамп заявил о возможном введении пошлин против России'))['geo_scope'] == 'national'
+
+
+def test_macro_event_direct_only_via_primary_channel(profiles):
+    rate = extract_event(RATE_NEWS)
+    from app.events import parse_dt
+    now = parse_dt("2026-10-24T20:00:00+03:00")
+    with_debt = score(profiles.get('U_9000001'), rate, 0.8, RATE_NEWS['published_at'], now=now)
+    deposits = score(profiles.get('U_9000002'), rate, 0.8, RATE_NEWS['published_at'], now=now)  # только депозиты
+    bare = dict(profiles.get('U_9000002'))  # та же розница, но без кредитов и депозитов в банке
+    bare['channels'] = {k: v for k, v in bare['channels'].items() if k not in ('cost_of_debt', 'liquidity_yield')}
+    no_products = score(bare, rate, 0.8, RATE_NEWS['published_at'], now=now)
+    assert with_debt['level'] == 'high' and no_products['level'] not in ('high',)
+    # ставка при кредите/депозитах — прямое событие (основной канал), без продуктов — только фон
+    assert with_debt['components'][0]['value'] > 0.5 and deposits['components'][0]['value'] > 0.5
+    assert no_products['components'][0]['value'] < 0.3
+    assert with_debt['score'] > deposits['score'] > no_products['score']
+
+
+def test_freshness_relative_to_latest_news():
+    from app.ranking import freshness, latest_time
+    news = [{'published_at': '2026-10-20T10:00:00+03:00'}, {'published_at': '2026-10-24T10:00:00+03:00'}]
+    now = latest_time(news)
+    assert now.isoformat() == '2026-10-24T10:00:00+03:00'
+    # результат не зависит от того, когда запущено демо
+    assert freshness('2026-10-23T10:00:00+03:00', now) == freshness('2026-10-23T10:00:00+03:00', latest_time(news))
+    assert freshness('2026-10-24T10:00:00+03:00', now) == 1.0
