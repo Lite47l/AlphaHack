@@ -250,13 +250,17 @@ class LLMClient:
         body: dict = {'model': model, 'messages': messages, 'temperature': temperature, 'max_tokens': max_tokens}
         if json_mode:
             body['response_format'] = {'type': 'json_object'}
+        if not getattr(self.settings, 'llm_reasoning', False):
+            # шлюз организаторов (OpenRouter-совместимый) по умолчанию включает «размышления» у Qwen/GLM:
+            # они съедают max_tokens и бюджет. Ответ нужен структурированный, поэтому reasoning выключаем.
+            body['reasoning'] = {'enabled': False}
 
         try:
             resp = self._post(body)
-            if resp.status_code == 400 and 'response_format' in body:
-                # не все OpenAI-совместимые серверы поддерживают response_format — один повтор без него
-                log.info('llm role=%s model=%s status=400 retry_without_response_format', role, model)
-                body = {k: v for k, v in body.items() if k != 'response_format'}
+            if resp.status_code == 400 and ('response_format' in body or 'reasoning' in body):
+                # не все OpenAI-совместимые серверы поддерживают эти параметры — один повтор без них
+                log.info('llm role=%s model=%s status=400 retry_without_optional_params', role, model)
+                body = {k: v for k, v in body.items() if k not in ('response_format', 'reasoning')}
                 resp = self._post(body)
         except LLMError as e:
             self._log_fail(role, model, t0, e.code)
@@ -307,25 +311,27 @@ class LLMClient:
 
     # ----- internals
     def _post(self, body: dict) -> httpx.Response:
-        """POST с одним повтором при таймауте/5xx/429."""
+        """POST с повторами: один при таймауте/5xx/429, до трёх при обрыве соединения (TLS через прокси)."""
         headers = {'Authorization': f'Bearer {self.settings.llm_api_key}'}
         last_exc: Exception | None = None
-        for attempt in range(2):
+        conn_errors = 0
+        for attempt in range(4):
             try:
                 resp = self._http.post(self._url, json=body, headers=headers)
             except httpx.TimeoutException as e:
                 last_exc = e
-                if attempt == 0:
+                if attempt == 0 and conn_errors == 0:
                     self._pause(None)
                     continue
                 raise LLMError('timeout', f'нет ответа за {self.settings.llm_timeout_s} с') from None
             except httpx.HTTPError as e:
                 last_exc = e
-                if attempt == 0:
+                conn_errors += 1
+                if conn_errors < 4:
                     self._pause(None)
                     continue
                 raise LLMError('http', f'ошибка соединения: {type(e).__name__}') from None
-            if resp.status_code in _RETRY_STATUSES and attempt == 0:
+            if resp.status_code in _RETRY_STATUSES and attempt == conn_errors:
                 self._pause(resp)
                 continue
             return resp

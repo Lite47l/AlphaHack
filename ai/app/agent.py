@@ -359,8 +359,16 @@ class InsightAgent:
             st.setdefault('published_at', src.get('published_at'))
             st.setdefault('url', src.get('url'))
             st.setdefault('warning', src.get('warning', ''))
-        if bv.get('statements') and all(st.get('warning') for st in bv['statements']) and bv.get('status') == 'found':
-            bv['status'] = 'outdated'
+        # статус позиции банка определяет код по датам и предупреждениям, а не модель
+        if bv.get('statements'):
+            bv['status'] = 'outdated' if all(st.get('warning') for st in bv['statements']) else 'found'
+            news_date = str(ctx['news'].get('published_at') or '')[:10]
+            if news_date and all(str(st.get('published_at') or '') < news_date for st in bv['statements']):
+                note = 'Материалы банка датированы до события: это позиция и прогноз на дату документа, а не комментарий к событию.'
+                if note not in (bv.get('note') or ''):
+                    bv['note'] = ((bv.get('note') or '') + ' ' + note).strip()
+        else:
+            bv['status'] = 'not_found'
         offer = insight.get('bank_offer')
         mech = ctx.get('mechanisms') or []
         if not offer and mech and mech[0]['channel'] in writer.OFFERS:

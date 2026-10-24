@@ -105,7 +105,10 @@ def validate(insight: dict, ev: Evidence, profile: dict) -> dict:
             issues.append(_issue('bank_view_unsupported', 'blocking', 'Позиция банка без существующего фрагмента аналитики', path))
             continue
         chunk_text = ' '.join(ev.text_of(s) for s in b_ids)
-        if st.get('quote') and not _quote_found(st['quote'], chunk_text):
+        body = ' '.join(ev.items[s].get('text', '') for s in b_ids)  # цитата — только из текста фрагмента, не из названия
+        if not st.get('quote'):
+            issues.append(_issue('quote_missing', 'warning', 'Нет дословной цитаты из аналитики банка', path))
+        elif not _quote_found(st['quote'], body):
             issues.append(_issue('quote_not_found', 'blocking', 'Цитата не найдена в указанном фрагменте аналитики', path))
         unsupported = numbers(st.get('text', '')) - ev.numbers_of(b_ids)
         if unsupported:

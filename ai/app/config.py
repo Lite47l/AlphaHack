@@ -47,12 +47,13 @@ class Settings:
 
     llm_base_url: str = field(default_factory=lambda: _env('LLM_BASE_URL').rstrip('/'))
     llm_api_key: str = field(default_factory=lambda: _env('LLM_API_KEY'))
-    model_planner: str = field(default_factory=lambda: _env('LLM_MODEL_PLANNER', 'GLM-5.3-Flash'))
-    model_extractor: str = field(default_factory=lambda: _env('LLM_MODEL_EXTRACTOR', 'Gemma-4-26B-A4B'))
-    model_writer: str = field(default_factory=lambda: _env('LLM_MODEL_WRITER', 'Qwen3.6-35B-A3B'))
-    model_chat: str = field(default_factory=lambda: _env('LLM_MODEL_CHAT', 'Qwen3.6-35B-A3B'))
+    model_planner: str = field(default_factory=lambda: _env('LLM_MODEL_PLANNER', 'z-ai/glm-5.3-flash'))
+    model_extractor: str = field(default_factory=lambda: _env('LLM_MODEL_EXTRACTOR', 'google/gemma-4-26b-a4b-it'))
+    model_writer: str = field(default_factory=lambda: _env('LLM_MODEL_WRITER', 'qwen/qwen3.6-35b-a3b'))
+    model_chat: str = field(default_factory=lambda: _env('LLM_MODEL_CHAT', 'qwen/qwen3.6-35b-a3b'))
     llm_timeout_s: int = field(default_factory=lambda: _int('LLM_TIMEOUT_SECONDS', 60))
     llm_daily_token_budget: int = field(default_factory=lambda: _int('LLM_DAILY_TOKEN_BUDGET', 1_500_000))
+    llm_reasoning: bool = field(default_factory=lambda: _env('LLM_REASONING', 'off').lower() in ('1', 'on', 'true'))
     llm_max_tokens: int = field(default_factory=lambda: _int('LLM_MAX_TOKENS', 2200))
 
     agent_max_steps: int = field(default_factory=lambda: _int('AGENT_MAX_STEPS', 12))

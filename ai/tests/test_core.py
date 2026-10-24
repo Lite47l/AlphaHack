@@ -223,7 +223,7 @@ def test_agent_llm_mode_with_repair_and_injection_guard(profiles, bank, store):
     assert any(s['kind'] == 'validate' and s['status'] == 'error' for s in trace.steps)  # первая версия с выдуманным числом
     assert res['validation']['repairs'] >= 1 and res['validation']['passed']
     assert not any('12%' in r['text'] for r in res['risks'])
-    assert all(m.split('/')[-1] in ('GLM-5.3-Flash', 'Qwen3.6-35B-A3B', 'Gemma-4-26B-A4B') for m in fake.calls)
+    assert all(m in ('z-ai/glm-5.3-flash', 'qwen/qwen3.6-35b-a3b', 'google/gemma-4-26b-a4b-it') for m in fake.calls)
     assert trace.summary('llm')['tokens']['prompt'] > 0
 
 
