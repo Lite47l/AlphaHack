@@ -249,3 +249,93 @@ func (r *Repository) Deduplicate(ctx context.Context) error {
 
 	return tx.Commit(ctx)
 }
+
+func (r *Repository) SaveCollected(
+	ctx context.Context,
+	items []News,
+) (int, error) {
+	tx, err := r.db.Begin(ctx)
+	if err != nil {
+		return 0, err
+	}
+	defer func() {
+		_ = tx.Rollback(ctx)
+	}()
+
+	inserted := 0
+
+	for _, item := range items {
+		url := NormalizeURL(item.URL)
+		if url == "" {
+			continue
+		}
+
+		var sourceID string
+		err := tx.QueryRow(ctx, `
+			INSERT INTO sources (name, base_url)
+			VALUES ($1, $2)
+			ON CONFLICT DO NOTHING
+			RETURNING id::text
+		`, item.SourceName, sourceBaseURL(url)).Scan(&sourceID)
+
+		if err != nil {
+			// Источник уже существует: находим его ID.
+			err = tx.QueryRow(ctx, `
+				SELECT id::text
+				FROM sources
+				WHERE name = $1
+				ORDER BY created_at
+				LIMIT 1
+			`, item.SourceName).Scan(&sourceID)
+			if err != nil {
+				return 0, err
+			}
+		}
+
+		var publishedAt any
+		if !item.PublishedAt.IsZero() {
+			publishedAt = item.PublishedAt
+		}
+
+		tag, err := tx.Exec(ctx, `
+			INSERT INTO news (
+				source_id,
+				title,
+				summary,
+				url,
+				published_at
+			)
+			VALUES ($1::uuid, $2, $3, $4, $5)
+			ON CONFLICT (url) DO NOTHING
+		`,
+			sourceID,
+			item.Title,
+			item.Summary,
+			url,
+			publishedAt,
+		)
+		if err != nil {
+			return 0, err
+		}
+
+		inserted += int(tag.RowsAffected())
+	}
+
+	if err := tx.Commit(ctx); err != nil {
+		return 0, err
+	}
+
+	return inserted, nil
+}
+
+func sourceBaseURL(rawURL string) string {
+	if strings.HasPrefix(rawURL, "https://alfabank.ru/") {
+		return "https://alfabank.ru"
+	}
+
+	if strings.HasPrefix(rawURL, "https://mock.invalid/") {
+		return "https://mock.invalid"
+	}
+
+	return ""
+}

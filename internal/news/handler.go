@@ -37,3 +37,19 @@ func parseInt(r *http.Request, key string, fallback int) int {
 	}
 	return n
 }
+
+func (h *Handler) Import(
+	importer *Importer,
+) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		results, err := importer.Import(r.Context())
+		if err != nil {
+			response.WriteServiceError(w, err)
+			return
+		}
+
+		response.WriteJSON(w, http.StatusOK, map[string]any{
+			"results": results,
+		})
+	}
+}

@@ -18,6 +18,10 @@ func NewRouter(db *pgxpool.Pool, logger *slog.Logger) http.Handler {
 	ch := company.NewHandler(company.NewService(cr))
 	nr := news.NewRepository(db)
 	nh := news.NewHandler(news.NewService(nr))
+	importer := news.NewImporter(
+		nr,
+		news.NewAlfaCollector(),
+		news.NewMockCollector())
 	kr := knowledge.NewRepository(db)
 	kh := knowledge.NewHandler(knowledge.NewService(kr))
 	ar := analysis.NewRepository(db)
@@ -34,6 +38,7 @@ func NewRouter(db *pgxpool.Pool, logger *slog.Logger) http.Handler {
 	mux.HandleFunc("GET /api/v1/knowledge", kh.List)
 	mux.HandleFunc("POST /api/v1/companies/{id}/analyses", ah.Create)
 	mux.HandleFunc("GET /api/v1/analyses/{id}", ah.GetByID)
+	mux.HandleFunc("POST /api/v1/news/import", nh.Import(importer))
 
 	var handler http.Handler = mux
 
