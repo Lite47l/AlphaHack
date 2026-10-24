@@ -31,7 +31,7 @@
 | `cleaning_report.md` | Понятный отчёт об обработке и ограничениях |
 | `quality_metrics.json` | Полные метрики и SHA-256 исходников для автоматических проверок |
 | `output_manifest.json` | Размерность и SHA-256 четырёх выходных таблиц |
-
+ССЫЛКА НА СКАЧИВАНИЕ ЭТИХ ТАБЛИЦ - https://drive.google.com/drive/folders/1-6vqXcWQJ0ygd8BgbQru3TYRH4mNSqeZ?usp=sharing
 `.csv.gz` — обычный CSV, сжатый gzip. Его не надо переименовывать в `.xlsx`. Входные CSV: UTF-8-sig, `;`. Выходные CSV: UTF-8, `,`, пропуск записан пустым полем. Чтобы не потерять типы и ведущие нули, читайте так:
 
 ```python
