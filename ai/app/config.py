@@ -56,6 +56,7 @@ class Settings:
     llm_reasoning: bool = field(default_factory=lambda: _env('LLM_REASONING', 'off').lower() in ('1', 'on', 'true'))
     llm_max_tokens: int = field(default_factory=lambda: _int('LLM_MAX_TOKENS', 2200))
 
+    include_edge_cases: bool = field(default_factory=lambda: _env('INCLUDE_EDGE_CASES', 'on').lower() in ('1', 'on', 'true'))
     agent_max_steps: int = field(default_factory=lambda: _int('AGENT_MAX_STEPS', 12))
     agent_max_seconds: int = field(default_factory=lambda: _int('AGENT_MAX_SECONDS', 150))
     agent_max_repairs: int = field(default_factory=lambda: _int('AGENT_MAX_REPAIRS', 1))

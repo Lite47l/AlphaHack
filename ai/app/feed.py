@@ -60,9 +60,11 @@ class FeedService:
                 a, b = toks[nid], toks[r]
                 if not a or not b:
                     continue
-                sim = len(a & b) / len(a | b)
-                close = not dates[nid] or not dates[r] or abs((dates[nid] - dates[r]).total_seconds()) < 3 * 86400
-                if sim >= 0.45 and close:
+                shared = len(a & b)
+                # коэффициент перекрытия: короткий заголовок другого издания почти целиком входит в длинный
+                overlap = shared / min(len(a), len(b))
+                close = not dates[nid] or not dates[r] or abs((dates[nid] - dates[r]).total_seconds()) < 2 * 86400
+                if close and (shared / len(a | b) >= 0.45 or (shared >= 3 and overlap >= 0.6)):
                     best = r
                     break
             if best:

@@ -10,6 +10,7 @@ from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Header, HTTPException, Query, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
@@ -66,6 +67,13 @@ app = FastAPI(title='Alfa News Insights — AI service', version='1.0', lifespan
 @app.exception_handler(HTTPException)
 async def http_error(_: Request, exc: HTTPException):
     return JSONResponse({'error': exc.detail}, status_code=exc.status_code)
+
+
+@app.exception_handler(RequestValidationError)
+async def validation_error(_: Request, exc: RequestValidationError):
+    first = exc.errors()[0] if exc.errors() else {}
+    field = '.'.join(str(x) for x in first.get('loc', [])[1:]) or 'request'
+    return JSONResponse({'error': f'invalid {field}: {first.get("msg", "validation error")}'}, status_code=400)
 
 
 @app.exception_handler(Exception)

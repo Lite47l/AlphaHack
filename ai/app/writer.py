@@ -192,6 +192,8 @@ def rules_insight(ctx: dict, ev: Evidence) -> dict:
     statements = []
     for h in bank_hits:
         q = h['key_sentence']
+        if len(q) < 40:
+            continue
         statements.append({'text': f'Аналитики Альфа-Банка в материале «{h["doc_title"]}» ({h["published_at"]}): {q}',
                            'quote': q, 'source_ids': [h['source_id']]})
     outdated = bank_hits and all(h.get('age_days') is not None and h['age_days'] > 120 for h in bank_hits)

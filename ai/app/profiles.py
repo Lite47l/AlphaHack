@@ -114,6 +114,25 @@ class ProfileStore:
 
     @classmethod
     def load(cls) -> 'ProfileStore':
+        store = cls._load()
+        if settings.include_edge_cases and not store.source.startswith('synthetic'):
+            store.add_edge_cases()
+        return store
+
+    def add_edge_cases(self):
+        """Синтетические пограничные случаи рядом с реальными данными: в реальной выборке нет компаний с пропусками
+        ключевых полей, а сервис должен показывать устойчивость к неполным и неоднозначным профилям."""
+        synth = build_profiles(settings.data_dir / 'synthetic', 15e9)
+        for p in synth['profiles']:
+            if p['company_id'] in ('U_9000008', 'U_9000009'):
+                kind = 'неполный профиль' if p['profile_status'] == 'matched' else 'неоднозначный ID'
+                p['display_name'] = f'Синтетический пример: {kind}'
+                p['data_notes'].insert(0, 'Синтетическая компания из data/synthetic — пограничный случай для проверки устойчивости, не клиент из датасета.')
+                p['channels'] = channels_for(p)
+                self.profiles[p['company_id']] = p
+
+    @classmethod
+    def _load(cls) -> 'ProfileStore':
         """Реальные данные (RAW_DATA_DIR или data/raw) → готовый data/generated → синтетика."""
         state = settings.state_dir / 'profiles.json'
         candidates = [Path(settings.raw_dir)] if settings.raw_dir else []
@@ -159,6 +178,7 @@ class ProfileStore:
         items = sorted(self.profiles.values(), key=lambda p: -(p['observed']['REVENUE_COMPANY']['value'] or 0))
         if q:
             items = [p for p in items if q in p['company_id'].lower() or q in (p['subtitle'] or '').lower()
+                     or q in p['display_name'].lower()
                      or q in (p['observed']['REGION']['value'] or '').lower()
                      or any(q in s['label'].lower() for s in p['sectors'])]
         return [self.summary(p) for p in items[offset:offset + limit]], len(items)

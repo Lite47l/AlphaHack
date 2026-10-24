@@ -55,7 +55,7 @@ News = {
 
 ### `GET /api/v1/companies?query=&limit=50&offset=0`
 ```json
-{"items":[CompanySummary], "total":115, "limit":50, "offset":0, "data_source":"real | synthetic"}
+{"items":[CompanySummary], "total":115, "limit":50, "offset":0, "data_source":"real | generated | synthetic"}
 CompanySummary = {
   "company_id":"U_102920", "display_name":"Компания U_102920",
   "subtitle":"Торговля оптовая прочими пищевыми продуктами, включая рыбу...",
