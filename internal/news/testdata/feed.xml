@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:yandex="http://news.yandex.ru" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:rbc_news="https://www.rbc.ru">
+  <channel>
+    <title>Тестовая лента</title>
+    <link>https://example.org</link>
+    <item>
+      <title>Банк России сохранил ключевую ставку на уровне 14,00% годовых</title>
+      <link>https://www.cbr.ru/press/PR/?file=23102026_133000key.htm&amp;utm_source=rss</link>
+      <guid isPermaLink="false">docid_41664</guid>
+      <description>&lt;!-- TypographyUse --&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Совет директоров Банка России 23&amp;nbsp;октября 2026 года принял решение сохранить &lt;a href="/oper_br/"&gt;ключевую ставку&lt;/a&gt; на&amp;nbsp;уровне 14,00% годовых.&lt;/em&gt;&lt;/p&gt;
+&lt;script&gt;alert(1)&lt;/script&gt;
+&lt;p&gt;Инфляция 5&amp;ndash;6%.&lt;/p&gt;</description>
+      <pubDate>Fri, 23 Oct 2026 13:30:00 +0300</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Компании нарастили экспорт]]></title>
+      <link>https://www.rbc.ru/economics/24/10/2026/abc</link>
+      <pubDate>Sat, 24 Oct 2026 20:11:03 +0300</pubDate>
+      <description><![CDATA[Краткий анонс <b>новости</b>]]></description>
+      <rbc_news:title>Не тот заголовок</rbc_news:title>
+      <rbc_news:full-text><![CDATA[Первый абзац полного текста.
+
+Второй&nbsp;&mdash; абзац.
+
+Оставайтесь на связи с РБК в «Максе».]]></rbc_news:full-text>
+    </item>
+    <item>
+      <title>Новость с yandex:full-text</title>
+      <link>https://example.com/news/1/</link>
+      <description></description>
+      <yandex:full-text>Полный текст из Яндекс-формата.</yandex:full-text>
+      <pubDate>Mon, 5 Oct 2026 09:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Новость с content:encoded</title>
+      <guid>https://example.com/news/2</guid>
+      <description>Анонс</description>
+      <content:encoded><![CDATA[<p>Абзац один.</p><p>Абзац два.</p>]]></content:encoded>
+      <pubDate>2026-10-05T10:00:00+03:00</pubDate>
+    </item>
+    <item>
+      <title>Без ссылки</title>
+      <description>Пропускается</description>
+    </item>
+    <item>
+      <title>Дубликат первой</title>
+      <link>https://www.cbr.ru/press/PR?file=23102026_133000key.htm</link>
+    </item>
+  </channel>
+</rss>
