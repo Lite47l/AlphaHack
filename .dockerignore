@@ -1,0 +1,13 @@
+# Контекст сборки корневого Dockerfile (Go-шлюз): только Go-код и сертификат.
+.git
+.env
+.env.*
+ai/
+frontend/
+data/
+bank_docs_raw/
+03_data/
+scripts/
+docs/
+**/__pycache__/
+**/node_modules/

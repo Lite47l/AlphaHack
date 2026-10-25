@@ -1,3 +1,5 @@
+> Объединённая версия: актуальный запуск и результаты проверок — [START_HERE_RU.md](START_HERE_RU.md).
+
 # Alfa-Hack
 
 ## Стек
@@ -239,3 +241,17 @@ docker compose logs --tail=100 backend
 - `internal/http` — маршруты и middleware.
 - `internal/{company,news,knowledge,analysis}` — модели, сервисы, репозитории, handlers.
 - `migrations` — схема БД.
+
+
+## Запуск веб-интерфейса
+
+Из корня проекта выполните:
+
+```bash
+docker compose up -d --build
+```
+
+Веб-интерфейс: http://localhost:3000
+Go API: http://localhost:8080
+
+Проверить состояние сервисов: `docker compose ps`. Nginx во frontend проксирует запросы `/api/` в сервис `backend`.

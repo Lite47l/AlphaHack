@@ -1,0 +1,674 @@
+{
+ "note": "Все отличия — из полей профиля (P:...) и платёжного графа (G:...); биографий и названий нет. Профили: real:data/raw (version a907df8bb053, 926 компаний).",
+ "companies": [
+  {
+   "company_id": "U_22299",
+   "role": "Топливный оптовик без ВЭД, с кредитом, лизингом и депозитами",
+   "why_selected": "Единственный в наборе с депозитами (канал доходности ликвидности) и прямым топливным каналом; ВЭД нет — курс для него только косвенный",
+   "segment": "Крупный бизнес (выручка ≥ 15 млрд)",
+   "okved": "46.71.2 Торговля оптовая моторным топливом, включая авиационный бензин",
+   "sectors": [
+    "wholesale",
+    "fuel_energy"
+   ],
+   "region": "Свердловская область",
+   "revenue_bn_rub": 34.3,
+   "workers_fns": "16-100",
+   "cl_type": "CLIENT",
+   "products": {
+    "CL_PRODUCT_RKO_MARK": 1,
+    "CL_PRODUCT_GAR_MARK": 0,
+    "CL_PRODUCT_LOA_MARK": 1,
+    "CL_PRODUCT_LEA_MARK": 1,
+    "CL_PRODUCT_DEP_MARK": 1,
+    "CL_PRODUCT_ZPP_MARK": 1,
+    "FACTORING_MARK": 0
+   },
+   "fts_flag": 0,
+   "fts_countries": null,
+   "channels": [
+    {
+     "key": "cost_of_debt",
+     "strength": 0.95,
+     "basis": [
+      "P:CL_PRODUCT_LOA_MARK",
+      "P:CL_PRODUCT_LEA_MARK"
+     ]
+    },
+    {
+     "key": "fuel_costs",
+     "strength": 0.9,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "liquidity_yield",
+     "strength": 0.7,
+     "basis": [
+      "P:CL_PRODUCT_DEP_MARK"
+     ]
+    },
+    {
+     "key": "payroll",
+     "strength": 0.5,
+     "basis": [
+      "P:AMOUNT_WORKERS_FNS_GRADATION",
+      "P:CL_PRODUCT_ZPP_MARK"
+     ]
+    }
+   ],
+   "missing_fields": [
+    "AMOUNT_WORKERS_SPARK_GRADATION",
+    "FTS_COUNTRY_NAME"
+   ],
+   "profile_status": "matched"
+  },
+  {
+   "company_id": "U_102920",
+   "role": "Пищевой оптовик (вкл. рыбу) с ВЭД и кредитом",
+   "why_selected": "ВЭД (ФТС: Перу, Чили, Дания) + кредит/лизинг + агро-канал; №1 по выручке в классе 46.38 в выборке",
+   "segment": "Крупный бизнес (выручка ≥ 15 млрд)",
+   "okved": "46.38 Торговля оптовая прочими пищевыми продуктами, включая рыбу, ракообразных и моллюсков",
+   "sectors": [
+    "wholesale",
+    "agri_food",
+    "consumer_goods"
+   ],
+   "region": "Санкт-Петербург",
+   "revenue_bn_rub": 54.8,
+   "workers_fns": "101-250",
+   "cl_type": "CLIENT",
+   "products": {
+    "CL_PRODUCT_RKO_MARK": 1,
+    "CL_PRODUCT_GAR_MARK": 0,
+    "CL_PRODUCT_LOA_MARK": 1,
+    "CL_PRODUCT_LEA_MARK": 1,
+    "CL_PRODUCT_DEP_MARK": 0,
+    "CL_PRODUCT_ZPP_MARK": 1,
+    "FACTORING_MARK": 0
+   },
+   "fts_flag": 1,
+   "fts_countries": "ПЕРУ, ЧИЛИ, ДАНИЯ",
+   "channels": [
+    {
+     "key": "cost_of_debt",
+     "strength": 0.95,
+     "basis": [
+      "P:CL_PRODUCT_LOA_MARK",
+      "P:CL_PRODUCT_LEA_MARK"
+     ]
+    },
+    {
+     "key": "foreign_trade",
+     "strength": 0.9,
+     "basis": [
+      "P:FTS_FLAG",
+      "P:FTS_COUNTRY_NAME",
+      "G:payments_out.fts_countries"
+     ]
+    },
+    {
+     "key": "agri_prices",
+     "strength": 0.8,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "consumer_demand",
+     "strength": 0.6,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "payroll",
+     "strength": 0.5,
+     "basis": [
+      "P:AMOUNT_WORKERS_FNS_GRADATION",
+      "P:CL_PRODUCT_ZPP_MARK"
+     ]
+    },
+    {
+     "key": "fuel_costs",
+     "strength": 0.5,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    }
+   ],
+   "missing_fields": [
+    "AMOUNT_WORKERS_SPARK_GRADATION"
+   ],
+   "profile_status": "matched"
+  },
+  {
+   "company_id": "U_34911",
+   "role": "Зерновой оптовик с ВЭД и кредитом, юг",
+   "why_selected": "Торговля зерном, ФТС (ОАЭ, Алжир, Индия), только кредит (без лизинга/ЗП-проекта); регион — Ростовская обл.",
+   "segment": "Крупный бизнес (выручка ≥ 15 млрд)",
+   "okved": "46.21 Торговля оптовая зерном, необработанным табаком, семенами и кормами для сельскохозяйственных животных",
+   "sectors": [
+    "wholesale",
+    "agri_food"
+   ],
+   "region": "Ростовская область",
+   "revenue_bn_rub": 53.9,
+   "workers_fns": "16-100",
+   "cl_type": "CLIENT",
+   "products": {
+    "CL_PRODUCT_RKO_MARK": 1,
+    "CL_PRODUCT_GAR_MARK": 0,
+    "CL_PRODUCT_LOA_MARK": 1,
+    "CL_PRODUCT_LEA_MARK": 0,
+    "CL_PRODUCT_DEP_MARK": 0,
+    "CL_PRODUCT_ZPP_MARK": 0,
+    "FACTORING_MARK": 0
+   },
+   "fts_flag": 1,
+   "fts_countries": "ОАЭ, АЛЖИР, ИНДИЯ",
+   "channels": [
+    {
+     "key": "cost_of_debt",
+     "strength": 0.9,
+     "basis": [
+      "P:CL_PRODUCT_LOA_MARK"
+     ]
+    },
+    {
+     "key": "foreign_trade",
+     "strength": 0.9,
+     "basis": [
+      "P:FTS_FLAG",
+      "P:FTS_COUNTRY_NAME",
+      "G:payments_out.fts_countries"
+     ]
+    },
+    {
+     "key": "agri_prices",
+     "strength": 0.8,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "consumer_demand",
+     "strength": 0.6,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "fuel_costs",
+     "strength": 0.5,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "payroll",
+     "strength": 0.2,
+     "basis": [
+      "P:AMOUNT_WORKERS_FNS_GRADATION"
+     ]
+    }
+   ],
+   "missing_fields": [
+    "AMOUNT_WORKERS_SPARK_GRADATION"
+   ],
+   "profile_status": "matched"
+  },
+  {
+   "company_id": "U_201985",
+   "role": "Жилищный застройщик, только лизинг",
+   "why_selected": "Строительный цикл/ипотека — сильнейший канал; нет кредитных продуктов в банке (только лизинг); большая группа компаний (369 участников)",
+   "segment": "Крупный бизнес (выручка ≥ 15 млрд)",
+   "okved": "41.20.1 Жилищное строительство",
+   "sectors": [
+    "construction"
+   ],
+   "region": "Москва",
+   "revenue_bn_rub": 25.0,
+   "workers_fns": "Более 251",
+   "cl_type": "CLIENT",
+   "products": {
+    "CL_PRODUCT_RKO_MARK": 1,
+    "CL_PRODUCT_GAR_MARK": 0,
+    "CL_PRODUCT_LOA_MARK": 0,
+    "CL_PRODUCT_LEA_MARK": 1,
+    "CL_PRODUCT_DEP_MARK": 0,
+    "CL_PRODUCT_ZPP_MARK": 0,
+    "FACTORING_MARK": 0
+   },
+   "fts_flag": 1,
+   "fts_countries": "ТУРЦИЯ",
+   "channels": [
+    {
+     "key": "construction_cycle",
+     "strength": 1.0,
+     "basis": [
+      "P:MAINOKVED_CODE",
+      "G:payments_in.sectors"
+     ]
+    },
+    {
+     "key": "foreign_trade",
+     "strength": 0.8,
+     "basis": [
+      "P:FTS_FLAG",
+      "P:FTS_COUNTRY_NAME"
+     ]
+    },
+    {
+     "key": "cost_of_debt",
+     "strength": 0.6,
+     "basis": [
+      "P:CL_PRODUCT_LEA_MARK"
+     ]
+    },
+    {
+     "key": "payroll",
+     "strength": 0.6,
+     "basis": [
+      "P:AMOUNT_WORKERS_FNS_GRADATION"
+     ]
+    },
+    {
+     "key": "fuel_costs",
+     "strength": 0.5,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "state_budget",
+     "strength": 0.5,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "metals_prices",
+     "strength": 0.45,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    }
+   ],
+   "missing_fields": [
+    "AMOUNT_WORKERS_SPARK_GRADATION"
+   ],
+   "profile_status": "matched"
+  },
+  {
+   "company_id": "U_44792",
+   "role": "IT-разработчик без кредитных продуктов и ВЭД",
+   "why_selected": "Контрольный «бедный» профиль: только РКО, нет ВЭД — у ранжировщика почти нет механизмов (один слабый канал ФОТ)",
+   "segment": "Крупный бизнес (выручка ≥ 15 млрд)",
+   "okved": "62.01 Разработка компьютерного программного обеспечения",
+   "sectors": [
+    "it_telecom"
+   ],
+   "region": "Москва",
+   "revenue_bn_rub": 15.8,
+   "workers_fns": "16-100",
+   "cl_type": "CLIENT",
+   "products": {
+    "CL_PRODUCT_RKO_MARK": 1,
+    "CL_PRODUCT_GAR_MARK": 0,
+    "CL_PRODUCT_LOA_MARK": 0,
+    "CL_PRODUCT_LEA_MARK": 0,
+    "CL_PRODUCT_DEP_MARK": 0,
+    "CL_PRODUCT_ZPP_MARK": 0,
+    "FACTORING_MARK": 0
+   },
+   "fts_flag": 0,
+   "fts_countries": null,
+   "channels": [
+    {
+     "key": "payroll",
+     "strength": 0.2,
+     "basis": [
+      "P:AMOUNT_WORKERS_FNS_GRADATION"
+     ]
+    }
+   ],
+   "missing_fields": [
+    "AMOUNT_WORKERS_SPARK_GRADATION",
+    "FTS_COUNTRY_NAME"
+   ],
+   "profile_status": "matched"
+  },
+  {
+   "company_id": "U_1595",
+   "role": "Розница одеждой: кредит + лизинг + ВЭД (эталон T2, «high»)",
+   "why_selected": "Эталонный сценарий продакта: решение ЦБ по ставке должно быть high (есть кредит и лизинг)",
+   "segment": "Крупный бизнес (выручка ≥ 15 млрд)",
+   "okved": "47.71 Торговля розничная одеждой в специализированных магазинах",
+   "sectors": [
+    "retail",
+    "consumer_goods"
+   ],
+   "region": "Москва",
+   "revenue_bn_rub": 16.5,
+   "workers_fns": "Более 251",
+   "cl_type": "CLIENT",
+   "products": {
+    "CL_PRODUCT_RKO_MARK": 1,
+    "CL_PRODUCT_GAR_MARK": 0,
+    "CL_PRODUCT_LOA_MARK": 1,
+    "CL_PRODUCT_LEA_MARK": 1,
+    "CL_PRODUCT_DEP_MARK": 0,
+    "CL_PRODUCT_ZPP_MARK": 1,
+    "FACTORING_MARK": 0
+   },
+   "fts_flag": 1,
+   "fts_countries": "ТУРЦИЯ, НИДЕРЛАНДЫ",
+   "channels": [
+    {
+     "key": "consumer_demand",
+     "strength": 1.0,
+     "basis": [
+      "P:MAINOKVED_CODE"
+     ]
+    },
+    {
+     "key": "cost_of_debt",
+     "strength": 0.95,
+     "basis": [
+      "P:CL_PRODUCT_LOA_MARK",
+      "P:CL_PRODUCT_LEA_MARK"
+     ]
+    },
+    {
+     "key": "foreign_trade",
+     "strength": 0.8,
+     "basis": [
+      "P:FTS_FLAG",
+      "P:FTS_COUNTRY_NAME"
+     ]
+    },
+    {
+     "key": "payroll",
+     "strength": 0.7,
+     "basis": [
+      "P:AMOUNT_WORKERS_FNS_GRADATION",
+      "P:CL_PRODUCT_ZPP_MARK"
+     ]
+    }
+   ],
+   "missing_fields": [
+    "AMOUNT_WORKERS_SPARK_GRADATION"
+   ],
+   "profile_status": "matched"
+  },
+  {
+   "company_id": "U_8167",
+   "role": "Продуктовая розница без кредитов (эталон T2, «low/medium»)",
+   "why_selected": "Пара к U_1595: та же отрасль-розница, но нет кредитов/лизинга/депозитов → ставка только через спрос. Выручка 5–15 млрд — НЕ сегмент ≥15 млрд, используется как контроль",
+   "segment": "Выручка 5–15 млрд (расширенная выборка для сравнения)",
+   "okved": "47.11 Торговля розничная преимущественно пищевыми продуктами, включая напитки, и табачными изделиями в неспециализированных магазинах",
+   "sectors": [
+    "retail",
+    "consumer_goods"
+   ],
+   "region": "Санкт-Петербург",
+   "revenue_bn_rub": 10.0,
+   "workers_fns": "Более 251",
+   "cl_type": "CLIENT",
+   "products": {
+    "CL_PRODUCT_RKO_MARK": 1,
+    "CL_PRODUCT_GAR_MARK": 0,
+    "CL_PRODUCT_LOA_MARK": 0,
+    "CL_PRODUCT_LEA_MARK": 0,
+    "CL_PRODUCT_DEP_MARK": 0,
+    "CL_PRODUCT_ZPP_MARK": 1,
+    "FACTORING_MARK": 0
+   },
+   "fts_flag": 0,
+   "fts_countries": null,
+   "channels": [
+    {
+     "key": "consumer_demand",
+     "strength": 1.0,
+     "basis": [
+      "P:MAINOKVED_CODE",
+      "G:payments_in.sectors"
+     ]
+    },
+    {
+     "key": "payroll",
+     "strength": 0.7,
+     "basis": [
+      "P:AMOUNT_WORKERS_FNS_GRADATION",
+      "P:CL_PRODUCT_ZPP_MARK"
+     ]
+    },
+    {
+     "key": "foreign_trade",
+     "strength": 0.35,
+     "basis": [
+      "G:payments_out.fts_countries"
+     ]
+    }
+   ],
+   "missing_fields": [
+    "AMOUNT_WORKERS_SPARK_GRADATION",
+    "FTS_COUNTRY_NAME"
+   ],
+   "profile_status": "matched"
+  }
+ ],
+ "robustness_example": {
+  "U_9000008": {
+   "company_id": "U_9000008",
+   "source": "data/synthetic (синтетика)",
+   "profile_status": "matched",
+   "missing_fields": [
+    "MAINOKVED_NAME",
+    "ECO_MARK_LABEL",
+    "AMOUNT_WORKERS_FNS_GRADATION",
+    "AMOUNT_WORKERS_SPARK_GRADATION",
+    "FTS_COUNTRY_NAME",
+    "CITY",
+    "REGION",
+    "CL_PRODUCT_LOA_MARK",
+    "CL_PRODUCT_DEP_MARK",
+    "CL_PRODUCT_ZPP_MARK"
+   ],
+   "channels": {
+    "foreign_trade": 0.35,
+    "construction_cycle": 0.4
+   },
+   "robustness_result": {
+    "profile_status": "matched",
+    "missing_fields": 10,
+    "channels": {
+     "foreign_trade": 0.35,
+     "construction_cycle": 0.4
+    },
+    "scored_news": 200,
+    "shown_level_not_none": 25,
+    "confidence_top": "low",
+    "warnings_top": [
+     "Неполный профиль: нет регион регистрации, кредитные продукты, работники (фнс)"
+    ],
+    "top3": [
+     {
+      "title": "Рубль дорожает. Курсы доллара, евро и юаня на 24 октября",
+      "score": 0.3603,
+      "why_short": "Внешнеэкономическая деятельность и курс — заметная часть исходящих платежей идёт контрагентам с ВЭД (≈58% объёма)"
+     },
+     {
+      "title": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+      "score": 0.3561,
+      "why_short": "Внешнеэкономическая деятельность и курс — заметная часть исходящих платежей идёт контрагентам с ВЭД (≈58% объёма)"
+     },
+     {
+      "title": "Курс доллара. Прогноз на 26–30 октября // Мнения и прогнозы аналитиков о том, как будет вести себя рубль",
+      "score": 0.3553,
+      "why_short": "Внешнеэкономическая деятельность и курс — заметная часть исходящих платежей идёт контрагентам с ВЭД (≈58% объёма)"
+     }
+    ]
+   }
+  },
+  "U_9000009": {
+   "company_id": "U_9000009",
+   "source": "data/synthetic (синтетика)",
+   "profile_status": "ambiguous",
+   "missing_fields": [
+    "MAINOKVED_CODE",
+    "MAINOKVED_NAME",
+    "ORG_TYPE",
+    "OKFS_NAME",
+    "COMPANY_AGE_YEARS_GRADATION",
+    "ECO_MARK_LABEL",
+    "REVENUE_COMPANY",
+    "AMOUNT_WORKERS_FNS_GRADATION",
+    "AMOUNT_WORKERS_SPARK_GRADATION",
+    "CL_TYPE",
+    "NEGATIVEMARK",
+    "FTS_FLAG",
+    "FTS_COUNTRY_NAME",
+    "GROUP_ID",
+    "CITY",
+    "REGION",
+    "CL_PRODUCT_RKO_MARK",
+    "CL_PRODUCT_GAR_MARK",
+    "CL_PRODUCT_LOA_MARK",
+    "CL_PRODUCT_LEA_MARK",
+    "CL_PRODUCT_DEP_MARK",
+    "CL_PRODUCT_ZPP_MARK",
+    "FACTORING_MARK"
+   ],
+   "channels": {},
+   "robustness_result": {
+    "profile_status": "ambiguous",
+    "missing_fields": 23,
+    "channels": {},
+    "scored_news": 200,
+    "shown_level_not_none": 0,
+    "confidence_top": "low",
+    "warnings_top": [
+     "ID компании встречается в справочнике несколько раз — профиль не используется для персонализации",
+     "Неполный профиль: нет код основного оквэд, регион регистрации, кредитные продукты, работники (фнс), годовая выручка"
+    ],
+    "top3": [
+     {
+      "title": "Аналитик прогнозирует, что снижения ключевой ставки не будет до весны 2027 года",
+      "score": 0.1201,
+      "why_short": "Ключевая ставка и ДКП: общеэкономический фактор для бизнеса"
+     },
+     {
+      "title": "ЦБ сохранил ключевую ставку, цена земли в Подмосковье достигла рекордного уровня. Главное за день",
+      "score": 0.1197,
+      "why_short": "Ключевая ставка и ДКП: общеэкономический фактор для бизнеса"
+     },
+     {
+      "title": "ЦБ не спешит // Пауза в снижении ключевой ставки может затянуться",
+      "score": 0.1186,
+      "why_short": "Ключевая ставка и ДКП: общеэкономический фактор для бизнеса"
+     }
+    ]
+   }
+  }
+ },
+ "news_contrast_pairs": [
+  {
+   "news": "Банк России принял решение сохранить ключевую ставку на уровне 14,00% годовых (23.10.2026)",
+   "pairs": [
+    {
+     "company_id": "U_22299",
+     "label": 2,
+     "rationale": "Ставка 14% сохранена и снижение отложено: у компании кредит и лизинг (LOA=1, LEA=1) — стоимость долга; есть депозиты (DEP=1) — доходность ликвидности",
+     "score": 0.7271,
+     "level": "high",
+     "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты, лизинг"
+    },
+    {
+     "company_id": "U_1595",
+     "label": 2,
+     "rationale": "Ставка 14% сохранена и снижение отложено: у компании кредит и лизинг (LOA=1, LEA=1) — стоимость долга; плюс потребительский спрос (розница)",
+     "score": 0.7271,
+     "level": "high",
+     "why_short": "Стоимость заёмного финансирования — в банке есть кредитные продукты, лизинг"
+    },
+    {
+     "company_id": "U_44792",
+     "label": 1,
+     "rationale": "Ставка 14%: у компании нет кредитных и депозитных продуктов (только РКО) — только косвенно через спрос клиентов на IT-инвестиции",
+     "score": 0.1356,
+     "level": "none",
+     "why_short": "Ключевая ставка и ДКП: общеэкономический фактор для бизнеса"
+    },
+    {
+     "company_id": "U_8167",
+     "label": 1,
+     "rationale": "Ставка 14%: у компании нет кредитных продуктов (LOA=0, LEA=0) — влияние только косвенное, через потребительский спрос",
+     "score": 0.3873,
+     "level": "medium",
+     "why_short": "Расходы на персонал — численность (ФНС): Более 251"
+    }
+   ]
+  },
+  {
+   "news": "Нефть марки Brent превысила $117 за баррель впервые за полгода",
+   "pairs": [
+    {
+     "company_id": "U_22299",
+     "label": 2,
+     "rationale": "Brent +18% за октябрь: цена сырья напрямую переходит в оптовые цены моторного топлива и оборотный капитал (ОКВЭД 46.71.2)",
+     "score": 0.5964,
+     "level": "high",
+     "why_short": "Цены на топливо и энергию — цены на топливо и энергию напрямую определяют выручку и маржу"
+    },
+    {
+     "company_id": "U_102920",
+     "label": 1,
+     "rationale": "Рост нефти -> топливо и логистика; для пищевого опта транспорт — заметная, но не главная статья затрат",
+     "score": 0.294,
+     "level": "low",
+     "why_short": "Цены на топливо и энергию — топливо — существенная статья затрат для отрасли"
+    },
+    {
+     "company_id": "U_44792",
+     "label": 0,
+     "rationale": "Цена нефти: у компании нет топливного/сырьевого канала",
+     "score": 0.0851,
+     "level": "none",
+     "why_short": "Слабая связь с профилем компании"
+    }
+   ]
+  },
+  {
+   "news": "ЦБ установил курс доллара ниже 81 руб. впервые с августа",
+   "pairs": [
+    {
+     "company_id": "U_102920",
+     "label": 2,
+     "rationale": "Компания в базе ФТС (Перу, Чили, Дания); заметное укрепление рубля (доллар < 81) меняет стоимость ВЭД-контрактов. Направление операций в данных не указано, но значимость курса — независимо от знака",
+     "score": 0.6582,
+     "level": "high",
+     "why_short": "Внешнеэкономическая деятельность и курс — компания есть в базе ФТС (ПЕРУ, ЧИЛИ, ДАНИЯ); направление операций (импорт/экспорт) в данных не указано"
+    },
+    {
+     "company_id": "U_22299",
+     "label": 1,
+     "rationale": "Курс рубля влияет на экспортный паритет цен нефтепродуктов, но у компании нет ВЭД (FTS_FLAG=0) — только косвенно",
+     "score": 0.0983,
+     "level": "none",
+     "why_short": "Курс рубля и валюты: общеэкономический фактор для бизнеса"
+    },
+    {
+     "company_id": "U_44792",
+     "label": 0,
+     "rationale": "Курс рубля: у компании нет ВЭД (FTS_FLAG=0); прямой связи в данных нет",
+     "score": 0.0983,
+     "level": "none",
+     "why_short": "Курс рубля и валюты: общеэкономический фактор для бизнеса"
+    }
+   ]
+  }
+ ]
+}

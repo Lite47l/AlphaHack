@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS knowledge_documents (
     institution TEXT NOT NULL DEFAULT '',
     document_url TEXT NOT NULL DEFAULT '',
     published_at TIMESTAMPTZ,
+    file_hash TEXT UNIQUE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 

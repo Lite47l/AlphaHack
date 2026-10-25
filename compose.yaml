@@ -6,15 +6,71 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - "127.0.0.1:${POSTGRES_PORT:-55432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./migrations:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d hackathon"]
       interval: 5s
       timeout: 3s
       retries: 10
+
+  rbc-parser:
+    build:
+      context: ./parsing_rbk_lentaru
+      dockerfile: Dockerfile
+    environment:
+      PYTHONUNBUFFERED: "1"
+      TRANSFORMERS_CACHE: /home/appuser/.cache/transformers
+      HF_HOME: /home/appuser/.cache/huggingface
+    volumes:
+      - rbc_model_cache:/home/appuser/.cache
+    expose:
+      - "8000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 180s
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+
+  ai:
+    build:
+      context: ./ai
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/hackathon?sslmode=disable
+      DATA_DIR: /data
+      STATE_DIR: /state
+      RAW_DATA_DIR: /data/raw
+      SEGMENT_MIN_REVENUE: ${SEGMENT_MIN_REVENUE:-5000000000}
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_MODEL_PLANNER: ${LLM_MODEL_PLANNER:-z-ai/glm-5.3-flash}
+      LLM_MODEL_EXTRACTOR: ${LLM_MODEL_EXTRACTOR:-google/gemma-4-26b-a4b-it}
+      LLM_MODEL_WRITER: ${LLM_MODEL_WRITER:-qwen/qwen3.6-35b-a3b}
+      LLM_MODEL_CHAT: ${LLM_MODEL_CHAT:-qwen/qwen3.6-35b-a3b}
+      LLM_DAILY_TOKEN_BUDGET: ${LLM_DAILY_TOKEN_BUDGET:-1500000}
+    volumes:
+      - ./data:/data:ro
+      - ai_state:/state
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=4).status == 200 else 1)"]
+      interval: 10s
+      timeout: 5s
+      start_period: 60s
+      retries: 5
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
 
   backend:
     build:
@@ -22,13 +78,50 @@ services:
       dockerfile: Dockerfile
     environment:
       PORT: "8080"
-      APP_ENV: dev
+      APP_ENV: ${APP_ENV:-dev}
+      AI_URL: http://ai:8000
+      NEWS_FEEDS: ${NEWS_FEEDS:-}
+      NEWS_IMPORT_INTERVAL: ${NEWS_IMPORT_INTERVAL:-30m}
+      NEWS_IMPORT_ON_START: ${NEWS_IMPORT_ON_START:-true}
+      NEWS_SNAPSHOT_PATH: /data/news_snapshot.json
+      RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-20}
+      FETCH_ALLOW_CIDRS: ${FETCH_ALLOW_CIDRS:-}
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/hackathon?sslmode=disable
+      RBC_PARSER_URL: http://rbc-parser:8000
+      RBC_QUERY: ${RBC_QUERY:-экономика}
+      KNOWLEDGE_PDF_DIR: /app/data/knowledge
     ports:
-      - "8080:8080"
+      - "127.0.0.1:${BACKEND_PORT:-8080}:8080"
+    volumes:
+      - ./data/knowledge:/app/data/knowledge:ro
+      - ./data:/data:ro
     depends_on:
       postgres:
         condition: service_healthy
+      rbc-parser:
+        condition: service_healthy
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8080/ready >/dev/null || exit 1"]
+      interval: 5s
+      timeout: 3s
+      start_period: 30s
+      retries: 10
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./frontend
+    ports:
+      - "127.0.0.1:${WEB_PORT:-3000}:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+      ai:
+        condition: service_healthy
+    restart: unless-stopped
 
 volumes:
   postgres_data:
+  rbc_model_cache:
+  ai_state:

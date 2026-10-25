@@ -1,0 +1,3402 @@
+[
+ {
+  "summary": {
+   "company_id": "U_102920",
+   "display_name": "Компания U_102920",
+   "subtitle": "Торговля оптовая прочими пищевыми продуктами, включая рыбу, ракообразных и моллюсков",
+   "okved_code": "46.38",
+   "region": "Санкт-Петербург",
+   "revenue": 54767618087,
+   "cl_type": "CLIENT",
+   "sectors": [
+    {
+     "key": "wholesale",
+     "label": "Оптовая торговля"
+    },
+    {
+     "key": "agri_food",
+     "label": "Агро и продукты питания"
+    },
+    {
+     "key": "consumer_goods",
+     "label": "Потребительские товары"
+    }
+   ],
+   "profile_status": "matched",
+   "completeness": "complete",
+   "key_missing": [],
+   "top_channels": [
+    "Стоимость заёмного финансирования",
+    "Внешнеэкономическая деятельность и курс"
+   ]
+  },
+  "observed": {
+   "MAINOKVED_CODE": {
+    "value": "46.38",
+    "title": "Код основного ОКВЭД",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_CODE"
+   },
+   "MAINOKVED_NAME": {
+    "value": "Торговля оптовая прочими пищевыми продуктами, включая рыбу, ракообразных и моллюсков",
+    "title": "Основной вид деятельности",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_NAME"
+   },
+   "ORG_TYPE": {
+    "value": "КОММ_ОРГ",
+    "title": "Тип организации",
+    "source": "df_Uid_data_hack.csv:ORG_TYPE"
+   },
+   "OKFS_NAME": {
+    "value": "ЧАСТНАЯ СОБСТВЕННОСТЬ",
+    "title": "Форма собственности",
+    "source": "df_Uid_data_hack.csv:OKFS_NAME"
+   },
+   "COMPANY_AGE_YEARS_GRADATION": {
+    "value": "16-25",
+    "title": "Возраст компании, лет",
+    "source": "df_Uid_data_hack.csv:COMPANY_AGE_YEARS_GRADATION"
+   },
+   "ECO_MARK_LABEL": {
+    "value": "Бизнес в новой реальности",
+    "title": "Стадия развития бизнеса",
+    "source": "df_Uid_data_hack.csv:ECO_MARK_LABEL"
+   },
+   "REVENUE_COMPANY": {
+    "value": 54767618087,
+    "title": "Годовая выручка",
+    "source": "df_Uid_data_hack.csv:REVENUE_COMPANY"
+   },
+   "AMOUNT_WORKERS_FNS_GRADATION": {
+    "value": "101-250",
+    "title": "Работники (ФНС)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_FNS_GRADATION"
+   },
+   "AMOUNT_WORKERS_SPARK_GRADATION": {
+    "value": null,
+    "title": "Работники (СПАРК)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_SPARK_GRADATION"
+   },
+   "CL_TYPE": {
+    "value": "CLIENT",
+    "title": "Тип клиента",
+    "source": "df_Uid_data_hack.csv:CL_TYPE"
+   },
+   "NEGATIVEMARK": {
+    "value": 0,
+    "title": "Признак ключевого собственника",
+    "source": "df_Uid_data_hack.csv:NEGATIVEMARK"
+   },
+   "FTS_FLAG": {
+    "value": 1,
+    "title": "Есть данные в базе ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_FLAG"
+   },
+   "FTS_COUNTRY_NAME": {
+    "value": "ПЕРУ, ЧИЛИ, ДАНИЯ",
+    "title": "Страны в данных ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_COUNTRY_NAME"
+   },
+   "GROUP_ID": {
+    "value": "group_133117_sb",
+    "title": "Группа компаний",
+    "source": "df_Uid_data_hack.csv:GROUP_ID"
+   },
+   "CITY": {
+    "value": "г. Санкт-Петербург",
+    "title": "Город регистрации",
+    "source": "df_Uid_data_hack.csv:CITY"
+   },
+   "REGION": {
+    "value": "Санкт-Петербург",
+    "title": "Регион регистрации",
+    "source": "df_Uid_data_hack.csv:REGION"
+   },
+   "CL_PRODUCT_RKO_MARK": {
+    "value": 1,
+    "title": "Расчётно-кассовое обслуживание",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_RKO_MARK"
+   },
+   "CL_PRODUCT_GAR_MARK": {
+    "value": 0,
+    "title": "Банковские гарантии",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_GAR_MARK"
+   },
+   "CL_PRODUCT_LOA_MARK": {
+    "value": 1,
+    "title": "Кредитные продукты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LOA_MARK"
+   },
+   "CL_PRODUCT_LEA_MARK": {
+    "value": 1,
+    "title": "Лизинг",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LEA_MARK"
+   },
+   "CL_PRODUCT_DEP_MARK": {
+    "value": 0,
+    "title": "Депозиты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_DEP_MARK"
+   },
+   "CL_PRODUCT_ZPP_MARK": {
+    "value": 1,
+    "title": "Зарплатный проект",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_ZPP_MARK"
+   },
+   "FACTORING_MARK": {
+    "value": 0,
+    "title": "Факторинг",
+    "source": "df_Uid_data_hack.csv:FACTORING_MARK"
+   }
+  },
+  "products": {
+   "CL_PRODUCT_RKO_MARK": 1,
+   "CL_PRODUCT_GAR_MARK": 0,
+   "CL_PRODUCT_LOA_MARK": 1,
+   "CL_PRODUCT_LEA_MARK": 1,
+   "CL_PRODUCT_DEP_MARK": 0,
+   "CL_PRODUCT_ZPP_MARK": 1,
+   "FACTORING_MARK": 0
+  },
+  "missing_fields": [
+   "AMOUNT_WORKERS_SPARK_GRADATION"
+  ],
+  "channels": [
+   {
+    "key": "cost_of_debt",
+    "label": "Стоимость заёмного финансирования",
+    "strength": 0.95,
+    "basis": [
+     "P:CL_PRODUCT_LOA_MARK",
+     "P:CL_PRODUCT_LEA_MARK"
+    ],
+    "notes": [
+     "В банке есть кредитные продукты, лизинг"
+    ]
+   },
+   {
+    "key": "foreign_trade",
+    "label": "Внешнеэкономическая деятельность и курс",
+    "strength": 0.9,
+    "basis": [
+     "P:FTS_FLAG",
+     "P:FTS_COUNTRY_NAME",
+     "G:payments_out.fts_countries"
+    ],
+    "notes": [
+     "Компания есть в базе ФТС (ПЕРУ, ЧИЛИ, ДАНИЯ); направление операций (импорт/экспорт) в данных не указано",
+     "Заметная часть исходящих платежей идёт контрагентам с ВЭД (≈20% объёма)"
+    ]
+   },
+   {
+    "key": "agri_prices",
+    "label": "Цены на агропродукцию",
+    "strength": 0.8,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Цены на агросырьё влияют на закупки или выручку"
+    ]
+   },
+   {
+    "key": "consumer_demand",
+    "label": "Потребительский спрос",
+    "strength": 0.6,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Продукция компании ориентирована на потребительский рынок"
+    ]
+   },
+   {
+    "key": "payroll",
+    "label": "Расходы на персонал",
+    "strength": 0.5,
+    "basis": [
+     "P:AMOUNT_WORKERS_FNS_GRADATION",
+     "P:CL_PRODUCT_ZPP_MARK"
+    ],
+    "notes": [
+     "Численность (ФНС): 101-250",
+     "Есть зарплатный проект"
+    ]
+   },
+   {
+    "key": "fuel_costs",
+    "label": "Цены на топливо и энергию",
+    "strength": 0.5,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Топливо — существенная статья затрат для отрасли"
+    ]
+   }
+  ],
+  "derived": {
+   "revenue_rank": {
+    "okved_class": "46.38",
+    "rank": 1,
+    "of": 513,
+    "note": "Место по выручке среди компаний выборки с тем же классом ОКВЭД. Это не доля рынка."
+   },
+   "group": {
+    "group_id": "group_133117_sb",
+    "size": 3,
+    "revenue_sum": 84277808102,
+    "member_sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "companies": 2
+     },
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "companies": 1
+     }
+    ],
+    "note": "Сумма выручки участников группы из датасета, не консолидированная отчётность."
+   },
+   "payments_out": {
+    "amount": 3405827000.0,
+    "count": 1281,
+    "counterparties": 52,
+    "top5_share": 0.7718,
+    "max_share": 0.3315,
+    "unknown_profile_share": 0.9183,
+    "sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.0655
+     },
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "share": 0.0114
+     },
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "share": 0.0042
+     },
+     {
+      "key": "agri_food",
+      "label": "Агро и продукты питания",
+      "share": 0.0002
+     },
+     {
+      "key": "it_telecom",
+      "label": "IT и связь",
+      "share": 0.0002
+     },
+     {
+      "key": "real_estate",
+      "label": "Недвижимость",
+      "share": 0.0001
+     },
+     {
+      "key": "hospitality",
+      "label": "Общепит, гостиницы и досуг",
+      "share": 0.0
+     }
+    ],
+    "regions": [
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.0703
+     },
+     {
+      "key": "Санкт-Петербург",
+      "label": "Санкт-Петербург",
+      "share": 0.0113
+     },
+     {
+      "key": "Краснодарский край",
+      "label": "Краснодарский край",
+      "share": 0.0001
+     },
+     {
+      "key": "Воронежская область",
+      "label": "Воронежская область",
+      "share": 0.0
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "КИТАЙ",
+      "label": "КИТАЙ",
+      "share": 0.0657
+     },
+     {
+      "key": "ЧИЛИ",
+      "label": "ЧИЛИ",
+      "share": 0.0655
+     },
+     {
+      "key": "ТУНИС",
+      "label": "ТУНИС",
+      "share": 0.0655
+     },
+     {
+      "key": "ТУРЦИЯ",
+      "label": "ТУРЦИЯ",
+      "share": 0.0013
+     },
+     {
+      "key": "ВЬЕТНАМ",
+      "label": "ВЬЕТНАМ",
+      "share": 0.0002
+     },
+     {
+      "key": "ЭКВАДОР",
+      "label": "ЭКВАДОР",
+      "share": 0.0002
+     },
+     {
+      "key": "ГЕРМАНИЯ",
+      "label": "ГЕРМАНИЯ",
+      "share": 0.0
+     },
+     {
+      "key": "ИОРДАНИЯ",
+      "label": "ИОРДАНИЯ",
+      "share": 0.0
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_32499",
+      "amt": 1129128000.0,
+      "cnt": 266,
+      "share": 0.3315,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_44272",
+      "amt": 754455000.0,
+      "cnt": 5,
+      "share": 0.2215,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_4628",
+      "amt": 370628000.0,
+      "cnt": 9,
+      "share": 0.1088,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_57628",
+      "amt": 223102000.0,
+      "cnt": 12,
+      "share": 0.0655,
+      "okved_code": "46.38",
+      "okved_name": "Торговля оптовая прочими пищевыми продуктами, включая рыбу, ракообразных и моллюсков",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_173487",
+      "amt": 151390000.0,
+      "cnt": 24,
+      "share": 0.0445,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_306963",
+      "amt": 137991000.0,
+      "cnt": 13,
+      "share": 0.0405,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_11835",
+      "amt": 134059000.0,
+      "cnt": 641,
+      "share": 0.0394,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_196028",
+      "amt": 128175000.0,
+      "cnt": 17,
+      "share": 0.0376,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "payments_in": {
+    "amount": 25323243000.0,
+    "count": 9668,
+    "counterparties": 178,
+    "top5_share": 0.3103,
+    "max_share": 0.0912,
+    "unknown_profile_share": 0.6707,
+    "sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.3173
+     },
+     {
+      "key": "agri_food",
+      "label": "Агро и продукты питания",
+      "share": 0.008
+     },
+     {
+      "key": "hospitality",
+      "label": "Общепит, гостиницы и досуг",
+      "share": 0.0032
+     },
+     {
+      "key": "it_telecom",
+      "label": "IT и связь",
+      "share": 0.0008
+     },
+     {
+      "key": "metals_mining",
+      "label": "Металлы и добыча",
+      "share": 0.0
+     },
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "share": 0.0
+     }
+    ],
+    "regions": [
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.1522
+     },
+     {
+      "key": "Санкт-Петербург",
+      "label": "Санкт-Петербург",
+      "share": 0.0685
+     },
+     {
+      "key": "Приморский край",
+      "label": "Приморский край",
+      "share": 0.0259
+     },
+     {
+      "key": "Рязанская область",
+      "label": "Рязанская область",
+      "share": 0.0142
+     },
+     {
+      "key": "Новосибирская область",
+      "label": "Новосибирская область",
+      "share": 0.0136
+     },
+     {
+      "key": "Челябинская область",
+      "label": "Челябинская область",
+      "share": 0.013
+     },
+     {
+      "key": "Нижегородская область",
+      "label": "Нижегородская область",
+      "share": 0.0096
+     },
+     {
+      "key": "Краснодарский край",
+      "label": "Краснодарский край",
+      "share": 0.0075
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "КИТАЙ",
+      "label": "КИТАЙ",
+      "share": 0.1371
+     },
+     {
+      "key": "ЕГИПЕТ",
+      "label": "ЕГИПЕТ",
+      "share": 0.071
+     },
+     {
+      "key": "ЧИЛИ",
+      "label": "ЧИЛИ",
+      "share": 0.0672
+     },
+     {
+      "key": "ГРУЗИЯ",
+      "label": "ГРУЗИЯ",
+      "share": 0.0594
+     },
+     {
+      "key": "ТУНИС",
+      "label": "ТУНИС",
+      "share": 0.035
+     },
+     {
+      "key": "ИНДИЯ",
+      "label": "ИНДИЯ",
+      "share": 0.0336
+     },
+     {
+      "key": "ПЕРУ",
+      "label": "ПЕРУ",
+      "share": 0.0165
+     },
+     {
+      "key": "АРГЕНТИНА",
+      "label": "АРГЕНТИНА",
+      "share": 0.0095
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_3193",
+      "amt": 2308850000.0,
+      "cnt": 159,
+      "share": 0.0912,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_233837",
+      "amt": 1767800000.0,
+      "cnt": 443,
+      "share": 0.0698,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_212846",
+      "amt": 1505139000.0,
+      "cnt": 500,
+      "share": 0.0594,
+      "okved_code": "46.90",
+      "okved_name": "Торговля оптовая неспециализированная",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_189944",
+      "amt": 1389703000.0,
+      "cnt": 693,
+      "share": 0.0549,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_57628",
+      "amt": 886540000.0,
+      "cnt": 19,
+      "share": 0.035,
+      "okved_code": "46.38",
+      "okved_name": "Торговля оптовая прочими пищевыми продуктами, включая рыбу, ракообразных и моллюсков",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_65051",
+      "amt": 862805000.0,
+      "cnt": 74,
+      "share": 0.0341,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_336168",
+      "amt": 835916000.0,
+      "cnt": 98,
+      "share": 0.033,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_82250",
+      "amt": 673014000.0,
+      "cnt": 143,
+      "share": 0.0266,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "self_payments_amount": 25576246000.0,
+   "persons": {
+    "linked_persons": 0,
+    "regions": [],
+    "companies_via_shared_persons": [],
+    "note": "Связь физлица с компанией не означает владение или руководство."
+   }
+  },
+  "data_notes": [
+   "Период и единицы платежей в данных не указаны: суммы — объём в единицах датасета.",
+   "Регион — регион регистрации, а не все регионы присутствия."
+  ]
+ },
+ {
+  "summary": {
+   "company_id": "U_45612",
+   "display_name": "Компания U_45612",
+   "subtitle": "Торговля оптовая моторным топливом, включая авиационный бензин",
+   "okved_code": "46.71.2",
+   "region": "Москва",
+   "revenue": 47466583782,
+   "cl_type": "CLIENT",
+   "sectors": [
+    {
+     "key": "wholesale",
+     "label": "Оптовая торговля"
+    },
+    {
+     "key": "fuel_energy",
+     "label": "Топливо и энергетика"
+    }
+   ],
+   "profile_status": "matched",
+   "completeness": "complete",
+   "key_missing": [],
+   "top_channels": [
+    "Цены на топливо и энергию",
+    "Расходы на персонал"
+   ]
+  },
+  "observed": {
+   "MAINOKVED_CODE": {
+    "value": "46.71.2",
+    "title": "Код основного ОКВЭД",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_CODE"
+   },
+   "MAINOKVED_NAME": {
+    "value": "Торговля оптовая моторным топливом, включая авиационный бензин",
+    "title": "Основной вид деятельности",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_NAME"
+   },
+   "ORG_TYPE": {
+    "value": "КОММ_ОРГ",
+    "title": "Тип организации",
+    "source": "df_Uid_data_hack.csv:ORG_TYPE"
+   },
+   "OKFS_NAME": {
+    "value": "ЧАСТНАЯ СОБСТВЕННОСТЬ",
+    "title": "Форма собственности",
+    "source": "df_Uid_data_hack.csv:OKFS_NAME"
+   },
+   "COMPANY_AGE_YEARS_GRADATION": {
+    "value": "8-15",
+    "title": "Возраст компании, лет",
+    "source": "df_Uid_data_hack.csv:COMPANY_AGE_YEARS_GRADATION"
+   },
+   "ECO_MARK_LABEL": {
+    "value": "Оптимизация",
+    "title": "Стадия развития бизнеса",
+    "source": "df_Uid_data_hack.csv:ECO_MARK_LABEL"
+   },
+   "REVENUE_COMPANY": {
+    "value": 47466583782,
+    "title": "Годовая выручка",
+    "source": "df_Uid_data_hack.csv:REVENUE_COMPANY"
+   },
+   "AMOUNT_WORKERS_FNS_GRADATION": {
+    "value": "16-100",
+    "title": "Работники (ФНС)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_FNS_GRADATION"
+   },
+   "AMOUNT_WORKERS_SPARK_GRADATION": {
+    "value": null,
+    "title": "Работники (СПАРК)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_SPARK_GRADATION"
+   },
+   "CL_TYPE": {
+    "value": "CLIENT",
+    "title": "Тип клиента",
+    "source": "df_Uid_data_hack.csv:CL_TYPE"
+   },
+   "NEGATIVEMARK": {
+    "value": 1,
+    "title": "Признак ключевого собственника",
+    "source": "df_Uid_data_hack.csv:NEGATIVEMARK"
+   },
+   "FTS_FLAG": {
+    "value": 0,
+    "title": "Есть данные в базе ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_FLAG"
+   },
+   "FTS_COUNTRY_NAME": {
+    "value": null,
+    "title": "Страны в данных ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_COUNTRY_NAME"
+   },
+   "GROUP_ID": {
+    "value": "group_133355_sb",
+    "title": "Группа компаний",
+    "source": "df_Uid_data_hack.csv:GROUP_ID"
+   },
+   "CITY": {
+    "value": "г. Москва",
+    "title": "Город регистрации",
+    "source": "df_Uid_data_hack.csv:CITY"
+   },
+   "REGION": {
+    "value": "Москва",
+    "title": "Регион регистрации",
+    "source": "df_Uid_data_hack.csv:REGION"
+   },
+   "CL_PRODUCT_RKO_MARK": {
+    "value": 1,
+    "title": "Расчётно-кассовое обслуживание",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_RKO_MARK"
+   },
+   "CL_PRODUCT_GAR_MARK": {
+    "value": 0,
+    "title": "Банковские гарантии",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_GAR_MARK"
+   },
+   "CL_PRODUCT_LOA_MARK": {
+    "value": 0,
+    "title": "Кредитные продукты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LOA_MARK"
+   },
+   "CL_PRODUCT_LEA_MARK": {
+    "value": 0,
+    "title": "Лизинг",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LEA_MARK"
+   },
+   "CL_PRODUCT_DEP_MARK": {
+    "value": 0,
+    "title": "Депозиты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_DEP_MARK"
+   },
+   "CL_PRODUCT_ZPP_MARK": {
+    "value": 1,
+    "title": "Зарплатный проект",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_ZPP_MARK"
+   },
+   "FACTORING_MARK": {
+    "value": 0,
+    "title": "Факторинг",
+    "source": "df_Uid_data_hack.csv:FACTORING_MARK"
+   }
+  },
+  "products": {
+   "CL_PRODUCT_RKO_MARK": 1,
+   "CL_PRODUCT_GAR_MARK": 0,
+   "CL_PRODUCT_LOA_MARK": 0,
+   "CL_PRODUCT_LEA_MARK": 0,
+   "CL_PRODUCT_DEP_MARK": 0,
+   "CL_PRODUCT_ZPP_MARK": 1,
+   "FACTORING_MARK": 0
+  },
+  "missing_fields": [
+   "AMOUNT_WORKERS_SPARK_GRADATION",
+   "FTS_COUNTRY_NAME"
+  ],
+  "channels": [
+   {
+    "key": "fuel_costs",
+    "label": "Цены на топливо и энергию",
+    "strength": 0.9,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Цены на топливо и энергию напрямую определяют выручку и маржу"
+    ]
+   },
+   {
+    "key": "payroll",
+    "label": "Расходы на персонал",
+    "strength": 0.5,
+    "basis": [
+     "P:AMOUNT_WORKERS_FNS_GRADATION",
+     "P:CL_PRODUCT_ZPP_MARK"
+    ],
+    "notes": [
+     "Численность (ФНС): 16-100",
+     "Есть зарплатный проект"
+    ]
+   }
+  ],
+  "derived": {
+   "revenue_rank": {
+    "okved_class": "46.71",
+    "rank": 3,
+    "of": 910,
+    "note": "Место по выручке среди компаний выборки с тем же классом ОКВЭД. Это не доля рынка."
+   },
+   "group": {
+    "group_id": "group_133355_sb",
+    "size": 1,
+    "revenue_sum": 47466583782,
+    "member_sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "companies": 1
+     }
+    ],
+    "note": "Сумма выручки участников группы из датасета, не консолидированная отчётность."
+   },
+   "payments_out": {
+    "amount": 13956059000.0,
+    "count": 1142,
+    "counterparties": 32,
+    "top5_share": 0.9834,
+    "max_share": 0.5417,
+    "unknown_profile_share": 0.6568,
+    "sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.342
+     },
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "share": 0.0009
+     },
+     {
+      "key": "hospitality",
+      "label": "Общепит, гостиницы и досуг",
+      "share": 0.0003
+     }
+    ],
+    "regions": [
+     {
+      "key": "Санкт-Петербург",
+      "label": "Санкт-Петербург",
+      "share": 0.3296
+     },
+     {
+      "key": "Ростовская область",
+      "label": "Ростовская область",
+      "share": 0.0083
+     },
+     {
+      "key": "Омская область",
+      "label": "Омская область",
+      "share": 0.0031
+     },
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.0015
+     },
+     {
+      "key": "Оренбургская область",
+      "label": "Оренбургская область",
+      "share": 0.0006
+     },
+     {
+      "key": "Башкортостан (Республика)",
+      "label": "Башкортостан (Республика)",
+      "share": 0.0001
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "ОАЭ",
+      "label": "ОАЭ",
+      "share": 0.0001
+     },
+     {
+      "key": "КИТАЙ",
+      "label": "КИТАЙ",
+      "share": 0.0001
+     },
+     {
+      "key": "ЧЕХИЯ",
+      "label": "ЧЕХИЯ",
+      "share": 0.0001
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_150367",
+      "amt": 7559441000.0,
+      "cnt": 316,
+      "share": 0.5417,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_100861",
+      "amt": 4600525000.0,
+      "cnt": 221,
+      "share": 0.3296,
+      "okved_code": "46.71",
+      "okved_name": "Торговля оптовая твердым, жидким и газообразным топливом и подобными продуктами",
+      "region": "Санкт-Петербург",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_38390",
+      "amt": 1390163000.0,
+      "cnt": 84,
+      "share": 0.0996,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_83126",
+      "amt": 115356000.0,
+      "cnt": 6,
+      "share": 0.0083,
+      "okved_code": "46.71.2",
+      "okved_name": "Торговля оптовая моторным топливом, включая авиационный бензин",
+      "region": "Ростовская область",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_85841",
+      "amt": 58658000.0,
+      "cnt": 115,
+      "share": 0.0042,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_215120",
+      "amt": 54688000.0,
+      "cnt": 4,
+      "share": 0.0039,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_55096",
+      "amt": 44553000.0,
+      "cnt": 12,
+      "share": 0.0032,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_20232",
+      "amt": 42641000.0,
+      "cnt": 8,
+      "share": 0.0031,
+      "okved_code": "46.71.2",
+      "okved_name": "Торговля оптовая моторным топливом, включая авиационный бензин",
+      "region": "Омская область",
+      "in_profile": true
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "payments_in": {
+    "amount": 7827622000.0,
+    "count": 985,
+    "counterparties": 42,
+    "top5_share": 0.7718,
+    "max_share": 0.5735,
+    "unknown_profile_share": 0.3875,
+    "sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.606
+     },
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "share": 0.006
+     },
+     {
+      "key": "construction",
+      "label": "Строительство и стройматериалы",
+      "share": 0.0005
+     }
+    ],
+    "regions": [
+     {
+      "key": "Санкт-Петербург",
+      "label": "Санкт-Петербург",
+      "share": 0.5735
+     },
+     {
+      "key": "Ростовская область",
+      "label": "Ростовская область",
+      "share": 0.0129
+     },
+     {
+      "key": "Оренбургская область",
+      "label": "Оренбургская область",
+      "share": 0.0098
+     },
+     {
+      "key": "Омская область",
+      "label": "Омская область",
+      "share": 0.0063
+     },
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.006
+     },
+     {
+      "key": "Краснодарский край",
+      "label": "Краснодарский край",
+      "share": 0.0036
+     },
+     {
+      "key": "Кемеровская область",
+      "label": "Кемеровская область",
+      "share": 0.0005
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "КАЗАХСТАН",
+      "label": "КАЗАХСТАН",
+      "share": 0.0
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_100861",
+      "amt": 4488765000.0,
+      "cnt": 25,
+      "share": 0.5735,
+      "okved_code": "46.71",
+      "okved_name": "Торговля оптовая твердым, жидким и газообразным топливом и подобными продуктами",
+      "region": "Санкт-Петербург",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_150367",
+      "amt": 426654000.0,
+      "cnt": 1,
+      "share": 0.0545,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_189",
+      "amt": 425590000.0,
+      "cnt": 69,
+      "share": 0.0544,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_156218",
+      "amt": 396945000.0,
+      "cnt": 103,
+      "share": 0.0507,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_103807",
+      "amt": 303451000.0,
+      "cnt": 93,
+      "share": 0.0388,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_213596",
+      "amt": 222544000.0,
+      "cnt": 105,
+      "share": 0.0284,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_65901",
+      "amt": 219036000.0,
+      "cnt": 5,
+      "share": 0.028,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_170216",
+      "amt": 204752000.0,
+      "cnt": 241,
+      "share": 0.0262,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "self_payments_amount": 3857000.0,
+   "persons": {
+    "linked_persons": 0,
+    "regions": [],
+    "companies_via_shared_persons": [],
+    "note": "Связь физлица с компанией не означает владение или руководство."
+   }
+  },
+  "data_notes": [
+   "Период и единицы платежей в данных не указаны: суммы — объём в единицах датасета.",
+   "Регион — регион регистрации, а не все регионы присутствия."
+  ]
+ },
+ {
+  "summary": {
+   "company_id": "U_191099",
+   "display_name": "Компания U_191099",
+   "subtitle": "Строительство автомобильных дорог и автомагистралей",
+   "okved_code": "42.11",
+   "region": "Москва",
+   "revenue": 28771905415,
+   "cl_type": "CLIENT",
+   "sectors": [
+    {
+     "key": "construction",
+     "label": "Строительство и стройматериалы"
+    },
+    {
+     "key": "utilities",
+     "label": "ЖКХ и инфраструктура"
+    }
+   ],
+   "profile_status": "matched",
+   "completeness": "complete",
+   "key_missing": [],
+   "top_channels": [
+    "Строительный цикл и недвижимость",
+    "Стоимость заёмного финансирования"
+   ]
+  },
+  "observed": {
+   "MAINOKVED_CODE": {
+    "value": "42.11",
+    "title": "Код основного ОКВЭД",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_CODE"
+   },
+   "MAINOKVED_NAME": {
+    "value": "Строительство автомобильных дорог и автомагистралей",
+    "title": "Основной вид деятельности",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_NAME"
+   },
+   "ORG_TYPE": {
+    "value": "КОММ_ОРГ",
+    "title": "Тип организации",
+    "source": "df_Uid_data_hack.csv:ORG_TYPE"
+   },
+   "OKFS_NAME": {
+    "value": "ЧАСТНАЯ СОБСТВЕННОСТЬ",
+    "title": "Форма собственности",
+    "source": "df_Uid_data_hack.csv:OKFS_NAME"
+   },
+   "COMPANY_AGE_YEARS_GRADATION": {
+    "value": "8-15",
+    "title": "Возраст компании, лет",
+    "source": "df_Uid_data_hack.csv:COMPANY_AGE_YEARS_GRADATION"
+   },
+   "ECO_MARK_LABEL": {
+    "value": "Оптимизация",
+    "title": "Стадия развития бизнеса",
+    "source": "df_Uid_data_hack.csv:ECO_MARK_LABEL"
+   },
+   "REVENUE_COMPANY": {
+    "value": 28771905415,
+    "title": "Годовая выручка",
+    "source": "df_Uid_data_hack.csv:REVENUE_COMPANY"
+   },
+   "AMOUNT_WORKERS_FNS_GRADATION": {
+    "value": "101-250",
+    "title": "Работники (ФНС)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_FNS_GRADATION"
+   },
+   "AMOUNT_WORKERS_SPARK_GRADATION": {
+    "value": null,
+    "title": "Работники (СПАРК)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_SPARK_GRADATION"
+   },
+   "CL_TYPE": {
+    "value": "CLIENT",
+    "title": "Тип клиента",
+    "source": "df_Uid_data_hack.csv:CL_TYPE"
+   },
+   "NEGATIVEMARK": {
+    "value": 0,
+    "title": "Признак ключевого собственника",
+    "source": "df_Uid_data_hack.csv:NEGATIVEMARK"
+   },
+   "FTS_FLAG": {
+    "value": 0,
+    "title": "Есть данные в базе ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_FLAG"
+   },
+   "FTS_COUNTRY_NAME": {
+    "value": null,
+    "title": "Страны в данных ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_COUNTRY_NAME"
+   },
+   "GROUP_ID": {
+    "value": "group_134402_sb",
+    "title": "Группа компаний",
+    "source": "df_Uid_data_hack.csv:GROUP_ID"
+   },
+   "CITY": {
+    "value": "г. Москва",
+    "title": "Город регистрации",
+    "source": "df_Uid_data_hack.csv:CITY"
+   },
+   "REGION": {
+    "value": "Москва",
+    "title": "Регион регистрации",
+    "source": "df_Uid_data_hack.csv:REGION"
+   },
+   "CL_PRODUCT_RKO_MARK": {
+    "value": 1,
+    "title": "Расчётно-кассовое обслуживание",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_RKO_MARK"
+   },
+   "CL_PRODUCT_GAR_MARK": {
+    "value": 0,
+    "title": "Банковские гарантии",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_GAR_MARK"
+   },
+   "CL_PRODUCT_LOA_MARK": {
+    "value": 0,
+    "title": "Кредитные продукты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LOA_MARK"
+   },
+   "CL_PRODUCT_LEA_MARK": {
+    "value": 1,
+    "title": "Лизинг",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LEA_MARK"
+   },
+   "CL_PRODUCT_DEP_MARK": {
+    "value": 0,
+    "title": "Депозиты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_DEP_MARK"
+   },
+   "CL_PRODUCT_ZPP_MARK": {
+    "value": 0,
+    "title": "Зарплатный проект",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_ZPP_MARK"
+   },
+   "FACTORING_MARK": {
+    "value": 0,
+    "title": "Факторинг",
+    "source": "df_Uid_data_hack.csv:FACTORING_MARK"
+   }
+  },
+  "products": {
+   "CL_PRODUCT_RKO_MARK": 1,
+   "CL_PRODUCT_GAR_MARK": 0,
+   "CL_PRODUCT_LOA_MARK": 0,
+   "CL_PRODUCT_LEA_MARK": 1,
+   "CL_PRODUCT_DEP_MARK": 0,
+   "CL_PRODUCT_ZPP_MARK": 0,
+   "FACTORING_MARK": 0
+  },
+  "missing_fields": [
+   "AMOUNT_WORKERS_SPARK_GRADATION",
+   "FTS_COUNTRY_NAME"
+  ],
+  "channels": [
+   {
+    "key": "construction_cycle",
+    "label": "Строительный цикл и недвижимость",
+    "strength": 0.9,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Отрасль зависит от строительного цикла и ипотеки"
+    ]
+   },
+   {
+    "key": "cost_of_debt",
+    "label": "Стоимость заёмного финансирования",
+    "strength": 0.6,
+    "basis": [
+     "P:CL_PRODUCT_LEA_MARK"
+    ],
+    "notes": [
+     "В банке есть лизинг"
+    ]
+   },
+   {
+    "key": "fuel_costs",
+    "label": "Цены на топливо и энергию",
+    "strength": 0.5,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Топливо — существенная статья затрат для отрасли"
+    ]
+   },
+   {
+    "key": "state_budget",
+    "label": "Госрасходы и налоги",
+    "strength": 0.5,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Отрасль чувствительна к госзаказу и бюджетным расходам"
+    ]
+   },
+   {
+    "key": "metals_prices",
+    "label": "Цены на металлы",
+    "strength": 0.45,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Металл — входящее сырьё для отрасли"
+    ]
+   },
+   {
+    "key": "payroll",
+    "label": "Расходы на персонал",
+    "strength": 0.4,
+    "basis": [
+     "P:AMOUNT_WORKERS_FNS_GRADATION"
+    ],
+    "notes": [
+     "Численность (ФНС): 101-250"
+    ]
+   }
+  ],
+  "derived": {
+   "revenue_rank": {
+    "okved_class": "42.11",
+    "rank": 1,
+    "of": 295,
+    "note": "Место по выручке среди компаний выборки с тем же классом ОКВЭД. Это не доля рынка."
+   },
+   "group": {
+    "group_id": "group_134402_sb",
+    "size": 369,
+    "revenue_sum": 302726049209,
+    "member_sectors": [
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "companies": 84
+     },
+     {
+      "key": "real_estate",
+      "label": "Недвижимость",
+      "companies": 79
+     },
+     {
+      "key": "construction",
+      "label": "Строительство и стройматериалы",
+      "companies": 53
+     },
+     {
+      "key": "finance",
+      "label": "Финансы и холдинги",
+      "companies": 45
+     },
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "companies": 40
+     },
+     {
+      "key": "hospitality",
+      "label": "Общепит, гостиницы и досуг",
+      "companies": 21
+     }
+    ],
+    "note": "Сумма выручки участников группы из датасета, не консолидированная отчётность."
+   },
+   "payments_out": {
+    "amount": 2516160000.0,
+    "count": 987,
+    "counterparties": 91,
+    "top5_share": 0.6026,
+    "max_share": 0.1945,
+    "unknown_profile_share": 0.534,
+    "sectors": [
+     {
+      "key": "construction",
+      "label": "Строительство и стройматериалы",
+      "share": 0.217
+     },
+     {
+      "key": "finance",
+      "label": "Финансы и холдинги",
+      "share": 0.1851
+     },
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.0327
+     },
+     {
+      "key": "hospitality",
+      "label": "Общепит, гостиницы и досуг",
+      "share": 0.0091
+     },
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "share": 0.0072
+     },
+     {
+      "key": "metals_mining",
+      "label": "Металлы и добыча",
+      "share": 0.0066
+     },
+     {
+      "key": "auto",
+      "label": "Автомобили и запчасти",
+      "share": 0.0045
+     },
+     {
+      "key": "it_telecom",
+      "label": "IT и связь",
+      "share": 0.0014
+     }
+    ],
+    "regions": [
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.4501
+     },
+     {
+      "key": "Санкт-Петербург",
+      "label": "Санкт-Петербург",
+      "share": 0.0077
+     },
+     {
+      "key": "Амурская область",
+      "label": "Амурская область",
+      "share": 0.0044
+     },
+     {
+      "key": "Нижегородская область",
+      "label": "Нижегородская область",
+      "share": 0.0016
+     },
+     {
+      "key": "Московская область",
+      "label": "Московская область",
+      "share": 0.0015
+     },
+     {
+      "key": "Самарская область",
+      "label": "Самарская область",
+      "share": 0.0006
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "КИТАЙ",
+      "label": "КИТАЙ",
+      "share": 0.0054
+     },
+     {
+      "key": "СЕРБИЯ",
+      "label": "СЕРБИЯ",
+      "share": 0.0005
+     },
+     {
+      "key": "ОАЭ",
+      "label": "ОАЭ",
+      "share": 0.0003
+     },
+     {
+      "key": "ЧЕХИЯ",
+      "label": "ЧЕХИЯ",
+      "share": 0.0003
+     },
+     {
+      "key": "АБХАЗИЯ",
+      "label": "АБХАЗИЯ",
+      "share": 0.0001
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_49135",
+      "amt": 489499000.0,
+      "cnt": 63,
+      "share": 0.1945,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_231489",
+      "amt": 465808000.0,
+      "cnt": 7,
+      "share": 0.1851,
+      "okved_code": "64.99.11",
+      "okved_name": "Вложения в ценные бумаги",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_225818",
+      "amt": 243026000.0,
+      "cnt": 127,
+      "share": 0.0966,
+      "okved_code": "23.63",
+      "okved_name": "Производство товарного бетона",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_65561",
+      "amt": 172377000.0,
+      "cnt": 14,
+      "share": 0.0685,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_207365",
+      "amt": 145522000.0,
+      "cnt": 1,
+      "share": 0.0578,
+      "okved_code": "23.63",
+      "okved_name": "Производство товарного бетона",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_100799",
+      "amt": 134724000.0,
+      "cnt": 17,
+      "share": 0.0535,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_50352",
+      "amt": 131370000.0,
+      "cnt": 19,
+      "share": 0.0522,
+      "okved_code": "42.11",
+      "okved_name": "Строительство автомобильных дорог и автомагистралей",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_70315",
+      "amt": 62418000.0,
+      "cnt": 29,
+      "share": 0.0248,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "payments_in": {
+    "amount": 390000.0,
+    "count": 10,
+    "counterparties": 4,
+    "top5_share": 1.0,
+    "max_share": 0.7436,
+    "unknown_profile_share": 0.8923,
+    "sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.1077
+     }
+    ],
+    "regions": [
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.1077
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "ТУРЦИЯ",
+      "label": "ТУРЦИЯ",
+      "share": 0.1077
+     },
+     {
+      "key": "ШВЕЦИЯ",
+      "label": "ШВЕЦИЯ",
+      "share": 0.1077
+     },
+     {
+      "key": "БЕЛЬГИЯ",
+      "label": "БЕЛЬГИЯ",
+      "share": 0.1077
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_100799",
+      "amt": 290000.0,
+      "cnt": 4,
+      "share": 0.7436,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_94123",
+      "amt": 42000.0,
+      "cnt": 4,
+      "share": 0.1077,
+      "okved_code": "46.19",
+      "okved_name": "Деятельность агентов по оптовой торговле универсальным ассортиментом товаров",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_42353",
+      "amt": 36000.0,
+      "cnt": 1,
+      "share": 0.0923,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_42041",
+      "amt": 22000.0,
+      "cnt": 1,
+      "share": 0.0564,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "self_payments_amount": 54000.0,
+   "persons": {
+    "linked_persons": 0,
+    "regions": [],
+    "companies_via_shared_persons": [],
+    "note": "Связь физлица с компанией не означает владение или руководство."
+   }
+  },
+  "data_notes": [
+   "Период и единицы платежей в данных не указаны: суммы — объём в единицах датасета.",
+   "Регион — регион регистрации, а не все регионы присутствия."
+  ]
+ },
+ {
+  "summary": {
+   "company_id": "U_212593",
+   "display_name": "Компания U_212593",
+   "subtitle": "Деятельность ресторанов и кафе с полным ресторанным обслуживанием, кафетериев, ресторанов быстрого питания и самообслуживания",
+   "okved_code": "56.10.1",
+   "region": "Москва",
+   "revenue": 26859562976,
+   "cl_type": "CLIENT",
+   "sectors": [
+    {
+     "key": "hospitality",
+     "label": "Общепит, гостиницы и досуг"
+    },
+    {
+     "key": "consumer_goods",
+     "label": "Потребительские товары"
+    }
+   ],
+   "profile_status": "matched",
+   "completeness": "complete",
+   "key_missing": [],
+   "top_channels": [
+    "Потребительский спрос",
+    "Стоимость заёмного финансирования"
+   ]
+  },
+  "observed": {
+   "MAINOKVED_CODE": {
+    "value": "56.10.1",
+    "title": "Код основного ОКВЭД",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_CODE"
+   },
+   "MAINOKVED_NAME": {
+    "value": "Деятельность ресторанов и кафе с полным ресторанным обслуживанием, кафетериев, ресторанов быстрого питания и самообслуживания",
+    "title": "Основной вид деятельности",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_NAME"
+   },
+   "ORG_TYPE": {
+    "value": "КОММ_ОРГ",
+    "title": "Тип организации",
+    "source": "df_Uid_data_hack.csv:ORG_TYPE"
+   },
+   "OKFS_NAME": {
+    "value": "СОБСТВЕННОСТЬ ИНОСТРАННЫХ ГРАЖДАН И ЛИЦ БЕЗ ГРАЖДАНСТВА",
+    "title": "Форма собственности",
+    "source": "df_Uid_data_hack.csv:OKFS_NAME"
+   },
+   "COMPANY_AGE_YEARS_GRADATION": {
+    "value": "8-15",
+    "title": "Возраст компании, лет",
+    "source": "df_Uid_data_hack.csv:COMPANY_AGE_YEARS_GRADATION"
+   },
+   "ECO_MARK_LABEL": {
+    "value": "Бизнес в новой реальности",
+    "title": "Стадия развития бизнеса",
+    "source": "df_Uid_data_hack.csv:ECO_MARK_LABEL"
+   },
+   "REVENUE_COMPANY": {
+    "value": 26859562976,
+    "title": "Годовая выручка",
+    "source": "df_Uid_data_hack.csv:REVENUE_COMPANY"
+   },
+   "AMOUNT_WORKERS_FNS_GRADATION": {
+    "value": "Более 251",
+    "title": "Работники (ФНС)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_FNS_GRADATION"
+   },
+   "AMOUNT_WORKERS_SPARK_GRADATION": {
+    "value": null,
+    "title": "Работники (СПАРК)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_SPARK_GRADATION"
+   },
+   "CL_TYPE": {
+    "value": "CLIENT",
+    "title": "Тип клиента",
+    "source": "df_Uid_data_hack.csv:CL_TYPE"
+   },
+   "NEGATIVEMARK": {
+    "value": 1,
+    "title": "Признак ключевого собственника",
+    "source": "df_Uid_data_hack.csv:NEGATIVEMARK"
+   },
+   "FTS_FLAG": {
+    "value": 0,
+    "title": "Есть данные в базе ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_FLAG"
+   },
+   "FTS_COUNTRY_NAME": {
+    "value": null,
+    "title": "Страны в данных ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_COUNTRY_NAME"
+   },
+   "GROUP_ID": {
+    "value": "group_132690_sb",
+    "title": "Группа компаний",
+    "source": "df_Uid_data_hack.csv:GROUP_ID"
+   },
+   "CITY": {
+    "value": "г. Москва",
+    "title": "Город регистрации",
+    "source": "df_Uid_data_hack.csv:CITY"
+   },
+   "REGION": {
+    "value": "Москва",
+    "title": "Регион регистрации",
+    "source": "df_Uid_data_hack.csv:REGION"
+   },
+   "CL_PRODUCT_RKO_MARK": {
+    "value": 1,
+    "title": "Расчётно-кассовое обслуживание",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_RKO_MARK"
+   },
+   "CL_PRODUCT_GAR_MARK": {
+    "value": 0,
+    "title": "Банковские гарантии",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_GAR_MARK"
+   },
+   "CL_PRODUCT_LOA_MARK": {
+    "value": 0,
+    "title": "Кредитные продукты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LOA_MARK"
+   },
+   "CL_PRODUCT_LEA_MARK": {
+    "value": 1,
+    "title": "Лизинг",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LEA_MARK"
+   },
+   "CL_PRODUCT_DEP_MARK": {
+    "value": 0,
+    "title": "Депозиты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_DEP_MARK"
+   },
+   "CL_PRODUCT_ZPP_MARK": {
+    "value": 0,
+    "title": "Зарплатный проект",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_ZPP_MARK"
+   },
+   "FACTORING_MARK": {
+    "value": 0,
+    "title": "Факторинг",
+    "source": "df_Uid_data_hack.csv:FACTORING_MARK"
+   }
+  },
+  "products": {
+   "CL_PRODUCT_RKO_MARK": 1,
+   "CL_PRODUCT_GAR_MARK": 0,
+   "CL_PRODUCT_LOA_MARK": 0,
+   "CL_PRODUCT_LEA_MARK": 1,
+   "CL_PRODUCT_DEP_MARK": 0,
+   "CL_PRODUCT_ZPP_MARK": 0,
+   "FACTORING_MARK": 0
+  },
+  "missing_fields": [
+   "AMOUNT_WORKERS_SPARK_GRADATION",
+   "FTS_COUNTRY_NAME"
+  ],
+  "channels": [
+   {
+    "key": "consumer_demand",
+    "label": "Потребительский спрос",
+    "strength": 1.0,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Компания работает с конечным потребителем"
+    ]
+   },
+   {
+    "key": "cost_of_debt",
+    "label": "Стоимость заёмного финансирования",
+    "strength": 0.6,
+    "basis": [
+     "P:CL_PRODUCT_LEA_MARK"
+    ],
+    "notes": [
+     "В банке есть лизинг"
+    ]
+   },
+   {
+    "key": "payroll",
+    "label": "Расходы на персонал",
+    "strength": 0.6,
+    "basis": [
+     "P:AMOUNT_WORKERS_FNS_GRADATION"
+    ],
+    "notes": [
+     "Численность (ФНС): Более 251"
+    ]
+   },
+   {
+    "key": "foreign_trade",
+    "label": "Внешнеэкономическая деятельность и курс",
+    "strength": 0.35,
+    "basis": [
+     "G:payments_out.fts_countries"
+    ],
+    "notes": [
+     "Заметная часть исходящих платежей идёт контрагентам с ВЭД (≈35% объёма)"
+    ]
+   }
+  ],
+  "derived": {
+   "revenue_rank": {
+    "okved_class": "56.10",
+    "rank": 1,
+    "of": 4824,
+    "note": "Место по выручке среди компаний выборки с тем же классом ОКВЭД. Это не доля рынка."
+   },
+   "group": {
+    "group_id": "group_132690_sb",
+    "size": 3,
+    "revenue_sum": 27181174091,
+    "member_sectors": [
+     {
+      "key": "real_estate",
+      "label": "Недвижимость",
+      "companies": 2
+     },
+     {
+      "key": "hospitality",
+      "label": "Общепит, гостиницы и досуг",
+      "companies": 1
+     }
+    ],
+    "note": "Сумма выручки участников группы из датасета, не консолидированная отчётность."
+   },
+   "payments_out": {
+    "amount": 791809000.0,
+    "count": 2003,
+    "counterparties": 32,
+    "top5_share": 0.8356,
+    "max_share": 0.3912,
+    "unknown_profile_share": 0.3812,
+    "sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.5286
+     },
+     {
+      "key": "real_estate",
+      "label": "Недвижимость",
+      "share": 0.0388
+     },
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "share": 0.0237
+     },
+     {
+      "key": "construction",
+      "label": "Строительство и стройматериалы",
+      "share": 0.0175
+     },
+     {
+      "key": "utilities",
+      "label": "ЖКХ и инфраструктура",
+      "share": 0.0087
+     },
+     {
+      "key": "consumer_goods",
+      "label": "Потребительские товары",
+      "share": 0.0011
+     },
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "share": 0.0004
+     },
+     {
+      "key": "it_telecom",
+      "label": "IT и связь",
+      "share": 0.0
+     }
+    ],
+    "regions": [
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.5527
+     },
+     {
+      "key": "Башкортостан (Республика)",
+      "label": "Башкортостан (Республика)",
+      "share": 0.035
+     },
+     {
+      "key": "Республика Татарстан",
+      "label": "Республика Татарстан",
+      "share": 0.0213
+     },
+     {
+      "key": "Свердловская область",
+      "label": "Свердловская область",
+      "share": 0.0087
+     },
+     {
+      "key": "Челябинская область",
+      "label": "Челябинская область",
+      "share": 0.0011
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "ЛИТВА",
+      "label": "ЛИТВА",
+      "share": 0.1182
+     },
+     {
+      "key": "ИТАЛИЯ",
+      "label": "ИТАЛИЯ",
+      "share": 0.1182
+     },
+     {
+      "key": "ПОЛЬША",
+      "label": "ПОЛЬША",
+      "share": 0.1182
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_46544",
+      "amt": 309782000.0,
+      "cnt": 364,
+      "share": 0.3912,
+      "okved_code": "46.14.9",
+      "okved_name": "Деятельность агентов по оптовой торговле прочими видами машин и промышленным оборудованием",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_10644",
+      "amt": 126858000.0,
+      "cnt": 188,
+      "share": 0.1602,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_258279",
+      "amt": 93587000.0,
+      "cnt": 60,
+      "share": 0.1182,
+      "okved_code": "46.90",
+      "okved_name": "Торговля оптовая неспециализированная",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_46081",
+      "amt": 79477000.0,
+      "cnt": 96,
+      "share": 0.1004,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_20292",
+      "amt": 51955000.0,
+      "cnt": 14,
+      "share": 0.0656,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_36901",
+      "amt": 27674000.0,
+      "cnt": 182,
+      "share": 0.035,
+      "okved_code": "68.20.2",
+      "okved_name": "Аренда и управление собственным или арендованным нежилым недвижимым имуществом",
+      "region": "Башкортостан (Республика)",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_40138",
+      "amt": 23032000.0,
+      "cnt": 74,
+      "share": 0.0291,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_56949",
+      "amt": 18774000.0,
+      "cnt": 19,
+      "share": 0.0237,
+      "okved_code": "73.11.9",
+      "okved_name": "Деятельность рекламных агентств прочая",
+      "region": "Москва",
+      "in_profile": true
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "payments_in": {
+    "amount": 819000.0,
+    "count": 8,
+    "counterparties": 3,
+    "top5_share": 1.0,
+    "max_share": 0.8962,
+    "unknown_profile_share": 0.1038,
+    "sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.8962
+     }
+    ],
+    "regions": [
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.8962
+     }
+    ],
+    "fts_countries": [],
+    "top": [
+     {
+      "company_id": "U_46544",
+      "amt": 734000.0,
+      "cnt": 3,
+      "share": 0.8962,
+      "okved_code": "46.14.9",
+      "okved_name": "Деятельность агентов по оптовой торговле прочими видами машин и промышленным оборудованием",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_258557",
+      "amt": 82000.0,
+      "cnt": 4,
+      "share": 0.1001,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_84713",
+      "amt": 3000.0,
+      "cnt": 1,
+      "share": 0.0037,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "self_payments_amount": 0.0,
+   "persons": {
+    "linked_persons": 0,
+    "regions": [],
+    "companies_via_shared_persons": [],
+    "note": "Связь физлица с компанией не означает владение или руководство."
+   }
+  },
+  "data_notes": [
+   "Период и единицы платежей в данных не указаны: суммы — объём в единицах датасета.",
+   "Регион — регион регистрации, а не все регионы присутствия."
+  ]
+ },
+ {
+  "summary": {
+   "company_id": "U_1595",
+   "display_name": "Компания U_1595",
+   "subtitle": "Торговля розничная одеждой в специализированных магазинах",
+   "okved_code": "47.71",
+   "region": "Москва",
+   "revenue": 16461799989,
+   "cl_type": "CLIENT",
+   "sectors": [
+    {
+     "key": "retail",
+     "label": "Розничная торговля"
+    },
+    {
+     "key": "consumer_goods",
+     "label": "Потребительские товары"
+    }
+   ],
+   "profile_status": "matched",
+   "completeness": "complete",
+   "key_missing": [],
+   "top_channels": [
+    "Потребительский спрос",
+    "Стоимость заёмного финансирования"
+   ]
+  },
+  "observed": {
+   "MAINOKVED_CODE": {
+    "value": "47.71",
+    "title": "Код основного ОКВЭД",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_CODE"
+   },
+   "MAINOKVED_NAME": {
+    "value": "Торговля розничная одеждой в специализированных магазинах",
+    "title": "Основной вид деятельности",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_NAME"
+   },
+   "ORG_TYPE": {
+    "value": "КОММ_ОРГ",
+    "title": "Тип организации",
+    "source": "df_Uid_data_hack.csv:ORG_TYPE"
+   },
+   "OKFS_NAME": {
+    "value": "СОБСТВЕННОСТЬ ИНОСТРАННЫХ ЮРИДИЧЕСКИХ ЛИЦ",
+    "title": "Форма собственности",
+    "source": "df_Uid_data_hack.csv:OKFS_NAME"
+   },
+   "COMPANY_AGE_YEARS_GRADATION": {
+    "value": "16-25",
+    "title": "Возраст компании, лет",
+    "source": "df_Uid_data_hack.csv:COMPANY_AGE_YEARS_GRADATION"
+   },
+   "ECO_MARK_LABEL": {
+    "value": "Бизнес в новой реальности",
+    "title": "Стадия развития бизнеса",
+    "source": "df_Uid_data_hack.csv:ECO_MARK_LABEL"
+   },
+   "REVENUE_COMPANY": {
+    "value": 16461799989,
+    "title": "Годовая выручка",
+    "source": "df_Uid_data_hack.csv:REVENUE_COMPANY"
+   },
+   "AMOUNT_WORKERS_FNS_GRADATION": {
+    "value": "Более 251",
+    "title": "Работники (ФНС)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_FNS_GRADATION"
+   },
+   "AMOUNT_WORKERS_SPARK_GRADATION": {
+    "value": null,
+    "title": "Работники (СПАРК)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_SPARK_GRADATION"
+   },
+   "CL_TYPE": {
+    "value": "CLIENT",
+    "title": "Тип клиента",
+    "source": "df_Uid_data_hack.csv:CL_TYPE"
+   },
+   "NEGATIVEMARK": {
+    "value": 0,
+    "title": "Признак ключевого собственника",
+    "source": "df_Uid_data_hack.csv:NEGATIVEMARK"
+   },
+   "FTS_FLAG": {
+    "value": 1,
+    "title": "Есть данные в базе ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_FLAG"
+   },
+   "FTS_COUNTRY_NAME": {
+    "value": "ТУРЦИЯ, НИДЕРЛАНДЫ",
+    "title": "Страны в данных ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_COUNTRY_NAME"
+   },
+   "GROUP_ID": {
+    "value": "group_134285_sb",
+    "title": "Группа компаний",
+    "source": "df_Uid_data_hack.csv:GROUP_ID"
+   },
+   "CITY": {
+    "value": "г. Москва",
+    "title": "Город регистрации",
+    "source": "df_Uid_data_hack.csv:CITY"
+   },
+   "REGION": {
+    "value": "Москва",
+    "title": "Регион регистрации",
+    "source": "df_Uid_data_hack.csv:REGION"
+   },
+   "CL_PRODUCT_RKO_MARK": {
+    "value": 1,
+    "title": "Расчётно-кассовое обслуживание",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_RKO_MARK"
+   },
+   "CL_PRODUCT_GAR_MARK": {
+    "value": 0,
+    "title": "Банковские гарантии",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_GAR_MARK"
+   },
+   "CL_PRODUCT_LOA_MARK": {
+    "value": 1,
+    "title": "Кредитные продукты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LOA_MARK"
+   },
+   "CL_PRODUCT_LEA_MARK": {
+    "value": 1,
+    "title": "Лизинг",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LEA_MARK"
+   },
+   "CL_PRODUCT_DEP_MARK": {
+    "value": 0,
+    "title": "Депозиты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_DEP_MARK"
+   },
+   "CL_PRODUCT_ZPP_MARK": {
+    "value": 1,
+    "title": "Зарплатный проект",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_ZPP_MARK"
+   },
+   "FACTORING_MARK": {
+    "value": 0,
+    "title": "Факторинг",
+    "source": "df_Uid_data_hack.csv:FACTORING_MARK"
+   }
+  },
+  "products": {
+   "CL_PRODUCT_RKO_MARK": 1,
+   "CL_PRODUCT_GAR_MARK": 0,
+   "CL_PRODUCT_LOA_MARK": 1,
+   "CL_PRODUCT_LEA_MARK": 1,
+   "CL_PRODUCT_DEP_MARK": 0,
+   "CL_PRODUCT_ZPP_MARK": 1,
+   "FACTORING_MARK": 0
+  },
+  "missing_fields": [
+   "AMOUNT_WORKERS_SPARK_GRADATION"
+  ],
+  "channels": [
+   {
+    "key": "consumer_demand",
+    "label": "Потребительский спрос",
+    "strength": 1.0,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Компания работает с конечным потребителем"
+    ]
+   },
+   {
+    "key": "cost_of_debt",
+    "label": "Стоимость заёмного финансирования",
+    "strength": 0.95,
+    "basis": [
+     "P:CL_PRODUCT_LOA_MARK",
+     "P:CL_PRODUCT_LEA_MARK"
+    ],
+    "notes": [
+     "В банке есть кредитные продукты, лизинг"
+    ]
+   },
+   {
+    "key": "foreign_trade",
+    "label": "Внешнеэкономическая деятельность и курс",
+    "strength": 0.8,
+    "basis": [
+     "P:FTS_FLAG",
+     "P:FTS_COUNTRY_NAME"
+    ],
+    "notes": [
+     "Компания есть в базе ФТС (ТУРЦИЯ, НИДЕРЛАНДЫ); направление операций (импорт/экспорт) в данных не указано"
+    ]
+   },
+   {
+    "key": "payroll",
+    "label": "Расходы на персонал",
+    "strength": 0.7,
+    "basis": [
+     "P:AMOUNT_WORKERS_FNS_GRADATION",
+     "P:CL_PRODUCT_ZPP_MARK"
+    ],
+    "notes": [
+     "Численность (ФНС): Более 251",
+     "Есть зарплатный проект"
+    ]
+   }
+  ],
+  "derived": {
+   "revenue_rank": {
+    "okved_class": "47.71",
+    "rank": 1,
+    "of": 130,
+    "note": "Место по выручке среди компаний выборки с тем же классом ОКВЭД. Это не доля рынка."
+   },
+   "group": {
+    "group_id": "group_134285_sb",
+    "size": 1,
+    "revenue_sum": 16461799989,
+    "member_sectors": [
+     {
+      "key": "retail",
+      "label": "Розничная торговля",
+      "companies": 1
+     }
+    ],
+    "note": "Сумма выручки участников группы из датасета, не консолидированная отчётность."
+   },
+   "payments_out": {
+    "amount": 1822228000.0,
+    "count": 5046,
+    "counterparties": 159,
+    "top5_share": 0.2669,
+    "max_share": 0.1197,
+    "unknown_profile_share": 0.5459,
+    "sectors": [
+     {
+      "key": "real_estate",
+      "label": "Недвижимость",
+      "share": 0.2472
+     },
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "share": 0.1197
+     },
+     {
+      "key": "it_telecom",
+      "label": "IT и связь",
+      "share": 0.022
+     },
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "share": 0.0214
+     },
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.0204
+     },
+     {
+      "key": "finance",
+      "label": "Финансы и холдинги",
+      "share": 0.0143
+     },
+     {
+      "key": "retail",
+      "label": "Розничная торговля",
+      "share": 0.0078
+     },
+     {
+      "key": "construction",
+      "label": "Строительство и стройматериалы",
+      "share": 0.0007
+     }
+    ],
+    "regions": [
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.2813
+     },
+     {
+      "key": "Санкт-Петербург",
+      "label": "Санкт-Петербург",
+      "share": 0.0294
+     },
+     {
+      "key": "Самарская область",
+      "label": "Самарская область",
+      "share": 0.0273
+     },
+     {
+      "key": "Свердловская область",
+      "label": "Свердловская область",
+      "share": 0.0256
+     },
+     {
+      "key": "Краснодарский край",
+      "label": "Краснодарский край",
+      "share": 0.019
+     },
+     {
+      "key": "Тюменская область",
+      "label": "Тюменская область",
+      "share": 0.0169
+     },
+     {
+      "key": "Пермский край",
+      "label": "Пермский край",
+      "share": 0.0143
+     },
+     {
+      "key": "Калужская область",
+      "label": "Калужская область",
+      "share": 0.0097
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "ИТАЛИЯ",
+      "label": "ИТАЛИЯ",
+      "share": 0.0038
+     },
+     {
+      "key": "КИТАЙ",
+      "label": "КИТАЙ",
+      "share": 0.0005
+     },
+     {
+      "key": "ЛИТВА",
+      "label": "ЛИТВА",
+      "share": 0.0002
+     },
+     {
+      "key": "ИНДИЯ",
+      "label": "ИНДИЯ",
+      "share": 0.0002
+     },
+     {
+      "key": "ВЬЕТНАМ",
+      "label": "ВЬЕТНАМ",
+      "share": 0.0001
+     },
+     {
+      "key": "УЗБЕКИСТАН",
+      "label": "УЗБЕКИСТАН",
+      "share": 0.0
+     },
+     {
+      "key": "ТУРЦИЯ",
+      "label": "ТУРЦИЯ",
+      "share": 0.0
+     },
+     {
+      "key": "ТАЙВАНЬ",
+      "label": "ТАЙВАНЬ",
+      "share": 0.0
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_107247",
+      "amt": 218064000.0,
+      "cnt": 86,
+      "share": 0.1197,
+      "okved_code": "53.20.3",
+      "okved_name": "Деятельность курьерская",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_229071",
+      "amt": 72733000.0,
+      "cnt": 192,
+      "share": 0.0399,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_141569",
+      "amt": 69732000.0,
+      "cnt": 1,
+      "share": 0.0383,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_2253",
+      "amt": 65196000.0,
+      "cnt": 138,
+      "share": 0.0358,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_70743",
+      "amt": 60559000.0,
+      "cnt": 59,
+      "share": 0.0332,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_279588",
+      "amt": 42515000.0,
+      "cnt": 92,
+      "share": 0.0233,
+      "okved_code": "68.20.21",
+      "okved_name": "Аренда и управление собственным или арендованным торговым объектом недвижимого имущества",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_48087",
+      "amt": 41764000.0,
+      "cnt": 82,
+      "share": 0.0229,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_100301",
+      "amt": 36868000.0,
+      "cnt": 76,
+      "share": 0.0202,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "payments_in": {
+    "amount": 170730000.0,
+    "count": 40,
+    "counterparties": 5,
+    "top5_share": 1.0,
+    "max_share": 0.9937,
+    "unknown_profile_share": 0.9994,
+    "sectors": [
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "share": 0.0006
+     },
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.0
+     }
+    ],
+    "regions": [
+     {
+      "key": "Омская область",
+      "label": "Омская область",
+      "share": 0.0006
+     },
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.0
+     }
+    ],
+    "fts_countries": [],
+    "top": [
+     {
+      "company_id": "U_26993",
+      "amt": 169648000.0,
+      "cnt": 32,
+      "share": 0.9937,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_36496",
+      "amt": 972000.0,
+      "cnt": 4,
+      "share": 0.0057,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_58918",
+      "amt": 99000.0,
+      "cnt": 1,
+      "share": 0.0006,
+      "okved_code": "81.10",
+      "okved_name": "Деятельность по комплексному обслуживанию помещений",
+      "region": "Омская область",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_18744",
+      "amt": 8000.0,
+      "cnt": 2,
+      "share": 0.0,
+      "okved_code": "46.1",
+      "okved_name": "Торговля оптовая за вознаграждение или на договорной основе",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_373138",
+      "amt": 3000.0,
+      "cnt": 1,
+      "share": 0.0,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "self_payments_amount": 16326970000.0,
+   "persons": {
+    "linked_persons": 0,
+    "regions": [],
+    "companies_via_shared_persons": [],
+    "note": "Связь физлица с компанией не означает владение или руководство."
+   }
+  },
+  "data_notes": [
+   "Период и единицы платежей в данных не указаны: суммы — объём в единицах датасета.",
+   "Регион — регион регистрации, а не все регионы присутствия."
+  ]
+ },
+ {
+  "summary": {
+   "company_id": "U_68157",
+   "display_name": "Компания U_68157",
+   "subtitle": "Прочие виды строительства жилых и нежилых зданий",
+   "okved_code": "41.20.9",
+   "region": null,
+   "revenue": 16231451089,
+   "cl_type": "CLIENT",
+   "sectors": [
+    {
+     "key": "construction",
+     "label": "Строительство и стройматериалы"
+    }
+   ],
+   "profile_status": "matched",
+   "completeness": "incomplete",
+   "key_missing": [
+    "REGION"
+   ],
+   "top_channels": [
+    "Стоимость заёмного финансирования",
+    "Строительный цикл и недвижимость"
+   ]
+  },
+  "observed": {
+   "MAINOKVED_CODE": {
+    "value": "41.20.9",
+    "title": "Код основного ОКВЭД",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_CODE"
+   },
+   "MAINOKVED_NAME": {
+    "value": "Прочие виды строительства жилых и нежилых зданий",
+    "title": "Основной вид деятельности",
+    "source": "df_Uid_data_hack.csv:MAINOKVED_NAME"
+   },
+   "ORG_TYPE": {
+    "value": "КОММ_ОРГ",
+    "title": "Тип организации",
+    "source": "df_Uid_data_hack.csv:ORG_TYPE"
+   },
+   "OKFS_NAME": {
+    "value": "ЧАСТНАЯ СОБСТВЕННОСТЬ",
+    "title": "Форма собственности",
+    "source": "df_Uid_data_hack.csv:OKFS_NAME"
+   },
+   "COMPANY_AGE_YEARS_GRADATION": {
+    "value": "16-25",
+    "title": "Возраст компании, лет",
+    "source": "df_Uid_data_hack.csv:COMPANY_AGE_YEARS_GRADATION"
+   },
+   "ECO_MARK_LABEL": {
+    "value": "Оптимизация",
+    "title": "Стадия развития бизнеса",
+    "source": "df_Uid_data_hack.csv:ECO_MARK_LABEL"
+   },
+   "REVENUE_COMPANY": {
+    "value": 16231451089,
+    "title": "Годовая выручка",
+    "source": "df_Uid_data_hack.csv:REVENUE_COMPANY"
+   },
+   "AMOUNT_WORKERS_FNS_GRADATION": {
+    "value": "101-250",
+    "title": "Работники (ФНС)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_FNS_GRADATION"
+   },
+   "AMOUNT_WORKERS_SPARK_GRADATION": {
+    "value": null,
+    "title": "Работники (СПАРК)",
+    "source": "df_Uid_data_hack.csv:AMOUNT_WORKERS_SPARK_GRADATION"
+   },
+   "CL_TYPE": {
+    "value": "CLIENT",
+    "title": "Тип клиента",
+    "source": "df_Uid_data_hack.csv:CL_TYPE"
+   },
+   "NEGATIVEMARK": {
+    "value": 1,
+    "title": "Признак ключевого собственника",
+    "source": "df_Uid_data_hack.csv:NEGATIVEMARK"
+   },
+   "FTS_FLAG": {
+    "value": 0,
+    "title": "Есть данные в базе ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_FLAG"
+   },
+   "FTS_COUNTRY_NAME": {
+    "value": null,
+    "title": "Страны в данных ФТС",
+    "source": "df_Uid_data_hack.csv:FTS_COUNTRY_NAME"
+   },
+   "GROUP_ID": {
+    "value": "group_134546_sb",
+    "title": "Группа компаний",
+    "source": "df_Uid_data_hack.csv:GROUP_ID"
+   },
+   "CITY": {
+    "value": null,
+    "title": "Город регистрации",
+    "source": "df_Uid_data_hack.csv:CITY"
+   },
+   "REGION": {
+    "value": null,
+    "title": "Регион регистрации",
+    "source": "df_Uid_data_hack.csv:REGION"
+   },
+   "CL_PRODUCT_RKO_MARK": {
+    "value": 1,
+    "title": "Расчётно-кассовое обслуживание",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_RKO_MARK"
+   },
+   "CL_PRODUCT_GAR_MARK": {
+    "value": 1,
+    "title": "Банковские гарантии",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_GAR_MARK"
+   },
+   "CL_PRODUCT_LOA_MARK": {
+    "value": 1,
+    "title": "Кредитные продукты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LOA_MARK"
+   },
+   "CL_PRODUCT_LEA_MARK": {
+    "value": 1,
+    "title": "Лизинг",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_LEA_MARK"
+   },
+   "CL_PRODUCT_DEP_MARK": {
+    "value": 0,
+    "title": "Депозиты",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_DEP_MARK"
+   },
+   "CL_PRODUCT_ZPP_MARK": {
+    "value": 1,
+    "title": "Зарплатный проект",
+    "source": "df_Uid_data_hack.csv:CL_PRODUCT_ZPP_MARK"
+   },
+   "FACTORING_MARK": {
+    "value": 0,
+    "title": "Факторинг",
+    "source": "df_Uid_data_hack.csv:FACTORING_MARK"
+   }
+  },
+  "products": {
+   "CL_PRODUCT_RKO_MARK": 1,
+   "CL_PRODUCT_GAR_MARK": 1,
+   "CL_PRODUCT_LOA_MARK": 1,
+   "CL_PRODUCT_LEA_MARK": 1,
+   "CL_PRODUCT_DEP_MARK": 0,
+   "CL_PRODUCT_ZPP_MARK": 1,
+   "FACTORING_MARK": 0
+  },
+  "missing_fields": [
+   "AMOUNT_WORKERS_SPARK_GRADATION",
+   "FTS_COUNTRY_NAME",
+   "REGION",
+   "CITY"
+  ],
+  "channels": [
+   {
+    "key": "cost_of_debt",
+    "label": "Стоимость заёмного финансирования",
+    "strength": 1.0,
+    "basis": [
+     "P:CL_PRODUCT_LOA_MARK",
+     "P:CL_PRODUCT_LEA_MARK",
+     "P:CL_PRODUCT_GAR_MARK"
+    ],
+    "notes": [
+     "В банке есть кредитные продукты, лизинг, банковские гарантии"
+    ]
+   },
+   {
+    "key": "construction_cycle",
+    "label": "Строительный цикл и недвижимость",
+    "strength": 0.9,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Отрасль зависит от строительного цикла и ипотеки"
+    ]
+   },
+   {
+    "key": "payroll",
+    "label": "Расходы на персонал",
+    "strength": 0.5,
+    "basis": [
+     "P:AMOUNT_WORKERS_FNS_GRADATION",
+     "P:CL_PRODUCT_ZPP_MARK"
+    ],
+    "notes": [
+     "Численность (ФНС): 101-250",
+     "Есть зарплатный проект"
+    ]
+   },
+   {
+    "key": "fuel_costs",
+    "label": "Цены на топливо и энергию",
+    "strength": 0.5,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Топливо — существенная статья затрат для отрасли"
+    ]
+   },
+   {
+    "key": "state_budget",
+    "label": "Госрасходы и налоги",
+    "strength": 0.5,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Отрасль чувствительна к госзаказу и бюджетным расходам"
+    ]
+   },
+   {
+    "key": "metals_prices",
+    "label": "Цены на металлы",
+    "strength": 0.45,
+    "basis": [
+     "P:MAINOKVED_CODE"
+    ],
+    "notes": [
+     "Металл — входящее сырьё для отрасли"
+    ]
+   }
+  ],
+  "derived": {
+   "revenue_rank": {
+    "okved_class": "41.20",
+    "rank": 12,
+    "of": 5340,
+    "note": "Место по выручке среди компаний выборки с тем же классом ОКВЭД. Это не доля рынка."
+   },
+   "group": {
+    "group_id": "group_134546_sb",
+    "size": 137,
+    "revenue_sum": 51627572893,
+    "member_sectors": [
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "companies": 45
+     },
+     {
+      "key": "hospitality",
+      "label": "Общепит, гостиницы и досуг",
+      "companies": 22
+     },
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "companies": 21
+     },
+     {
+      "key": "real_estate",
+      "label": "Недвижимость",
+      "companies": 15
+     },
+     {
+      "key": "construction",
+      "label": "Строительство и стройматериалы",
+      "companies": 15
+     },
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "companies": 8
+     }
+    ],
+    "note": "Сумма выручки участников группы из датасета, не консолидированная отчётность."
+   },
+   "payments_out": {
+    "amount": 4578366000.0,
+    "count": 1580,
+    "counterparties": 96,
+    "top5_share": 0.7175,
+    "max_share": 0.1982,
+    "unknown_profile_share": 0.5905,
+    "sectors": [
+     {
+      "key": "construction",
+      "label": "Строительство и стройматериалы",
+      "share": 0.1719
+     },
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "share": 0.1117
+     },
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "share": 0.0753
+     },
+     {
+      "key": "finance",
+      "label": "Финансы и холдинги",
+      "share": 0.035
+     },
+     {
+      "key": "wholesale",
+      "label": "Оптовая торговля",
+      "share": 0.0146
+     },
+     {
+      "key": "auto",
+      "label": "Автомобили и запчасти",
+      "share": 0.0005
+     },
+     {
+      "key": "retail",
+      "label": "Розничная торговля",
+      "share": 0.0002
+     },
+     {
+      "key": "real_estate",
+      "label": "Недвижимость",
+      "share": 0.0
+     }
+    ],
+    "regions": [
+     {
+      "key": "Москва",
+      "label": "Москва",
+      "share": 0.18
+     },
+     {
+      "key": "Вологодская область",
+      "label": "Вологодская область",
+      "share": 0.1129
+     },
+     {
+      "key": "Пермский край",
+      "label": "Пермский край",
+      "share": 0.0737
+     },
+     {
+      "key": "Хабаровский край",
+      "label": "Хабаровский край",
+      "share": 0.035
+     },
+     {
+      "key": "Новосибирская область",
+      "label": "Новосибирская область",
+      "share": 0.0068
+     },
+     {
+      "key": "Иркутская область",
+      "label": "Иркутская область",
+      "share": 0.0007
+     },
+     {
+      "key": "Санкт-Петербург",
+      "label": "Санкт-Петербург",
+      "share": 0.0002
+     },
+     {
+      "key": "Ростовская область",
+      "label": "Ростовская область",
+      "share": 0.0001
+     }
+    ],
+    "fts_countries": [
+     {
+      "key": "КИТАЙ",
+      "label": "КИТАЙ",
+      "share": 0.0004
+     },
+     {
+      "key": "ТУРЦИЯ",
+      "label": "ТУРЦИЯ",
+      "share": 0.0001
+     },
+     {
+      "key": "ГОНКОНГ",
+      "label": "ГОНКОНГ",
+      "share": 0.0
+     },
+     {
+      "key": "ТАИЛАНД",
+      "label": "ТАИЛАНД",
+      "share": 0.0
+     },
+     {
+      "key": "ЯПОНИЯ",
+      "label": "ЯПОНИЯ",
+      "share": 0.0
+     },
+     {
+      "key": "АВСТРИЯ",
+      "label": "АВСТРИЯ",
+      "share": 0.0
+     },
+     {
+      "key": "ОАЭ",
+      "label": "ОАЭ",
+      "share": 0.0
+     },
+     {
+      "key": "ЧЕХИЯ",
+      "label": "ЧЕХИЯ",
+      "share": 0.0
+     }
+    ],
+    "top": [
+     {
+      "company_id": "U_187841",
+      "amt": 907306000.0,
+      "cnt": 5,
+      "share": 0.1982,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_149518",
+      "amt": 858406000.0,
+      "cnt": 101,
+      "share": 0.1875,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_141826",
+      "amt": 757243000.0,
+      "cnt": 85,
+      "share": 0.1654,
+      "okved_code": "41.20.9",
+      "okved_name": "Прочие виды строительства жилых и нежилых зданий",
+      "region": "Москва",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_149506",
+      "amt": 419468000.0,
+      "cnt": 93,
+      "share": 0.0916,
+      "okved_code": "49.42",
+      "okved_name": "Предоставление услуг по перевозкам",
+      "region": "Вологодская область",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_159897",
+      "amt": 342412000.0,
+      "cnt": 31,
+      "share": 0.0748,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_159876",
+      "amt": 265937000.0,
+      "cnt": 32,
+      "share": 0.0581,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_206373",
+      "amt": 178324000.0,
+      "cnt": 62,
+      "share": 0.0389,
+      "okved_code": "95.12",
+      "okved_name": "Ремонт коммуникационного оборудования",
+      "region": "Пермский край",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_206587",
+      "amt": 160376000.0,
+      "cnt": 72,
+      "share": 0.035,
+      "okved_code": "64.92",
+      "okved_name": "Предоставление займов и прочих видов кредита",
+      "region": "Хабаровский край",
+      "in_profile": true
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "payments_in": {
+    "amount": 117918000.0,
+    "count": 222,
+    "counterparties": 13,
+    "top5_share": 0.8357,
+    "max_share": 0.2791,
+    "unknown_profile_share": 0.567,
+    "sectors": [
+     {
+      "key": "transport",
+      "label": "Транспорт и логистика",
+      "share": 0.3253
+     },
+     {
+      "key": "business_services",
+      "label": "Бизнес-услуги",
+      "share": 0.0592
+     },
+     {
+      "key": "finance",
+      "label": "Финансы и холдинги",
+      "share": 0.0485
+     }
+    ],
+    "regions": [
+     {
+      "key": "Вологодская область",
+      "label": "Вологодская область",
+      "share": 0.3253
+     },
+     {
+      "key": "Пермский край",
+      "label": "Пермский край",
+      "share": 0.0592
+     },
+     {
+      "key": "Хабаровский край",
+      "label": "Хабаровский край",
+      "share": 0.0485
+     }
+    ],
+    "fts_countries": [],
+    "top": [
+     {
+      "company_id": "U_159902",
+      "amt": 32909000.0,
+      "cnt": 24,
+      "share": 0.2791,
+      "okved_code": "49.42",
+      "okved_name": "Предоставление услуг по перевозкам",
+      "region": "Вологодская область",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_149518",
+      "amt": 27248000.0,
+      "cnt": 22,
+      "share": 0.2311,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_166147",
+      "amt": 14457000.0,
+      "cnt": 35,
+      "share": 0.1226,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_161771",
+      "amt": 13655000.0,
+      "cnt": 26,
+      "share": 0.1158,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_136587",
+      "amt": 10271000.0,
+      "cnt": 22,
+      "share": 0.0871,
+      "okved_code": null,
+      "okved_name": null,
+      "region": null,
+      "in_profile": false
+     },
+     {
+      "company_id": "U_206587",
+      "amt": 5714000.0,
+      "cnt": 22,
+      "share": 0.0485,
+      "okved_code": "64.92",
+      "okved_name": "Предоставление займов и прочих видов кредита",
+      "region": "Хабаровский край",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_149506",
+      "amt": 5454000.0,
+      "cnt": 8,
+      "share": 0.0463,
+      "okved_code": "49.42",
+      "okved_name": "Предоставление услуг по перевозкам",
+      "region": "Вологодская область",
+      "in_profile": true
+     },
+     {
+      "company_id": "U_206371",
+      "amt": 3576000.0,
+      "cnt": 6,
+      "share": 0.0303,
+      "okved_code": "95.12",
+      "okved_name": "Ремонт коммуникационного оборудования",
+      "region": "Пермский край",
+      "in_profile": true
+     }
+    ],
+    "missing_amount_rows": 0
+   },
+   "self_payments_amount": 16814788000.0,
+   "persons": {
+    "linked_persons": 0,
+    "regions": [],
+    "companies_via_shared_persons": [],
+    "note": "Связь физлица с компанией не означает владение или руководство."
+   }
+  },
+  "data_notes": [
+   "Период и единицы платежей в данных не указаны: суммы — объём в единицах датасета.",
+   "Регион — регион регистрации, а не все регионы присутствия.",
+   "МОК: регион и город удалены из фикстуры, чтобы показать состояние «неполный профиль»."
+  ]
+ }
+]

@@ -11,11 +11,6 @@ import (
 	"time"
 )
 
-type Collector interface {
-	Name() string
-	Collect(ctx context.Context) ([]News, error)
-}
-
 type AlfaCollector struct {
 	client *http.Client
 	URL    string

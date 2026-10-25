@@ -23,7 +23,8 @@ func NormalizeURL(raw string) string {
 	query := u.Query()
 	for key := range query {
 		lower := strings.ToLower(key)
-		if strings.HasPrefix(lower, "utm-") ||
+		if strings.HasPrefix(lower, "utm_") ||
+			strings.HasPrefix(lower, "utm-") ||
 			lower == "fbclid" ||
 			lower == "gclid" ||
 			lower == "yclid" {

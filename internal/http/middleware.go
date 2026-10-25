@@ -41,6 +41,9 @@ func (w *statusWriter) Write(b []byte) (int, error) {
 	return w.ResponseWriter.Write(b)
 }
 
+// Unwrap даёт http.ResponseController (и reverse proxy) доступ к Flush.
+func (w *statusWriter) Unwrap() http.ResponseWriter { return w.ResponseWriter }
+
 func requestIDMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		id := strings.TrimSpace(r.Header.Get("X-Request-Id"))
@@ -51,6 +54,8 @@ func requestIDMiddleware(next http.Handler) http.Handler {
 		}
 
 		w.Header().Set("X-Request-Id", id)
+		// Нормализованный ID пробрасывается дальше (в т. ч. в AI-сервис через прокси).
+		r.Header.Set("X-Request-Id", id)
 
 		ctx := context.WithValue(r.Context(), requestIDKey{}, id)
 		next.ServeHTTP(w, r.WithContext(ctx))
@@ -109,7 +114,7 @@ func recoveryMiddleware(
 				)
 				w.WriteHeader(http.StatusInternalServerError)
 				_, _ = w.Write(
-					[]byte("internal server error"),
+					[]byte(`{"error":"internal server error"}`),
 				)
 			}
 		}()
