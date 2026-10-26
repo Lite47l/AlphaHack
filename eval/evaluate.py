@@ -3,6 +3,7 @@
 Запуск из корня репозитория (нужны зависимости ai/requirements.txt, в первую очередь pandas):
 
     python3 eval/evaluate.py            # таблица в stdout + eval/results.json
+    python3 eval/evaluate.py --labels-from llm   # эталон — вторая разметка моделью (eval/labels_llm.csv), без записи
 
 Что делает:
   1. читает eval/labels.csv (пары компания × новость, метка 0/1/2, split dev/holdout) и, если есть,
@@ -45,6 +46,7 @@ from app.storage import MemoryStore  # noqa: E402
 
 LABELS_CSV = ROOT / 'eval' / 'labels.csv'
 LABELS_FRESH_CSV = ROOT / 'eval' / 'labels_fresh.csv'  # разметка после правок ядра, split=fresh
+LABELS_LLM_CSV = ROOT / 'eval' / 'labels_llm.csv'  # вторая автоматическая разметка моделью (eval/llm_annotate.py)
 RESULTS_JSON = ROOT / 'eval' / 'results.json'
 SNAPSHOT = ROOT / 'data' / 'news_snapshot.json'
 SYNTH_DIR = ROOT / 'data' / 'synthetic'
@@ -104,7 +106,9 @@ def ndcg_at_k(scored, k: int) -> float:
 
 
 # ------------------------------------------------------------------ данные
-def load_labels() -> list[dict]:
+def load_labels(labels_from: str = 'auto', only_agreed: bool = False) -> list[dict]:
+    """Пары eval. labels_from='llm' — метка из eval/labels_llm.csv вместо автометки;
+    only_agreed — только пары, где автометка и метка LLM совпали."""
     rows = []
     for path in (LABELS_CSV, LABELS_FRESH_CSV):
         if path.is_file():
@@ -112,11 +116,25 @@ def load_labels() -> list[dict]:
                 rows += list(csv.DictReader(f))
     for r in rows:
         r['label'] = int(r['label'])
+    if labels_from == 'auto' and not only_agreed:
+        return rows
+    with LABELS_LLM_CSV.open(encoding='utf-8') as f:
+        llm = {r['pair_id']: int(r['llm_label']) for r in csv.DictReader(f)}
+    rows = [r for r in rows if r['pair_id'] in llm and (not only_agreed or llm[r['pair_id']] == r['label'])]
+    if labels_from == 'llm':
+        for r in rows:
+            r['label'] = llm[r['pair_id']]
     return rows
 
 
 def main() -> int:
-    labels = load_labels()
+    labels_from = 'llm' if '--labels-from=llm' in sys.argv or sys.argv[-2:] == ['--labels-from', 'llm'] else 'auto'
+    run(labels_from=labels_from, write=labels_from == 'auto', verbose=True)
+    return 0
+
+
+def run(labels_from: str = 'auto', only_agreed: bool = False, write: bool = True, verbose: bool = False) -> dict:
+    labels = load_labels(labels_from, only_agreed)
     snap = json.loads(SNAPSHOT.read_text(encoding='utf-8'))
     now = parse_dt(snap['generated_at'])
     store = MemoryStore()
@@ -236,15 +254,20 @@ def main() -> int:
            'extractor': EXTRACTOR_VERSION, 'skipped_pairs': skipped, 't2_check': t2, 'weights': WEIGHTS,
            'metrics': metrics, 'feed_view': feed_view, 'errors': errors, 'pairs': pairs,
            'robustness': robustness}
-    RESULTS_JSON.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding='utf-8')
+    if labels_from != 'auto' or only_agreed:
+        out['labels_from'] = labels_from + (' (only agreed)' if only_agreed else '')
+    if write:
+        RESULTS_JSON.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding='utf-8')
+    if not verbose:
+        return out
     print(f'profiles: {profiles.source} ({len(profiles.profiles)} компаний, version {profiles.version}); '
           f'extractor {EXTRACTOR_VERSION}; пропущено пар: {len(skipped)} {skipped or ""}')
     print_report(metrics, feed_view, errors, robustness)
     print('\nЭталон T2 (ставка ЦБ 23.10: U_1595 → high, U_8167 → low/medium):')
     for row in t2:
         print(f'  {"OK  " if row["ok"] else "FAIL"} {row["title"][:70]:<70} U_1595 {row.get("U_1595")}  U_8167 {row.get("U_8167")}')
-    print(f'\nresults -> {RESULTS_JSON.relative_to(ROOT)}')
-    return 0
+    print(f'\nresults -> {RESULTS_JSON.relative_to(ROOT) if write else "(не записано: другой эталон)"}')
+    return out
 
 
 def _err(x):

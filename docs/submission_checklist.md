@@ -25,7 +25,7 @@
 | 12 | Модель данных | Готово | `docs/architecture.md` §2, `migrations/*.sql`, `ai/app/storage.py:_SCHEMA_SQL` |
 | 13 | Тестовые сценарии | Готово | `ai/tests/` (pytest), `internal/**/*_test.go`, `eval/` (офлайн-оценка ранжирования), [`docs/demo_script.md`](demo_script.md), раздел «Сценарий проверки для жюри» в README |
 | 14 | Безопасность, мониторинг, масштабирование | Готово | [`docs/security.md`](security.md), [`docs/monitoring.md`](monitoring.md), [`docs/scaling.md`](scaling.md) |
-| 15 | Отчёт об оценке качества | Проверить | [`docs/evaluation_report.md`](evaluation_report.md), данные — `eval/results.json` |
+| 15 | Отчёт об оценке качества | Проверить | [`docs/evaluation_report.md`](evaluation_report.md), данные — `eval/results.json`; вторая разметка моделью — `eval/labels_llm.csv`, `eval/results_llm.json` (раздел 8 отчёта) |
 | 16 | Решение на бесплатном внешнем сервере (рекомендация) | Сделать (по возможности) | Не развёрнуто. При развёртывании: не публиковать реальные CSV и ключ; ограничить доступ к стенду, так как в корпусе аналитика банка |
 
 ## Демонстрация
