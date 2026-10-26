@@ -16,6 +16,11 @@ curl -sf "$BASE/api/v1/system/status" >/dev/null || curl -sf "${BASE%:*}:8080/re
 MODE=$(curl -sf "$API/system/status" | json "d['mode']+' / '+d['data_source']+' / профилей '+str(d['profiles'])")
 pass "AI-сервис: $MODE"
 N=$(curl -sf "$API/news?limit=5" | json "len(d['items'])"); [ "$N" -gt 0 ] && pass "новости в БД" || fail "нет новостей"
+# Эталонная пара есть только в реальных данных; на синтетике берём первые две полные компании
+if [ "$(curl -s -o /dev/null -w '%{http_code}' "$API/companies/$C1")" != 200 ]; then
+  read -r C1 C2 < <(curl -sf "$API/companies?limit=50" | json "' '.join([c['company_id'] for c in d['items'] if c['completeness']=='complete'][:2])")
+  pass "эталонной пары нет в данных, проверяем на $C1 и $C2"
+fi
 FEED=$(curl -sf "$API/companies/$C1/feed?limit=5&include_filtered=true")
 echo "$FEED" | json "len(d['items'])" | grep -qv '^0$' && pass "персональная лента $C1" || fail "пустая лента"
 NID=$(echo "$FEED" | json "d['items'][0]['news_id']")
