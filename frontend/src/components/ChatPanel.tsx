@@ -18,10 +18,12 @@ interface Props {
   clientId: string;
   ready: boolean;
   onSources: (s: SourceMap) => void;
+  /** Внутри панели события: без собственной карточки и заголовка */
+  embedded?: boolean;
 }
 
 /** Чат уточнений. Компонент монтируется заново (key) при смене клиента/новости/инсайта. */
-export function ChatPanel({ insightId, clientId, ready, onSources }: Props) {
+export function ChatPanel({ insightId, clientId, ready, onSources, embedded }: Props) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [pending, setPending] = useState<string | null>(null);
@@ -86,14 +88,16 @@ export function ChatPanel({ insightId, clientId, ready, onSources }: Props) {
   }
 
   return (
-    <div className="chat card">
-      <div className="chat__head">
-        <IconChat size={18} />
-        <div>
-          <div className="strong">Уточняющие вопросы</div>
-          <div className="muted small">Ответы опираются на этот инсайт и его источники</div>
+    <div className={cls('chat', !embedded && 'card')}>
+      {!embedded && (
+        <div className="chat__head">
+          <IconChat size={18} />
+          <div>
+            <div className="strong">Уточняющие вопросы</div>
+            <div className="muted small">Ответы опираются на этот инсайт и его источники</div>
+          </div>
         </div>
-      </div>
+      )}
       <div className="chat__list" ref={listRef}>
         {!ready && <div className="chat__empty">Чат станет доступен, когда инсайт будет готов.</div>}
         {ready && histLoading && (

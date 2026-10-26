@@ -196,3 +196,69 @@ export const IconBrain = (p: P) => (
   </Svg>
 );
 export const IconRefresh = IconRepair;
+export const IconChevronRight = (p: P) => (
+  <Svg {...p}>
+    <path d="m9 6 6 6-6 6" />
+  </Svg>
+);
+export const IconChart = (p: P) => (
+  <Svg {...p}>
+    <path d="M5 20V11M12 20V5M19 20v-8" />
+  </Svg>
+);
+export const IconTrend = (p: P) => (
+  <Svg {...p}>
+    <path d="M3 17l6-6 4 4 8-8" />
+    <path d="M15 7h6v6" />
+  </Svg>
+);
+export const IconDrop = (p: P) => (
+  <Svg {...p}>
+    <path d="M12 3s6 6.2 6 11a6 6 0 0 1-12 0c0-4.800 6-11 6-11Z" />
+  </Svg>
+);
+export const IconGrain = (p: P) => (
+  <Svg {...p}>
+    <path d="M12 21V9M12 9c0-2.500 1.500-4 3.500-4 0 2.500-1.500 4-3.500 4ZM12 9c0-2.500-1.500-4-3.500-4 0 2.500 1.500 4 3.500 4ZM12 14c0-2.500 1.500-4 3.500-4 0 2.500-1.500 4-3.500 4ZM12 14c0-2.500-1.500-4-3.500-4 0 2.500 1.500 4 3.500 4Z" />
+  </Svg>
+);
+export const IconCart = (p: P) => (
+  <Svg {...p}>
+    <path d="M3 4h2.500l2 11h10l2-8H7" />
+    <circle cx="9" cy="19" r="1.300" />
+    <circle cx="17" cy="19" r="1.300" />
+  </Svg>
+);
+export const IconGlobe = (p: P) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
+  </Svg>
+);
+export const IconCoin = (p: P) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M14.500 9a2.500 2.500 0 0 0-2.500-1.500c-1.500 0-2.500.8-2.500 2s1 1.800 2.500 2 2.500.8 2.500 2-1 2-2.500 2A2.500 2.500 0 0 1 9.500 15M12 6v1.500M12 16.500V18" />
+  </Svg>
+);
+export const IconBuilding = (p: P) => (
+  <Svg {...p}>
+    <path d="M4 21V8l8-4 8 4v13M9 21v-5h6v5M9 11h.01M15 11h.01" />
+  </Svg>
+);
+export const IconQuote = (p: P) => (
+  <Svg {...p}>
+    <path d="M10 7H6a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3v1.500A2.500 2.500 0 0 1 6.500 17M19 7h-4a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h3v1.500a2.500 2.500 0 0 1-2.500 2.500" />
+  </Svg>
+);
+export const IconLink = (p: P) => (
+  <Svg {...p}>
+    <path d="M10 14a4 4 0 0 0 5.700 0l3-3a4 4 0 0 0-5.700-5.700l-1 1M14 10a4 4 0 0 0-5.700 0l-3 3a4 4 0 0 0 5.700 5.700l1-1" />
+  </Svg>
+);
+export const IconList = (p: P) => (
+  <Svg {...p}>
+    <path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01" />
+  </Svg>
+);
+export const IconPeople = IconUsers;

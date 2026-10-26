@@ -65,7 +65,14 @@ export function CompanySwitcher() {
 
   return (
     <div className="switcher" ref={root}>
-      <button className={cls('switcher__btn', open && 'is-open')} onClick={() => setOpen((o) => !o)} aria-haspopup="listbox" aria-expanded={open}>
+      <button
+        className={cls('switcher__btn', open && 'is-open')}
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={`Компания: ${client?.display_name ?? 'не выбрана'}. Сменить`}
+        title={client?.subtitle}
+      >
         <span className="switcher__avatar">
           <IconBank size={18} />
         </span>
@@ -74,7 +81,7 @@ export function CompanySwitcher() {
             {client?.display_name ?? (loading ? 'Загрузка клиентов…' : clientId ?? 'Клиент не выбран')}
             {client?.completeness === 'incomplete' && <span className="badge-incomplete">неполный профиль</span>}
           </span>
-          <span className="switcher__sub">{client ? `${client.subtitle}` : 'Выберите компанию'}</span>
+          {!client && <span className="switcher__sub">Выберите компанию</span>}
         </span>
         <IconChevron size={16} />
       </button>

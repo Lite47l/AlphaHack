@@ -5,6 +5,9 @@ import type { CompanySummary, Feed } from '../api/types';
 
 const LS_KEY = 'alfa-news.client';
 
+/** Сколько событий запрашивается у ленты: если пришло столько же, событий может быть больше */
+export const FEED_LIMIT = 30;
+
 function lsGet(): string | null {
   try {
     return window.localStorage.getItem(LS_KEY);
@@ -133,6 +136,7 @@ export function ClientProvider({ children }: { children: ReactNode }) {
       setParams((prev) => {
         const p = new URLSearchParams(prev);
         p.set('client', id);
+        p.delete('event'); // выбранное событие принадлежало ленте прежней компании
         return p;
       });
     },
@@ -198,7 +202,7 @@ export function FeedProvider({ children }: { children: ReactNode }) {
     const ctrl = new AbortController();
     setLoading(true);
     api
-      .getFeed(clientId, { limit: 30, includeFiltered: true }, ctrl.signal)
+      .getFeed(clientId, { limit: FEED_LIMIT, includeFiltered: true }, ctrl.signal)
       .then((f) => {
         setFeed(f);
         setLoading(false);

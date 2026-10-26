@@ -5,11 +5,67 @@ import { IconAlert, IconBank, IconBrain, IconDoc, IconExternal, IconInfo, IconNe
 import { FeatureChips, Markers, useSources } from './sources';
 import { Chip, LevelBadge, ScoreBar } from './ui';
 
+/** Содержимое блока «Позиция Альфа-Банка»: цитаты с документом и страницей либо сообщение, что материал не найден. */
+export function BankBody({ bv }: { bv: Insight['bank_view'] }) {
+  const reg = useSources();
+  return (
+    <>
+    {bv.status === 'not_found' || bv.statements.length === 0 ? (
+      <div className="bank-empty">
+        <IconInfo size={16} />
+        <div>
+          <div className="strong">Позиция банка по этой теме не найдена.</div>
+          <div className="muted small">{bv.note || 'В корпусе аналитики Альфа-Банка нет материалов по теме события. Выводы ниже не опираются на мнение банка.'}</div>
+        </div>
+      </div>
+    ) : (
+      <>
+        {bv.note && <div className="block__hint">{bv.note}</div>}
+        {bv.statements.map((b, i) => {
+          const src = b.source_ids.map((id) => reg.get(id)).find((s) => s?.type === 'bank');
+          const url = b.url || (src && src.type === 'bank' ? src.url : undefined);
+          return (
+            <div key={i} className="bank-stmt">
+              <p className="bank-stmt__text">
+                {b.text} <Markers ids={b.source_ids} />
+              </p>
+              {b.quote && (
+                <blockquote className="bank-quote">
+                  <span className="bank-quote__mark">«</span>
+                  {b.quote}
+                  <span className="bank-quote__mark">»</span>
+                </blockquote>
+              )}
+              <div className="bank-stmt__doc">
+                <IconDoc size={14} />
+                <span className="strong">{b.doc_title}</span>
+                {b.page != null && <span>· стр. {b.page}</span>}
+                {b.published_at && <span>· {fmtDate(b.published_at)}</span>}
+                {url && (
+                  <a href={url} target="_blank" rel="noreferrer" className="link">
+                    открыть документ <IconExternal size={12} />
+                  </a>
+                )}
+              </div>
+              {b.warning && (
+                <div className="feed-card__warn">
+                  <IconAlert size={14} /> {b.warning}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </>
+    )}
+    </>
+  );
+}
+
 function KindBadge({ kind }: { kind: Statement['kind'] }) {
   return <span className={cls('kind', `kind--${kind}`)}>{KIND_LABEL[kind] ?? kind}</span>;
 }
 
-function StatementList({ items, showKind, features }: { items: Statement[]; showKind?: boolean; features?: boolean }) {
+export function StatementList({ items, showKind, features }: { items: Statement[]; showKind?: boolean; features?: boolean }) {
   return (
     <ul className="stmts">
       {items.map((s, i) => (
@@ -59,7 +115,6 @@ function Block({
 const ACTION_KIND: Record<string, string> = { action: 'Действие', question: 'Вопрос менеджеру / команде', scenario: 'Сценарий' };
 
 export function InsightView({ insight }: { insight: Insight }) {
-  const reg = useSources();
   const rel = insight.relevance;
   const bv = insight.bank_view;
   const rules = insight.mode === 'rules';
@@ -121,53 +176,7 @@ export function InsightView({ insight }: { insight: Insight }) {
           <span className="badge-bank">Аналитика Альфа-Банка</span>
           {bv.status === 'outdated' && <Chip tone="amber">материал устарел</Chip>}
         </div>
-        {bv.status === 'not_found' || bv.statements.length === 0 ? (
-          <div className="bank-empty">
-            <IconInfo size={16} />
-            <div>
-              <div className="strong">Позиция банка по этой теме не найдена.</div>
-              <div className="muted small">{bv.note || 'В корпусе аналитики Альфа-Банка нет материалов по теме события. Выводы ниже не опираются на мнение банка.'}</div>
-            </div>
-          </div>
-        ) : (
-          <>
-            {bv.note && <div className="block__hint">{bv.note}</div>}
-            {bv.statements.map((b, i) => {
-              const src = b.source_ids.map((id) => reg.get(id)).find((s) => s?.type === 'bank');
-              const url = b.url || (src && src.type === 'bank' ? src.url : undefined);
-              return (
-                <div key={i} className="bank-stmt">
-                  <p className="bank-stmt__text">
-                    {b.text} <Markers ids={b.source_ids} />
-                  </p>
-                  {b.quote && (
-                    <blockquote className="bank-quote">
-                      <span className="bank-quote__mark">«</span>
-                      {b.quote}
-                      <span className="bank-quote__mark">»</span>
-                    </blockquote>
-                  )}
-                  <div className="bank-stmt__doc">
-                    <IconDoc size={14} />
-                    <span className="strong">{b.doc_title}</span>
-                    {b.page != null && <span>· стр. {b.page}</span>}
-                    {b.published_at && <span>· {fmtDate(b.published_at)}</span>}
-                    {url && (
-                      <a href={url} target="_blank" rel="noreferrer" className="link">
-                        открыть документ <IconExternal size={12} />
-                      </a>
-                    )}
-                  </div>
-                  {b.warning && (
-                    <div className="feed-card__warn">
-                      <IconAlert size={14} /> {b.warning}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </>
-        )}
+        <BankBody bv={bv} />
       </section>
 
       <Block
