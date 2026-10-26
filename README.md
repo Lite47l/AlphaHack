@@ -288,7 +288,7 @@ docker run --rm -v "$PWD/frontend":/app -w /app node:22-alpine sh -c "npm ci && 
 # На реальных данных проверяет пару U_1595/U_8167, на синтетике сам берёт две компании U_9…
 ./scripts/smoke_test.sh
 
-# Офлайн-оценка ранжирования на ручной разметке (Precision@3, nDCG@5, dev/holdout, сравнение с baseline)
+# Офлайн-оценка ранжирования на автоматической разметке (Precision@3, nDCG@5, dev/holdout, сравнение с baseline)
 docker run --rm -v "$PWD":/repo -w /repo python:3.12-slim \
   sh -c "pip install -q -r ai/requirements.txt && python eval/evaluate.py"
 ```
