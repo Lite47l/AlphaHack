@@ -12,6 +12,7 @@ class FeedService:
         self.profiles, self.bank, self.store = profiles, bank, store
         self._events: dict[str, dict] = {}
         self._cov: dict[str, tuple[float, list]] = {}
+        self._topical: dict[str, list] = {}
         self._clusters: tuple[tuple, dict] | None = None
         self._lock = threading.Lock()
 
@@ -33,6 +34,14 @@ class FeedService:
             self._cov[n['id']] = self.bank.coverage(bank_query(e, n), as_of=str(n.get('published_at') or '')[:10] or None) \
                 if e['business_relevant'] else (0.0, [])
         return self._cov[n['id']]
+
+    def topical(self, n: dict, e: dict) -> list:
+        """Аналитика банка именно по теме события — основа флага bank_coverage.found (на ранжирование не влияет)."""
+        if n['id'] not in self._topical:
+            self._topical[n['id']] = self.bank.topical_hits(
+                n.get('title') or '', e.get('bank_topics') or [],
+                as_of=str(n.get('published_at') or '')[:10] or None) if e['business_relevant'] else []
+        return self._topical[n['id']]
 
     def recent_news(self, days: int) -> list[dict]:
         news = self.store.list_news(limit=600)
@@ -92,7 +101,7 @@ class FeedService:
             n, e = by_id[rep], events[rep]
             cov, hits = self.coverage(n, e)
             rel = score(p, e, cov, n['published_at'], now=now)
-            item = self.item(n, e, rel, hits, [by_id[d] for d in dups])
+            item = self.item(n, e, rel, self.topical(n, e), [by_id[d] for d in dups])
             if not e['business_relevant']:
                 stats['filtered_non_business'] += 1
                 item['filtered_reason'] = 'non_business'
@@ -162,7 +171,7 @@ class FeedService:
             'event': {k: e.get(k) for k in ('event_type', 'event_label', 'sectors', 'sector_labels', 'direction', 'regions')},
             'relevance': rel,
             'duplicates': [{'news_id': d['id'], 'title': d['title'], 'source_name': d['source_name'], 'url': d['url']} for d in dups],
-            'bank_coverage': {'found': bool(hits) and rel['components'][-1]['value'] >= 0.35 if rel['components'] else False,
+            'bank_coverage': {'found': bool(hits),
                               'docs': list({h['doc_id']: {'doc_id': h['doc_id'], 'title': h['doc_title']} for h in hits}.values())},
             'filtered_reason': None,
         }

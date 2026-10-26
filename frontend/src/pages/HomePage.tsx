@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api, ApiError, isAbort } from '../api/client';
 import type { FeedItem } from '../api/types';
-import { IconArrowRight, IconBank, IconNews, IconSpark } from '../components/Icons';
-import { Chip, ErrorState, LevelBadge, Skeleton } from '../components/ui';
+import { IconArrowRight } from '../components/Icons';
+import { Chip, ErrorState, Skeleton } from '../components/ui';
 import { useClient, useFeed } from '../lib/context';
-import { fmtBn, fmtRelative, plural } from '../lib/format';
+import { fmtBn, fmtRelative, LEVEL_SHORT, plural } from '../lib/format';
 
 // Демо-данные счетов: явно помечены, не связаны с реальным клиентом.
 const DEMO_ACCOUNTS = [
@@ -39,8 +39,8 @@ export function HomePage() {
     <div className="page">
       <div className="page-head">
         <div>
-          <h1>Добрый день!</h1>
-          <p className="muted">
+          <h1 className="page-title">Обзор</h1>
+          <p className="page-sub">
             {client ? (
               <>
                 {client.display_name} · {client.subtitle}
@@ -52,56 +52,40 @@ export function HomePage() {
         </div>
       </div>
 
-      <section className="news-entry" aria-label="Новости для вашего бизнеса">
-        <div className="news-entry__head">
-          <div className="news-entry__icon">
-            <IconNews size={22} />
+      <section className="panel" aria-label="Новости для вашего бизнеса">
+        <div className="panel__head">
+          <div>
+            <h2>Что важно для вашей компании</h2>
+            <p>События, которые затрагивают бизнес: с объяснением «почему для вас», позицией аналитиков Альфа-Банка и ссылками на источники.</p>
           </div>
-          <div className="news-entry__title">
-            <div className="news-entry__eyebrow">
-              <IconSpark size={14} /> Персональная аналитика
-            </div>
-            <h2>Новости для вашего бизнеса</h2>
-            <p>
-              События, которые влияют на компанию: с объяснением «почему для вас», позицией аналитиков Альфа-Банка и ссылками на
-              первоисточники.
-            </p>
-          </div>
-          <div className="news-entry__count">
+          <div>
             {feedLoading || !feed ? (
-              <Skeleton h={40} w={56} />
+              <Skeleton h={28} w={140} />
             ) : (
-              <>
-                <span className="news-entry__num">{significant}</span>
-                <span className="news-entry__numlabel">
-                  {plural(significant, 'значимое событие', 'значимых события', 'значимых событий')}
-                </span>
-              </>
+              <span className="tag tag--high">
+                {significant} {plural(significant, 'важное событие', 'важных события', 'важных событий')}
+              </span>
             )}
           </div>
         </div>
 
-        <div className="news-entry__list">
+        <div className="mini-grid">
           {err && <ErrorState message={err} onRetry={() => setNonce((n) => n + 1)} />}
-          {!err && !top && [0, 1, 2].map((i) => (
-            <div key={i} className="mini-news">
-              <Skeleton h={12} w="40%" />
-              <Skeleton h={16} w="90%" />
-              <Skeleton h={12} w="70%" />
-            </div>
-          ))}
-          {top && top.length === 0 && <div className="muted">Значимых событий для компании за период нет.</div>}
+          {!err &&
+            !top &&
+            [0, 1, 2].map((i) => (
+              <div key={i} className="mini-news" aria-busy="true">
+                <Skeleton h={12} w="40%" />
+                <Skeleton h={16} w="90%" />
+                <Skeleton h={12} w="70%" />
+              </div>
+            ))}
+          {top && top.length === 0 && <div className="muted">Событий для компании за период нет.</div>}
           {top?.map((it) => (
-            <Link key={it.news_id} to={href(`/news/${it.news_id}`)} className="mini-news">
+            <Link key={it.news_id} to={href(`/news?event=${it.news_id}`)} className="mini-news">
               <div className="mini-news__meta">
-                <LevelBadge level={it.relevance.level} short />
-                <Chip>{it.event.event_label}</Chip>
-                {it.bank_coverage.found && (
-                  <Chip tone="red" icon={<IconBank size={12} />}>
-                    позиция банка
-                  </Chip>
-                )}
-                <span className="muted small">{fmtRelative(it.published_at)}</span>
+                <span className={`tag tag--${it.relevance.level}`}>{LEVEL_SHORT[it.relevance.level]}</span>
+                <span>{fmtRelative(it.published_at)}</span>
               </div>
               <div className="mini-news__title">{it.title}</div>
               <div className="mini-news__why">
@@ -110,12 +94,12 @@ export function HomePage() {
             </Link>
           ))}
         </div>
-        <div className="news-entry__foot">
+        <div className="panel__foot">
           <Link to={href('/news')} className="btn btn--primary">
-            Открыть ленту <IconArrowRight size={16} />
+            Открыть события <IconArrowRight size={16} />
           </Link>
-          <Link to={href('/news?check=1')} className="btn btn--ghost-light">
-            Проверить свою новость
+          <Link to={href('/news?check=1')} className="btn btn--secondary">
+            Проверить новость
           </Link>
         </div>
       </section>

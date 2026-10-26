@@ -51,6 +51,15 @@ News = {
 
 ### `GET /api/v1/knowledge` — реестр документов банка (`{"items":[{id,title,institution,document_url,published_at}]}`)
 
+### `POST /api/v1/knowledge/import` (multipart, поле `file`) и `POST /api/v1/knowledge/collect` — импорт PDF
+Сохраняют PDF в `knowledge_documents` (дедупликация по SHA-256) и постранично в `knowledge_chunks`; OCR только для страниц
+без текстового слоя. `collect` читает PDF из `KNOWLEDGE_PDF_DIR` (`/data/knowledge`). AI-сервис по-прежнему ищет по
+`data/bank_corpus/corpus.json`; таблица чанков — задел для переноса поиска в БД.
+
+### Исходный Go-контракт (legacy)
+`GET /api/v1/legacy/companies`, `GET /api/v1/legacy/companies/{id}`, `GET /api/v1/legacy/companies/{id}/feed`,
+`POST /api/v1/companies/{id}/analyses`, `GET /api/v1/analyses/{id}` — компании из таблицы `companies`; UI их не использует.
+
 ## Компании (AI)
 
 ### `GET /api/v1/companies?query=&limit=50&offset=0`
@@ -116,6 +125,7 @@ FeedItem = {
 }
 ```
 `filtered_reason` (только в `filtered`): `"non_business"` | `"low_relevance"`.
+`bank_coverage.found` — в аналитике банка есть фрагмент по теме события: документ размечен темой события (`topics` корпуса ∩ `bank_topics` события) и фрагмент совпадает с заголовком новости (BM25 ≥ 12). `docs` — такие документы. На ранжирование флаг не влияет (компонент «банк» в `relevance` считается как прежде).
 
 ### `GET /api/v1/relevance?news_id=<uuid>&company_ids=U_1,U_2`
 Одна новость для нескольких компаний (демо «разная значимость»):

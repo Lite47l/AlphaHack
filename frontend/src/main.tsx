@@ -8,6 +8,7 @@ import { InsightPage } from './pages/InsightPage';
 import { MonitoringPage } from './pages/MonitoringPage';
 import { NewsPage } from './pages/NewsPage';
 import { ProfilePage } from './pages/ProfilePage';
+import { SourcesPage } from './pages/SourcesPage';
 import { NotFoundPage, StubPage } from './pages/StubPage';
 import './styles/app.css';
 
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="news/:newsId" element={<InsightPage />} />
             <Route path="compare" element={<ComparePage />} />
             <Route path="profile" element={<ProfilePage />} />
+            <Route path="sources" element={<SourcesPage />} />
             <Route path="monitoring" element={<MonitoringPage />} />
             <Route path="stub/:section" element={<StubPage />} />
             <Route path="*" element={<NotFoundPage />} />

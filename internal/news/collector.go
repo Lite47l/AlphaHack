@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"io"
-	"log"
 	"net/http"
 	"regexp"
 	"strings"
@@ -62,18 +61,6 @@ func (c *AlfaCollector) Collect(ctx context.Context) ([]News, error) {
 	}
 
 	html := string(body)
-
-	log.Printf("Alfa HTML: %s", html)
-
-	log.Printf("Alfa HTML size: %d bytes", len(html))
-
-	hrefPattern := regexp.MustCompile(`(?is)href=["']([^"']+)["']`)
-	hrefs := hrefPattern.FindAllStringSubmatch(html, 50)
-
-	log.Printf("Alfa href count: %d", len(hrefs))
-	for _, match := range hrefs {
-		log.Printf("Alfa href: %s", match[1])
-	}
 
 	linkPattern := regexp.MustCompile(
 		`(?is)<a\b[^>]*href=["']([^"'#]+)["'][^>]*>(.*?)</a\s*>`,

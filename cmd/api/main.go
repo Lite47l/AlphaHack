@@ -63,9 +63,14 @@ func run(cfg config.Config, logger *slog.Logger) error {
 	}
 	importer := news.NewImporter(newsRepo, logger, collectors...)
 	go importer.Run(ctx, cfg.NewsImportInterval, cfg.NewsImportOnStart)
-	// Run the heavy parser independently: RSS articles reach the DB immediately.
-	rbcImporter := news.NewImporter(newsRepo, logger, news.NewRBCCollector())
-	go rbcImporter.Run(ctx, cfg.NewsImportInterval, cfg.NewsImportOnStart)
+	// Парсер РБК (parsing_rbk_lentaru) — отдельный необязательный сервис (compose profile "rbc").
+	// Он тяжёлый, поэтому импортируется независимо: RSS попадает в БД сразу, а без парсера ничего не ждёт.
+	manual := collectors
+	if os.Getenv("RBC_PARSER_URL") != "" {
+		rbcImporter := news.NewImporter(newsRepo, logger, news.NewRBCCollector())
+		go rbcImporter.Run(ctx, cfg.NewsImportInterval, cfg.NewsImportOnStart)
+		manual = append(append([]news.Collector{}, collectors...), news.NewRBCCollector())
+	}
 
 	allowCIDRs, err := news.ParseCIDRList(cfg.FetchAllowCIDRs)
 	if err != nil {
@@ -77,7 +82,7 @@ func run(cfg config.Config, logger *slog.Logger) error {
 	router := apphttp.NewRouter(db, logger, apphttp.Options{
 		AIURL:              aiURL,
 		NewsService:        news.NewService(newsRepo, news.NewPageFetcher(allowCIDRs...)),
-		Importer:           news.NewImporter(newsRepo, logger, append(collectors, news.NewRBCCollector())...),
+		Importer:           news.NewImporter(newsRepo, logger, manual...),
 		RateLimitPerMinute: cfg.RateLimitPerMinute,
 	})
 	server := &http.Server{

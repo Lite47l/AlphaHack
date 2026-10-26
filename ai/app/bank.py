@@ -44,6 +44,11 @@ SYNONYMS = {
 }
 
 
+# Порог BM25 по заголовку для флага «есть аналитика банка» в ленте (подобран по ленте U_1595/U_34911:
+# ставка/курс/инфляция/кредит ≥12, случайные совпадения — «алименты», «троян в приложении АЗС» — 7–11).
+TOPICAL_MIN_SCORE = 12.0
+
+
 class BankCorpus:
     def __init__(self, data: dict):
         self.version = data['version']
@@ -162,6 +167,16 @@ class BankCorpus:
             return 0.0, []
         top = hits[0]['score']
         return min(1.0, top / 25.0), hits
+
+    def topical_hits(self, title: str, topics: list[str], as_of: str | None = None,
+                     min_score: float = TOPICAL_MIN_SCORE) -> list[dict]:
+        """Фрагменты аналитики, которые действительно про событие: документ размечен темой события
+        (topics корпуса ∩ bank_topics события) и фрагмент заметно совпадает с заголовком новости.
+        Поиск — только по заголовку: служебные слова типа события не «притягивают» любой документ темы."""
+        if not topics:
+            return []
+        hits = self.search(title, k=5, as_of=as_of, min_score=min_score)
+        return [h for h in hits if set(self.docs[h['doc_id']]['topics']) & set(topics)]
 
     def documents(self) -> list[dict]:
         return sorted(self.docs.values(), key=lambda d: d['published_at'], reverse=True)

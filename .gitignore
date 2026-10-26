@@ -8,17 +8,6 @@ bin/
 tmp/
 coverage.out
 
-# Added from AI feature
-.env
-.env.*
-!.env.example
-.idea/
-.vscode/
-*.log
-bin/
-tmp/
-coverage.out
-
 # Данные и артефакты
 data/raw/
 data/generated/
@@ -36,3 +25,7 @@ frontend/dist/
 .venv/
 *.zip
 .ipynb_checkpoints/
+
+# PDF аналитики банка для импорта (POST /api/v1/knowledge/collect) — не коммитим
+data/knowledge/
+*.pdf

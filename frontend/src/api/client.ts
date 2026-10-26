@@ -9,6 +9,7 @@ import type {
   CreateNewsRequest,
   Feed,
   InsightEnvelope,
+  KnowledgeItem,
   MetricsSummary,
   News,
   RelevanceCompare,
@@ -154,6 +155,7 @@ export const api = {
       signal,
       timeoutMs: 30_000,
     }),
+  knowledge: (signal?: AbortSignal) => request<{ items: KnowledgeItem[] }>('GET', '/knowledge', { signal }),
   getNews: (id: string, signal?: AbortSignal) => request<News>('GET', `/news/${enc(id)}`, { signal }),
   createNews: (body: CreateNewsRequest, signal?: AbortSignal) =>
     request<News>('POST', '/news', { body, signal, timeoutMs: 30_000 }),

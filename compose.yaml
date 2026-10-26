@@ -1,3 +1,7 @@
+# Запуск: docker compose up --build   (UI: http://localhost:3000, API-шлюз: http://localhost:8080)
+# Файл .env не обязателен: без него LLM выключена и инсайты строятся правилами.
+# Парсер РБК (parsing_rbk_lentaru, тяжёлый: Natasha/модели) — необязательный:
+#   RBC_PARSER_URL=http://rbc-parser:8000 docker compose --profile rbc up --build
 services:
   postgres:
     image: postgres:17-alpine
@@ -5,8 +9,6 @@ services:
       POSTGRES_DB: hackathon
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-    ports:
-      - "127.0.0.1:${POSTGRES_PORT:-55432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -14,8 +16,10 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+    restart: unless-stopped
 
   rbc-parser:
+    profiles: ["rbc"]
     build:
       context: ./parsing_rbk_lentaru
       dockerfile: Dockerfile
@@ -27,7 +31,6 @@ services:
       - rbc_model_cache:/home/appuser/.cache
     expose:
       - "8000"
-    restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
       interval: 30s
@@ -38,6 +41,7 @@ services:
       resources:
         limits:
           memory: 4G
+    restart: unless-stopped
 
   ai:
     build:
@@ -68,7 +72,7 @@ services:
       start_period: 60s
       retries: 5
     depends_on:
-      backend:
+      postgres:
         condition: service_healthy
     restart: unless-stopped
 
@@ -79,6 +83,8 @@ services:
     environment:
       PORT: "8080"
       APP_ENV: ${APP_ENV:-dev}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/hackathon?sslmode=disable
       AI_URL: http://ai:8000
       NEWS_FEEDS: ${NEWS_FEEDS:-}
       NEWS_IMPORT_INTERVAL: ${NEWS_IMPORT_INTERVAL:-30m}
@@ -86,27 +92,22 @@ services:
       NEWS_SNAPSHOT_PATH: /data/news_snapshot.json
       RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-20}
       FETCH_ALLOW_CIDRS: ${FETCH_ALLOW_CIDRS:-}
-      DATABASE_URL: postgres://postgres:postgres@postgres:5432/hackathon?sslmode=disable
-      RBC_PARSER_URL: http://rbc-parser:8000
+      RBC_PARSER_URL: ${RBC_PARSER_URL:-}
       RBC_QUERY: ${RBC_QUERY:-экономика}
-      KNOWLEDGE_PDF_DIR: /app/data/knowledge
+      KNOWLEDGE_PDF_DIR: /data/knowledge
+    volumes:
+      - ./data:/data:ro
     ports:
       - "127.0.0.1:${BACKEND_PORT:-8080}:8080"
-    volumes:
-      - ./data/knowledge:/app/data/knowledge:ro
-      - ./data:/data:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8080/health >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 3s
+      start_period: 20s
+      retries: 5
     depends_on:
       postgres:
         condition: service_healthy
-      rbc-parser:
-        condition: service_healthy
-
-    healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8080/ready >/dev/null || exit 1"]
-      interval: 5s
-      timeout: 3s
-      start_period: 30s
-      retries: 10
     restart: unless-stopped
 
   web:
@@ -116,12 +117,10 @@ services:
       - "127.0.0.1:${WEB_PORT:-3000}:3000"
     depends_on:
       backend:
-        condition: service_healthy
-      ai:
-        condition: service_healthy
+        condition: service_started
     restart: unless-stopped
 
 volumes:
   postgres_data:
-  rbc_model_cache:
   ai_state:
+  rbc_model_cache:
