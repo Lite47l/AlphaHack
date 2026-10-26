@@ -78,3 +78,13 @@ def test_end_to_end(client):
     assert client.get('/api/v1/bank/documents').json()['items']
     assert client.get('/api/v1/companies/NOPE').status_code == 404
     assert client.get('/api/v1/insights/not-a-uuid', headers={'X-Client-Id': cid}).status_code == 400
+
+
+def test_base_company_without_financial_profile_still_sees_business_news(client):
+    from app.main import S
+    cid = '75ad1adb-7c36-4101-bd17-7c782a620c2f'
+    S['profiles'].add_database_companies([{'id': cid, 'name': 'Основная компания', 'industry': '', 'description': ''}])
+    feed = client.get(f'/api/v1/companies/{cid}/feed').json()
+    assert feed['items'], 'Missing company profile must not hide every business publication'
+    assert any(item['relevance']['level'] == 'none' for item in feed['items'])
+    assert all(item['filtered_reason'] is None for item in feed['items'])

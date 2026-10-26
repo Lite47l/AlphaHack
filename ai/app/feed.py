@@ -106,7 +106,9 @@ class FeedService:
                 stats['filtered_non_business'] += 1
                 item['filtered_reason'] = 'non_business'
                 filtered.append(item)
-            elif rel['level'] == 'none':
+            elif rel['level'] == 'none' and not (
+                p['observed']['REVENUE_COMPANY']['source'].startswith('companies:missing:')
+            ):
                 stats['filtered_low_relevance'] += 1
                 item['filtered_reason'] = 'low_relevance'
                 filtered.append(item)

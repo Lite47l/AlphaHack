@@ -11,7 +11,7 @@ import logging
 from pathlib import Path
 
 from .config import settings
-from .data_build import FILES, PRODUCT_FIELDS, build_profiles
+from .data_build import FILES, OBSERVED_FIELDS, PRODUCT_FIELDS, build_profiles
 
 log = logging.getLogger(__name__)
 
@@ -155,6 +155,34 @@ class ProfileStore:
         synth = settings.data_dir / 'synthetic'
         log.warning('real data not found, using synthetic dataset %s', synth)
         return cls(build_profiles(synth, settings.min_revenue), f'synthetic:{synth}')
+
+    def add_database_companies(self, companies: list[dict]) -> None:
+        """Expose base PostgreSQL companies without inventing financial facts."""
+        for row in companies:
+            cid = str(row['id'])
+            if cid in self.profiles:
+                continue
+            def payments():
+                return {'amount': 0, 'count': 0, 'counterparties': 0,
+                        'top5_share': None, 'max_share': None, 'unknown_profile_share': None,
+                        'sectors': [], 'regions': [], 'fts_countries': [], 'top': []}
+            p = {
+                'company_id': cid, 'display_name': row['name'],
+                'subtitle': row.get('industry') or 'Вид деятельности не указан',
+                'profile_status': 'matched', 'segment': 'Финансовые данные не указаны', 'sectors': [],
+                'observed': {key: {'value': None, 'title': title, 'source': 'companies:missing:' + key}
+                             for key, title in OBSERVED_FIELDS.items()},
+                'products': {key: None for key in PRODUCT_FIELDS},
+                'missing_fields': list(OBSERVED_FIELDS),
+                'derived': {'revenue_rank': None, 'group': None, 'payments_out': payments(),
+                            'payments_in': payments(), 'self_payments_amount': 0,
+                            'persons': {'linked_persons': 0, 'regions': [], 'companies_via_shared_persons': [],
+                                        'note': 'Нет данных о связях физических лиц.'}},
+                'data_notes': [row.get('description') or '',
+                               'Финансовые поля и ОКВЭД в основной БД отсутствуют.'],
+            }
+            p['channels'] = channels_for(p)
+            self.profiles[cid] = p
 
     def get(self, company_id: str) -> dict | None:
         return self.profiles.get(company_id)

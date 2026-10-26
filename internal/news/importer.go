@@ -53,7 +53,11 @@ func (i *Importer) Import(ctx context.Context) ([]ImporterResult, error) {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			cctx, cancel := context.WithTimeout(ctx, collectTimeout)
+			timeout := collectTimeout
+			if _, ok := c.(*RBCCollector); ok {
+				timeout = 10 * time.Minute
+			}
+			cctx, cancel := context.WithTimeout(ctx, timeout)
 			defer cancel()
 			items, err := c.Collect(cctx)
 			out[idx] = collected{items: items, err: err}

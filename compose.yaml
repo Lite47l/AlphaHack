@@ -1,5 +1,7 @@
 # Запуск: docker compose up --build   (UI: http://localhost:3000, API-шлюз: http://localhost:8080)
 # Файл .env не обязателен: без него LLM выключена и инсайты строятся правилами.
+# Парсер РБК (parsing_rbk_lentaru, тяжёлый: Natasha/модели) — необязательный:
+#   RBC_PARSER_URL=http://rbc-parser:8000 docker compose --profile rbc up --build
 services:
   postgres:
     image: postgres:17-alpine
@@ -14,6 +16,31 @@ services:
       interval: 5s
       timeout: 3s
       retries: 10
+    restart: unless-stopped
+
+  rbc-parser:
+    profiles: ["rbc"]
+    build:
+      context: ./parsing_rbk_lentaru
+      dockerfile: Dockerfile
+    environment:
+      PYTHONUNBUFFERED: "1"
+      TRANSFORMERS_CACHE: /home/appuser/.cache/transformers
+      HF_HOME: /home/appuser/.cache/huggingface
+    volumes:
+      - rbc_model_cache:/home/appuser/.cache
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 180s
+    deploy:
+      resources:
+        limits:
+          memory: 4G
     restart: unless-stopped
 
   ai:
@@ -65,10 +92,13 @@ services:
       NEWS_SNAPSHOT_PATH: /data/news_snapshot.json
       RATE_LIMIT_PER_MINUTE: ${RATE_LIMIT_PER_MINUTE:-20}
       FETCH_ALLOW_CIDRS: ${FETCH_ALLOW_CIDRS:-}
+      RBC_PARSER_URL: ${RBC_PARSER_URL:-}
+      RBC_QUERY: ${RBC_QUERY:-экономика}
+      KNOWLEDGE_PDF_DIR: /data/knowledge
     volumes:
       - ./data:/data:ro
     ports:
-      - "8080:8080"
+      - "127.0.0.1:${BACKEND_PORT:-8080}:8080"
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8080/health >/dev/null || exit 1"]
       interval: 10s
@@ -84,7 +114,7 @@ services:
     build:
       context: ./frontend
     ports:
-      - "3000:3000"
+      - "127.0.0.1:${WEB_PORT:-3000}:3000"
     depends_on:
       backend:
         condition: service_started
@@ -93,3 +123,4 @@ services:
 volumes:
   postgres_data:
   ai_state:
+  rbc_model_cache:

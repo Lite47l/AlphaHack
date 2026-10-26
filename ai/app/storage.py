@@ -116,6 +116,9 @@ class Store(ABC):
 
     kind: str = 'abstract'
 
+    def list_companies(self) -> list[dict]:
+        return []
+
     @abstractmethod
     def ensure_schema(self) -> None: ...
 
@@ -620,6 +623,9 @@ class PgStore(Store):
         self._cols_lock = threading.Lock()
         self._news_cols: set[str] | None = None
         self._news_cols_checked = 0.0
+
+    def list_companies(self) -> list[dict]:
+        return self._all("SELECT id::text AS id, name, industry, description FROM companies ORDER BY name, id")
 
     def close(self) -> None:
         self._pool.close()

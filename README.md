@@ -249,6 +249,25 @@ docker compose exec ai python -c "import urllib.request;print(urllib.request.url
 
 Маршруты Go-шлюза описаны в [docs/api_contract.md](docs/api_contract.md).
 
+## Дополнительно: импорт PDF в базу знаний и парсер РБК
+
+Эти функции шлюза не нужны для сквозного сценария (он работает на `data/bank_corpus/corpus.json` и RSS), но доступны:
+
+- **Импорт PDF аналитики** в PostgreSQL (`knowledge_documents` + `knowledge_chunks`, миграция `005_knowledge_chunks.sql`):
+  текстовый слой по страницам, OCR (poppler + tesseract rus/eng, 150 DPI) только для страниц без текста, дедупликация по SHA-256.
+  - `POST /api/v1/knowledge/import` — один PDF, multipart-поле `file`;
+  - `POST /api/v1/knowledge/collect` — все PDF из `./data/knowledge` (в контейнере `/data/knowledge`; папка и PDF не в git).
+- **Парсер РБК** (`parsing_rbk_lentaru/`, FastAPI + Natasha: полный текст статей, найденные компании и ОКВЭД) — отдельный
+  необязательный сервис. Первый запуск долгий (зависимости и модели), лимит памяти 4 ГБ. Включение:
+  ```bash
+  RBC_PARSER_URL=http://rbc-parser:8000 docker compose --profile rbc up --build
+  ```
+  Шлюз импортирует РБК отдельно от RSS по тому же таймеру `NEWS_IMPORT_INTERVAL`; без `RBC_PARSER_URL` коллектор выключен,
+  и стек от парсера не зависит. Найденные парсером компании и ОКВЭД пока не сохраняются в схеме `news`.
+- Коллектор публикаций `alfabank.ru/news` (дата публикации на странице не размечена — публикация сохраняется без даты).
+- Исходный Go-контракт сохранён: `GET /api/v1/legacy/companies[/{id}[/feed]]`, `POST /api/v1/companies/{id}/analyses`,
+  `GET /api/v1/analyses/{id}`.
+
 ## Тесты
 
 ```bash
@@ -277,8 +296,9 @@ docker run --rm -v "$PWD":/repo -w /repo python:3.12-slim \
 ├── internal/
 │   ├── config/                              env-конфигурация
 │   ├── http/                                маршруты, прокси в AI, rate limit, middleware (request id, логи, заголовки)
-│   ├── news/                                RSS-коллектор, импорт, снимок, пользовательские новости, SSRF-защита
-│   ├── knowledge/                           реестр документов банка (GET /api/v1/knowledge)
+│   ├── news/                                RSS, alfabank.ru и РБК-коллекторы, импорт, снимок, пользовательские новости, SSRF-защита
+│   ├── knowledge/                           реестр документов банка, импорт PDF с OCR в knowledge_chunks
+│   ├── company/, analysis/                  исходный Go-контракт (legacy-компании, анализы)
 │   ├── storage/                             пул PostgreSQL и применение миграций
 │   └── response/                            формат JSON-ответов и ошибок
 ├── migrations/                              SQL-миграции шлюза (embed)
@@ -302,6 +322,7 @@ docker run --rm -v "$PWD":/repo -w /repo python:3.12-slim \
 │   ├── bank_corpus/corpus.json              распознанная аналитика Альфа-Банка (9 документов, 219 фрагментов)
 │   ├── news_snapshot.json (+ README)        офлайн-снимок 200 реальных публикаций из RSS
 │   └── raw/, generated/                     реальные данные и производные (не в git)
+├── parsing_rbk_lentaru/                     необязательный парсер РБК (Natasha, ОКВЭД), compose profile rbc
 ├── scripts/                                 OCR (Apple Vision) → корпус; синтетика; снимок новостей
 ├── eval/                                    разметка и офлайн-оценка ранжирования
 ├── 03_data/                                 подготовка и валидация исходных данных (L03)

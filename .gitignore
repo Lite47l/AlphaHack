@@ -25,3 +25,7 @@ frontend/dist/
 .venv/
 *.zip
 .ipynb_checkpoints/
+
+# PDF аналитики банка для импорта (POST /api/v1/knowledge/collect) — не коммитим
+data/knowledge/
+*.pdf

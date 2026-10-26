@@ -50,6 +50,7 @@ async def lifespan(app: FastAPI):
     store = make_store(settings)
     store.ensure_schema()
     profiles = ProfileStore.load()
+    profiles.add_database_companies(store.list_companies())
     bank = BankCorpus.load()
     llm = LLMClient(settings, store)
     S.update(store=store, profiles=profiles, bank=bank, llm=llm, feed=FeedService(profiles, bank, store),

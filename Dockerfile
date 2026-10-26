@@ -10,7 +10,8 @@ RUN CGO_ENABLED=0 GOOS=linux go build -trimpath -ldflags="-s -w" -o /out/api ./c
 
 FROM alpine:3.21
 
-RUN apk add --no-cache ca-certificates
+# poppler/tesseract: извлечение текста и OCR для POST /api/v1/knowledge/import
+RUN apk add --no-cache ca-certificates poppler-utils tesseract-ocr tesseract-ocr-data-rus tesseract-ocr-data-eng
 
 COPY Russian_Trusted_Root_CA.cer /usr/local/share/ca-certificates/Russian_Trusted_Root_CA.crt
 RUN update-ca-certificates && adduser -D -H appuser
